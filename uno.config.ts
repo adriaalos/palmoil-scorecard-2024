@@ -6,12 +6,28 @@ import {
     presetUno,
     presetWebFonts
 } from 'unocss'
+import transformerDirectives from '@unocss/transformer-directives'
 
 export default defineConfig({
     theme: {
         colors: {
-            po: {
-                DEFAULT: '#41B464'
+            green: '#41B464',   
+            leaf: '#96B441',
+            gold: '#96B441',
+            rosy: '#E46466',
+            gray: '#C1C1C1',
+            cake: '#FFFAF3',
+            ocre: '#E29F38',
+            line: '#DADADA'
+        },
+        extend: {
+            screens: {
+                '2xl': {'max': '1536px'},
+                'xl': {'max': '1280px'},
+                'lg': {'max': '1024px'},
+                'md': {'max': '768px'},
+                'sm': {'max': '640px'},
+                'xs': {'max': '414px'},
             }
         }
     },
@@ -33,4 +49,7 @@ export default defineConfig({
             },
         }),
     ],
+    transformers: [
+        transformerDirectives()
+    ]
 })

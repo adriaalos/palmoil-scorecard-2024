@@ -11,12 +11,14 @@
     },
     "dependencies": {
         "@unocss/reset": "^0.58.5",
-        "nuxt": "^3.10.1",
+        "nuxt": "3.8.2",
         "vue": "^3.4.15",
         "vue-router": "^4.2.5"
     },
     "devDependencies": {
+        "@pinia/nuxt": "^0.5.1",
         "@unocss/nuxt": "^0.58.5",
+        "@unocss/transformer-directives": "^0.58.5",
         "sass": "^1.70.0"
     }
 }

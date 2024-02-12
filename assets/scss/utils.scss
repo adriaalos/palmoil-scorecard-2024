@@ -1,0 +1,12 @@
+*, *::before, *::after {
+    @apply relative;
+}
+.u-container {
+    @apply mx-auto max-w-[1280px] px-9;
+}
+.u-fs18 {
+    @apply text-lg;
+}
+.u-fs28 {
+    @apply text-[28px];
+}
