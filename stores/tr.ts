@@ -12,6 +12,7 @@ export const useTrStore = defineStore('trStore', () => {
         }
 
         translations.value = JSON.parse(data.value as string)
+        console.log(translations.value)
         
     }
 

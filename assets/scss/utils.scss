@@ -1,8 +1,12 @@
 *, *::before, *::after {
     @apply relative;
 }
+
 .u-container {
     @apply mx-auto max-w-[1280px] px-9;
+    &--lg {
+        @apply max-w-[1024px];
+    }
     &--md {
         @apply max-w-[768px];
     }
@@ -22,6 +26,9 @@
 }
 .u-fs31 {
     @apply text-[31px];
+}
+.u-fs32 {
+    @apply text-[32px] leading-[52px];
 }
 .u-fs88 {
     @apply text-[88px] leading-[62px];

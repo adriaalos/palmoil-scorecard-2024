@@ -1,6 +1,9 @@
 <template>
     <header 
-        class="font-wwf uppercase text-white bg-black z-10"
+        :class="[
+            'sticky top-0 font-wwf uppercase text-white bg-black z-10 transform transition-all duration-300',
+            appStore.scrollDirection === 'down' && appStore.scrollPosition > 200 ? 'translate-y-[-150%]' : 'translate-y-0'
+        ]"
     >
         <div 
             class="u-container flex items-center justify-between"
@@ -41,6 +44,7 @@
 </template>
 
 <script setup lang="ts">
+const appStore = useAppStore()
 const tr = useTrStore().translations
 const nav = ref([
     {
