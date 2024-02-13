@@ -3,10 +3,45 @@
 }
 .u-container {
     @apply mx-auto max-w-[1280px] px-9;
+    &--md {
+        @apply max-w-[768px];
+    }
+    &--sm {
+        @apply max-w-[640px];
+    }
+   
 }
 .u-fs18 {
     @apply text-lg;
 }
+.u-fs22 {
+    @apply text-[22px];
+}
 .u-fs28 {
     @apply text-[28px];
+}
+.u-fs31 {
+    @apply text-[31px];
+}
+.u-fs88 {
+    @apply text-[88px] leading-[62px];
+}
+.u-fs220 {
+    @apply text-[220px] leading-[220px];
+}
+.u-fs180 {
+    @apply text-[180px] leading-[180px];
+}
+
+.u-button {
+    @apply inline-flex items-center gap-4 px-10 py-4 u-fs18 font-wwf text-white uppercase bg-green rounded-[50px] hover:bg-gold;
+    &--hero {
+        @apply px-12 py-5 text-[22px] text-green bg-white border-2 border-green hover:bg-green hover:text-white;
+        svg {
+            @apply top-0.5;
+            path {
+                @apply stroke-current;
+            }
+        }
+    }
 }

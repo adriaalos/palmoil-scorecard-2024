@@ -1,6 +1,6 @@
 <template>
-    <div class="">
-        {{ tr }}
+    <div>
+        <home-hero />
     </div>
 </template>
 

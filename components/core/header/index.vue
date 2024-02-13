@@ -1,6 +1,6 @@
 <template>
     <header 
-        class="font-wwf uppercase text-white bg-black"
+        class="font-wwf uppercase text-white bg-black z-10"
     >
         <div 
             class="u-container flex items-center justify-between"
