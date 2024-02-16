@@ -2,19 +2,10 @@
     @apply relative;
 }
 
-.u-container {
-    @apply mx-auto max-w-[1280px] px-9;
-    &--lg {
-        @apply max-w-[1024px];
-    }
-    &--md {
-        @apply max-w-[768px];
-    }
-    &--sm {
-        @apply max-w-[640px];
-    }
-   
+p {
+    @apply font-open;
 }
+
 .u-fs18 {
     @apply text-lg;
 }
@@ -30,6 +21,9 @@
 .u-fs32 {
     @apply text-[32px] leading-[52px];
 }
+.u-fs40 {
+    @apply text-[40px] leading-[52px];
+}
 .u-fs88 {
     @apply text-[88px] leading-[62px];
 }
@@ -41,9 +35,11 @@
 }
 
 .u-button {
-    @apply inline-flex items-center gap-4 px-10 py-4 u-fs18 font-wwf text-white uppercase bg-green rounded-[50px] hover:bg-gold;
+    @extend .u-fs18;
+    @apply inline-flex items-center gap-4 px-10 py-4 font-wwf text-white uppercase bg-green rounded-[50px] hover:bg-gold;
     &--hero {
-        @apply px-12 py-5 text-[22px] text-green bg-white border-2 border-green hover:bg-green hover:text-white;
+        @extend .u-fs22;
+        @apply px-12 py-5 text-green bg-white border-2 border-green hover:bg-green hover:text-white;
         svg {
             @apply top-0.5;
             path {
@@ -52,3 +48,87 @@
         }
     }
 }
+
+.u-container {
+    @apply mx-auto max-w-[1280px] px-9;
+    &--lg {
+        @apply max-w-[1024px];
+    }
+    &--md {
+        @apply max-w-[768px];
+    }
+    &--sm {
+        @apply max-w-[640px];
+    }
+   
+}
+
+.u-header {
+    @apply mb-20 text-center;
+    h2 {
+        @extend .u-fs32;
+        @apply font-wwf;
+    }
+    p {
+        @extend .u-fs18;
+        @apply leading-[38px];
+    }
+}
+
+.u-section {
+    @apply pb-32;
+    &--padded {
+        @apply py-32;
+    }
+    &--extra-mb {
+        @apply mb-60;
+    
+    }
+}
+
+.u-gradient {
+    @apply bg-gradient-to-b ;
+    &--cake-transparent { @apply from-cake to-transparent; }
+}
+
+.u-scatter-tooltip {
+    @apply p-6;
+    &__row {
+        @apply w-full flex;
+    }
+    &__category {
+        @apply py-2;
+        &__title {
+            @apply block w-[75px] leading-[14px] text-xs opacity-50 uppercase;
+            font-family: 'WWF'!important;
+        }
+    }
+    &__stats {
+        @apply text-center pt-4 flex flex-col items-center justify-center;
+    }
+    &__counter {
+        font-family: 'WWF'!important;
+        @extend .u-fs40;
+        @apply w-[90px] h-[90px] rounded-full flex items-center justify-center text-white;
+        &.middle-of-the-pack {
+            @apply bg-[#e4c864];
+        }
+    }
+    &__summary {
+        @apply mt-4;
+        h5 {
+            font-family: 'WWF'!important;
+            @extend .u-fs18; 
+            @apply uppercase;
+        }
+        p {
+            @apply text-[10px];
+            &:last-child {
+                @apply font-bold;
+            }
+        }
+    }
+    
+}
+
+

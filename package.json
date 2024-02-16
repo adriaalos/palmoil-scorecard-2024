@@ -23,6 +23,9 @@
         "@vueuse/core": "^10.7.2",
         "@vueuse/motion": "^2.0.0",
         "@vueuse/nuxt": "^10.7.2",
-        "sass": "^1.70.0"
+        "apexcharts": "^3.45.2",
+        "sass": "^1.70.0",
+        "vue-apexcharts": "^1.6.2",
+        "vue3-apexcharts": "^1.5.2"
     }
 }

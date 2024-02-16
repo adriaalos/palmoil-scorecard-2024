@@ -15,7 +15,7 @@ export default defineConfig({
             leaf: '#96B441',
             gold: '#96B441',
             rosy: '#E46466',
-            gray: '#C1C1C1',
+            grayy: '#C1C1C1',
             cake: '#FFFAF3',
             ocre: '#E29F38',
             line: '#DADADA'
@@ -39,7 +39,7 @@ export default defineConfig({
         presetWebFonts({
             fonts: {
                 provider: 'google',
-                open: 'Open Sans',
+                open: 'Open Sans:100,300,400,600,700,800,900',
                 wwf: [
                     {
                         name: 'WWF',

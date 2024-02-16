@@ -1,10 +1,12 @@
 <template>
     <div>
         <home-hero />
+        <home-scatter />
     </div>
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
+const sc = useScStore()
+await sc.fetchScores()
 </script>
 

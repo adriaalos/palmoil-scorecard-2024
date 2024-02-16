@@ -1,7 +1,7 @@
 
 import type { Style } from '#build/components';
 <template>
-    <div class="overflow-hidden">
+    <section class="u-section overflow-hidden">
         <div class="u-container u-container--md py-28">
             <div class="collage">
                 <img v-motion-slide-top src="@/assets/img/ho-hero-01.png" alt="hero" class="collage__pic collage__pic--01" />
@@ -17,8 +17,8 @@ import type { Style } from '#build/components';
                 <h1 class="-mt-8 u-fs220 text-green" v-html="tr.ho_hero_title_big" />
                 <h2 class="-mt-9 u-fs180 bg-gradient-to-b from-green via-green to-gold inline-block text-transparent bg-clip-text" v-html="tr.ho_hero_title_small" />
             </header>
-            <div class="mt-6 py-3 font-wwf text-white u-fs31 uppercase text-center bg-green rounded-[42px]">
-                <p>{{ tr.ho_hero_claim }}</p>
+            <div class="mt-6 py-3 text-white u-fs31 uppercase text-center bg-green rounded-[42px]">
+                <p class="font-wwf">{{ tr.ho_hero_claim }}</p>
             </div>
             <div class="flex justify-center mt-18">
                 <nuxt-link 
@@ -52,7 +52,7 @@ import type { Style } from '#build/components';
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">
