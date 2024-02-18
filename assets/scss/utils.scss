@@ -43,7 +43,13 @@ p {
 
 .u-button {
     @extend .u-fs18;
-    @apply inline-flex items-center gap-4 px-10 py-4 font-wwf text-white uppercase bg-green rounded-[50px] hover:bg-gold;
+    @apply inline-flex items-center gap-4 px-12 py-3 font-wwf text-white uppercase bg-green rounded-[50px] hover:bg-gold;
+    svg {
+           @apply top-0.5;
+            path {
+                @apply stroke-current;
+            }  
+    }
     &--hero {
         @extend .u-fs22;
         @apply px-12 py-5 text-green bg-white border-2 border-green hover:bg-green hover:text-white;
@@ -79,6 +85,12 @@ p {
     p {
         @extend .u-fs18;
         @apply leading-[38px];
+    }
+    > * {
+        @apply mb-6;
+        &:first-child:last-child {
+            @apply mb-0;
+        }
     }
 }
 

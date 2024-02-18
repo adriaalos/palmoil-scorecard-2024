@@ -2,6 +2,7 @@
     <div>
         <home-hero />
         <home-scatter />
+        <home-keys />
     </div>
 </template>
 

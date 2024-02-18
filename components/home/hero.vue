@@ -1,5 +1,4 @@
 
-import type { Style } from '#build/components';
 <template>
     <section class="u-section overflow-hidden">
         <div class="u-container u-container--md py-28">
