@@ -1,5 +1,5 @@
 html {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden font-open;
 }
 *, *::before, *::after {
     @apply relative;
@@ -18,6 +18,9 @@ p {
 }
 .u-fs22 {
     @apply text-[22px];
+}
+.u-fs24 {
+    @apply text-[24px] leading-[48px];
 }
 .u-fs28 {
     @apply text-[28px];
@@ -82,6 +85,10 @@ p {
         @extend .u-fs32;
         @apply font-wwf;
     }
+    h3 {
+        @extend .u-fs24;
+        @apply font-bold;
+    }
     p {
         @extend .u-fs18;
         @apply leading-[38px];
@@ -92,17 +99,25 @@ p {
             @apply mb-0;
         }
     }
+    &--left {
+        @apply text-left;
+    }
 }
 
 .u-section {
-    @apply pb-32;
+    @apply mt-32;
     &--padded {
         @apply py-32;
+    }
+    &--padded-t {
+        @apply pt-32;
     }
     &--extra-mb {
         @apply mb-60;
     
     }
+    &--cake { @apply bg-cake; }
+    
 }
 
 .u-gradient {

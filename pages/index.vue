@@ -3,6 +3,7 @@
         <home-hero />
         <home-scatter />
         <home-keys />
+        <home-rean />
     </div>
 </template>
 

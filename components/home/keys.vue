@@ -1,5 +1,5 @@
 <template>
-    <section class="u-section overflow-hidden">
+    <section class="u-section u-section--padded u-section--cake">
         <div class="u-container u-container--lg">
             <header class="u-header">
                 <h2> {{ tr.ho_keys_title }}</h2>

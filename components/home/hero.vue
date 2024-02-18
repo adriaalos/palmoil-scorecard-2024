@@ -1,6 +1,6 @@
 
 <template>
-    <section class="u-section overflow-hidden">
+    <section class="">
         <div class="u-container u-container--md py-28">
             <div class="collage">
                 <img v-motion-slide-top src="@/assets/img/ho-hero-01.png" alt="hero" class="collage__pic collage__pic--01" />

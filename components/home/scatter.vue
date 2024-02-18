@@ -1,5 +1,6 @@
 <template>
-    <section class="u-section u-section--padded u-gradient u-gradient--cake-transparent">
+    <section class="u-section u-section--padded-t">
+        <div class="w-full absolute top-0 left-0 h-[50%] u-gradient u-gradient--cake-transparent" />
         <div class="u-container u-container--md">
             <header class="u-header">
                 <h2><span class="font-wwf text-green">{{ sc.companies.length }}</span> {{ tr.ho_scatter_title }}</h2>
