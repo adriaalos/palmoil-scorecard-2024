@@ -1,13 +1,20 @@
+html {
+    @apply overflow-x-hidden;
+}
 *, *::before, *::after {
     @apply relative;
 }
 
 p {
+    @extend .u-fs18;
     @apply font-open;
 }
 
 .u-fs18 {
-    @apply text-lg;
+    @apply text-lg leading-[38px];
+}
+.u-fs20 {
+    @apply text-[20px];
 }
 .u-fs22 {
     @apply text-[22px];
@@ -110,9 +117,6 @@ p {
         font-family: 'WWF'!important;
         @extend .u-fs40;
         @apply w-[90px] h-[90px] rounded-full flex items-center justify-center text-white;
-        &.middle-of-the-pack {
-            @apply bg-[#e4c864];
-        }
     }
     &__summary {
         @apply mt-4;
@@ -129,6 +133,58 @@ p {
         }
     }
     
+}
+
+.u-scatter__resume {
+    @apply flex items-center mb-8 border boder-[#dadada] rounded-[12px] bg-white;
+    &__block {
+        @apply flex items-center space-x-3 flex-1 py-3 px-5;
+        &:after {
+            content: '';
+            @apply block w-px h-6 bg-[#dadada] absolute top-1/2 right-0 transform -translate-y-1/2;
+        }
+        h4 {
+            @extend .u-fs20;
+            @apply font-wwf;
+        }
+        h5 {
+            @apply text-xs text-[#7B7B7B];
+        }
+        &--col {
+            @apply flex-col space-x-0 items-start;
+            &:after {
+                @apply h-full;
+            }
+        }
+        &:last-child {
+            &:after {
+                @apply hidden;
+            }
+        }
+    }
+}
+.u-scatter-xaxis-title {
+    @apply text-sm fill-[#7B7B7B];
+}
+.u-scatter-yaxis-title {
+    @apply text-sm fill-[#7B7B7B];
+}
+
+.u-scatter-item {
+    @apply absolute flex flex-col items-center bottom-0 transform -translate-x-1/2 -translate-y-4;
+    &__circle {
+        @apply w-[20px] h-[20px] rounded-full;
+    }
+    &__line {
+        @apply w-[2px] h-2;
+    }
+    &__data {
+        @extend .u-fs18;
+        @apply w-[40px] h-[40px] rounded-full flex items-center justify-center font-wwf text-white;
+        &__label {
+            @apply absolute left-full text-base text-[#C4C4C4] transform translate-x-1 leading-tight;
+        }
+    }
 }
 
 

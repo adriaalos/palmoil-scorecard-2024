@@ -38,7 +38,7 @@ import type { Style } from '#build/components';
                 <img v-motion-slide-visible-once-right src="@/assets/img/ho-hero-09.png" alt="hero" class="collage__pic collage__pic--09" />
             </div>
             <div class="u-container u-container--lg">
-                <div class="u-fs32 text-center" v-html="tr.ho_hero_about_description" />
+                <div class="text-center" v-html="tr.ho_hero_about_description" />
                 <div class="flex justify-center mt-18">
                     <nuxt-link 
                         :to="`/${tr.ab_url}`"

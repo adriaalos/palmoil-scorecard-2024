@@ -115,9 +115,10 @@ export const useScStore = defineStore('scStore', () => {
     }
 
     const getAverage = async () => {
-        const scores = companies.value.map((c: Company) => c.companyTotalScore)
+        const respondants = companies.value.filter((c: Company) => c.respStatus)
+        const scores = respondants.map((c: Company) => c.companyTotalScore)
         const total = scores.reduce((acc, cur) => acc + cur, 0)
-        const average = total / companies.value.length
+        const average = total / respondants.length
         sc_average.value = average.toFixed(2) as any
     }
 
