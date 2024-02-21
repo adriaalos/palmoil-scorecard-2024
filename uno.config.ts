@@ -11,7 +11,9 @@ import transformerDirectives from '@unocss/transformer-directives'
 export default defineConfig({
     theme: {
         colors: {
-            green: '#41B464',   
+            green: '#41B464', 
+            greensoft: '#6FB956', 
+            greendark: '#2A6F3F', 
             leaf: '#96B441',
             gold: '#96B441',
             rosy: '#E46466',

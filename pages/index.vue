@@ -6,6 +6,7 @@
         <ho-rean />
         <ho-app />
         <ho-report />
+        <ho-partners />
     </div>
 </template>
 

@@ -37,6 +37,9 @@ p {
 .u-fs48 {
     @apply text-[48px] leading-[52px];
 }
+.u-fs68 {
+    @apply text-[68px] leading-[72px];
+}
 .u-fs88 {
     @apply text-[88px] leading-[62px];
 }
@@ -69,8 +72,10 @@ p {
     &--white-ocre {
         @apply bg-white text-ocre hover:bg-white hover:text-ocre hover:opacity-90;
     }
+    &--greendark {
+        @apply bg-greendark text-white hover:bg-greendark hover:text-white hover:opacity-90;
+    }
 }
-
 .u-container {
     @apply mx-auto max-w-[1280px] px-9;
     &--lg {
@@ -84,7 +89,6 @@ p {
     }
    
 }
-
 .u-header {
     @apply mb-20 text-center;
     h2 {
@@ -98,6 +102,9 @@ p {
     p {
         @extend .u-fs18;
         @apply leading-[38px];
+        em {
+            @apply text-green not-italic;
+        }
     }
     > * {
         @apply mb-6;
@@ -109,7 +116,6 @@ p {
         @apply text-left;
     }
 }
-
 .u-section {
     @apply mt-32;
     &--padded {
@@ -125,12 +131,11 @@ p {
     &--cake { @apply bg-cake; }
     
 }
-
 .u-gradient {
     @apply bg-gradient-to-b ;
-    &--cake-transparent { @apply from-cake to-transparent; }
+    &--horiz { @apply bg-gradient-to-r; }
+    &--green-greensoft { @apply from-green to-greensoft; }
 }
-
 .u-scatter-tooltip {
     @apply p-6;
     &__row {
@@ -167,7 +172,6 @@ p {
     }
     
 }
-
 .u-scatter__resume {
     @apply flex items-center mb-8 border boder-[#dadada] rounded-[12px] bg-white;
     &__block {
@@ -202,7 +206,6 @@ p {
 .u-scatter-yaxis-title {
     @apply text-sm fill-[#7B7B7B];
 }
-
 .u-scatter-item {
     @apply absolute flex flex-col items-center bottom-0 transform -translate-x-1/2 -translate-y-4;
     &__circle {
@@ -219,5 +222,24 @@ p {
         }
     }
 }
-
+.u-page-header {
+    @extend .u-gradient ,.u-gradient--horiz, .u-gradient--green-greensoft;
+    @apply py-6;
+    &__container {
+        @apply flex items-ctenter justify-between;
+    }
+    &__header {
+        @apply font-wwf text-white;
+        h2 {
+            @extend .u-fs32;
+            @apply leading-[20px];
+        }
+        h1 {
+            @extend .u-fs68;
+        }
+    }
+    &__cta {
+        @apply flex items-center justify-end;
+    }
+}
 
