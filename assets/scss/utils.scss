@@ -34,6 +34,9 @@ p {
 .u-fs40 {
     @apply text-[40px] leading-[52px];
 }
+.u-fs48 {
+    @apply text-[48px] leading-[52px];
+}
 .u-fs88 {
     @apply text-[88px] leading-[62px];
 }
@@ -62,6 +65,9 @@ p {
                 @apply stroke-current;
             }
         }
+    }
+    &--white-ocre {
+        @apply bg-white text-ocre hover:bg-white hover:text-ocre hover:opacity-90;
     }
 }
 

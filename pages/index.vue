@@ -1,10 +1,11 @@
 <template>
     <div>
-        <home-hero />
-        <home-scatter />
-        <home-keys />
-        <home-rean />
-        <home-app />
+        <ho-hero />
+        <ho-scatter />
+        <ho-keys />
+        <ho-rean />
+        <ho-app />
+        <ho-report />
     </div>
 </template>
 
