@@ -4,6 +4,7 @@
         <home-scatter />
         <home-keys />
         <home-rean />
+        <home-app />
     </div>
 </template>
 
