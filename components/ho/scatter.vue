@@ -4,7 +4,7 @@
         <div class="u-container u-container--md">
             <header class="u-header">
                 <h2><span class="font-wwf text-green">{{ sc.companies.length }}</span> {{ tr.ho_scatter_title }}</h2>
-                <p>{{ tr.ho_scatter_description_01 }} <span class="font-bold text-green">{{ tr.ho_scatter_description_02 }} {{ sc.sc_average }} {{ tr.ho_scatter_description_03 }} {{ sc.sc_total_points }}</span> {{ tr.ho_scatter_description_04 }}</p>
+                <p>{{ tr.ho_scatter_description_01 }} <span class="font-bold text-green">{{ tr.ho_scatter_description_02 }} {{ sc.average }} {{ tr.gl_outof }} {{ sc.total_outof }}</span> {{ tr.ho_scatter_description_04 }}</p>
             </header>
         </div>
         <div class="u-container">
@@ -14,19 +14,19 @@
                         <core-select 
                             class="flex-1"
                             :placeholder="tr.ho_scatter_filters_sector"
-                            :options="sc.sc_filter_sectors"
+                            :options="sc.filter_sectors"
                             @on-change="onFilter('sector', $event)"
                         />
                         <core-select 
                             class="flex-1"
                             :placeholder="tr.ho_scatter_filters_country"
-                            :options="sc.sc_filter_countries"
+                            :options="sc.filter_countries"
                             @on-change="onFilter('hq', $event)"
                         />
                         <core-select 
                             class="flex-1"
                             :placeholder="tr.ho_scatter_filters_region"
-                            :options="sc.sc_filter_regions"
+                            :options="sc.filter_regions"
                             @on-change="onFilter('regionHq', $event)"
                         />
                     </div>
@@ -80,7 +80,7 @@
                 />
                 <div 
                     class="u-scatter-item"
-                    :style="{ 'left': (sc.sc_average / sc.sc_total_points) * 100 + '%'}"
+                    :style="{ 'left': (sc.average / sc.total_outof) * 100 + '%'}"
                 >
                     <div 
                         class="u-scatter-item__circle"
@@ -94,7 +94,7 @@
                         class="u-scatter-item__data"
                         :style="{ 'background-color': averageColor }"
                     >
-                        {{ sc.sc_average }}
+                        {{ sc.average }}
                         <div class="u-scatter-item__data__label">
                             {{ tr.ho_scatter_axis_x_score_average }}
                         </div>
@@ -102,7 +102,7 @@
                 </div>
                 <div 
                     class="u-scatter-item"
-                    :style="{ 'left': (sc.sc_total_points / sc.sc_total_points) * 100 + '%'}"
+                    :style="{ 'left': (sc.total_outof / sc.total_outof) * 100 + '%'}"
                 >
                     <div 
                         class="u-scatter-item__circle"
@@ -116,7 +116,7 @@
                         class="u-scatter-item__data"
                         :style="{ 'background-color': totalColor }"
                     >
-                        {{ sc.sc_total_points }}
+                        {{ sc.total_outof }}
                         <div class="u-scatter-item__data__label">
                             {{ tr.ho_scatter_axis_x_objective }}
                         </div>
@@ -160,7 +160,7 @@ const options = ref ({
             },
         },
         title: {
-            text: tr.ho_scatter_axis_x_score_total,
+            text: tr.gl_total_score,
             offsetX: -460,
             offsetY: -10,
             style: {
@@ -194,22 +194,22 @@ const options = ref ({
     },
     tooltip: {
         custom: function ({ series, seriesIndex, dataPointIndex, w }: any) {
-            const company: any = sc.sc_references[seriesIndex][dataPointIndex]
+            const company: any = sc.references[seriesIndex][dataPointIndex]
             return renderTooltip(company)
         },
     },
 })
-const series = ref(sc.sc_ranges)
+const series = ref(sc.ranges)
 const filters = ref({
     sector: null,
     hq: null,
     regionHq: null,
 })
 const search = ref<string>('')
-const averageId = ref(sc.getTotalScoreRange(sc.sc_average, true))
-const averageColor = ref(sc.sc_ranges.find((r: any) => r.id == averageId.value).color)
-const totalId = ref(sc.getTotalScoreRange(sc.sc_total_points, true))
-const totalColor = ref(sc.sc_ranges.find((r: any) => r.id == totalId.value).color)
+const averageId = ref(sc.getTotalScoreRange(sc.average, true))
+const averageColor = ref(sc.ranges.find((r: any) => r.id == averageId.value).color)
+const totalId = ref(sc.getTotalScoreRange(sc.total_outof, true))
+const totalColor = ref(sc.ranges.find((r: any) => r.id == totalId.value).color)
 
 const getResumePalmoil = computed(() => {
     const sumTotalPalmOil = companies.value.reduce((acc, company) => acc + company.totalPalmOil, 0)
@@ -234,20 +234,26 @@ const getResumePercentage = (field: string) => {
 
 
 await sc.setCompaniesByRange(companies.value)
-sc.sc_filter_sectors = sc.getListOfInCompanies(sc.companies, 'sector')
-sc.sc_filter_countries = sc.getListOfInCompanies(sc.companies, 'hq')
-sc.sc_filter_regions = sc.getListOfInCompanies(sc.companies, 'regionHq')
+sc.filter_sectors = sc.getListOfInCompanies(sc.companies, 'sector')
+sc.filter_countries = sc.getListOfInCompanies(sc.companies, 'hq')
+sc.filter_regions = sc.getListOfInCompanies(sc.companies, 'regionHq')
 
 const renderTooltip = (company: Company) => {
-    const OUT_OF = sc.sc_out_of
+    const def_commitments = sc.categories.find((c: any) => c.id === 'commitments')
+    const def_purchasing = sc.categories.find((c: any) => c.id === 'purchasing')
+    const def_suppliers = sc.categories.find((c: any) => c.id === 'suppliers')
+    const def_platforms = sc.categories.find((c: any) => c.id === 'platforms')
+    const def_onTheGround = sc.categories.find((c: any) => c.id === 'onTheGround')
+
+
     let str = `<div class="u-scatter-tooltip">`
     str += `<div class="w-full">`
     str += renderCategory(
         company.purchasing.purchTotalCalcScore,
-        OUT_OF.PURCHASING,
-        sc.sc_types.PURCHASING,
+        def_purchasing?.out_of,
+        def_purchasing?.id,
         company.respStatus,
-        sc.sc_types_text.PURCHASING
+        def_purchasing?.label,
     )
 
     str += `</div>`
@@ -256,31 +262,31 @@ const renderTooltip = (company: Company) => {
     str += `<div class="w-1/2">`
     str += renderCategory(
         company.commitments.commitTotalScore,
-        OUT_OF.COMMITMENTS,
-        sc.sc_types.COMMITMENTS,
+        def_commitments?.out_of,
+        def_commitments?.id,
         company.respStatus,
-        sc.sc_types_text.COMMITMENTS
+        def_commitments?.label,
     )
     str += renderCategory(
         company.suppliers.supTotalScore,
-        OUT_OF.SUPPLIERS,
-        sc.sc_types.SUPPLIERS,
+        def_suppliers?.out_of,
+        def_suppliers?.id,
         company.respStatus,
-        sc.sc_types_text.SUPPLIERS
+        def_suppliers?.label,
     )
     str += renderCategory(
         company.platforms.platformsTotalScore,
-        OUT_OF.PLATFORMS,
-        sc.sc_types.PLATFORMS,
+        def_platforms?.out_of,
+        def_platforms?.id,
         company.respStatus,
-        sc.sc_types_text.PLATFORMS
+        def_platforms?.label,
     )
     str += renderCategory(
         company.onTheGround.groundTotalScore,
-        OUT_OF.ON_THE_GROUND,
-        sc.sc_types.ON_THE_GROUND,
+        def_onTheGround?.out_of,
+        def_onTheGround?.id,
         company.respStatus,
-        sc.sc_types_text.ON_THE_GROUND
+        def_onTheGround?.label,
     )
     str += `</div>`
     str += `<div class="w-1/2">`
@@ -302,14 +308,14 @@ const renderTooltip = (company: Company) => {
 
 const renderCategory = (
     scoreOfCategory: number,
-    total: number,
-    categoryName: string,
+    total: number | undefined,
+    categoryName: string | undefined,
     respondent: boolean,
-    title: string
+    title: string | undefined
 ) => {
     let str = `<div class="u-scatter-tooltip__category py-2">
                 <div class="flex items-center">`
-    if (categoryName === sc.sc_types.PURCHASING) {
+    if (categoryName === 'purchasing') {
       str += `<div><span class="u-scatter-tooltip__category__title">${title}</span></div>
             <div class="flex flex-1 ">`
     } else {
@@ -352,7 +358,7 @@ const renderTotalScore = (
     let str = `
     <div class="u-scatter-tooltip__stats">
         <div class="total-score-ctn">
-            <div class="u-scatter-tooltip__counter ${rangeId}" style="background-color: ${sc.sc_ranges.find((r: any) => r.id == rangeId).color}">
+            <div class="u-scatter-tooltip__counter ${rangeId}" style="background-color: ${sc.ranges.find((r: any) => r.id == rangeId).color}">
                 ${totalScore}
             </div>
         </div>
@@ -370,10 +376,10 @@ const onFilter = (type: any, value: any) => {
     console.log('Filter changed', type, value)
     console.log('Filters', filters.value)
     // Clean series data
-    sc.sc_ranges.map((r: any) => {
+    sc.ranges.map((r: any) => {
         r.data = []
     })
-    sc.sc_references = {
+    sc.references = {
         0: [],
         1: [],
         2: [],
@@ -407,10 +413,10 @@ const onSearch = () => {
         hq: null,
         regionHq: null,
     }
-    sc.sc_ranges.map((r: any) => {
+    sc.ranges.map((r: any) => {
         r.data = []
     })
-    sc.sc_references = {
+    sc.references = {
         0: [],
         1: [],
         2: [],

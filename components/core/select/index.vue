@@ -1,27 +1,35 @@
 <template>
     <div 
-        @mouseenter="visible = true"
+        
         @mouseleave="visible = false"
     >
         <div :class="[
-            'flex items-center justify-between bg-white border border-[#dadada] px-3 py-2.6 rounded-[50px]',
-            { 'ring-1 ring-gray-300': visible }
-        ]">
+                'flex items-center justify-between bg-white border border-[#dadada] px-3 py-2.5  cursor-pointer',
+                { 'rounded-[50px]': !filter },
+                { 'ring-1 ring-gray-300': visible }
+            ]"
+            @click="visible = !visible"
+        >
             <span 
                 :class="[
-                    'font-wwf u-fs18 uppercase',
-                    { 'text-[#7b7b7b]': !sel },
-                    { 'text-[#000000]': sel }
+                    'cursor-pointer truncate pr-10',
+                    { 'font-wwf uppercase u-fs18': !filter },
+                    { 'text-base': filter },
+                    { 'text-[#7b7b7b]': !model },
+                    { 'text-[#000000]': model }
                 ]"
             >
-                {{ sel ? sel : placeholder }}
+                {{ model ? model : placeholder }}
             </span>
-            <div class="flex items-center gap-1">
+            <div :class="[
+                'flex items-center gap-1',
+                { 'text-green': filter }]
+            ">
                 <svg
-                    v-if="placeholder && sel" 
+                    v-if="placeholder && model" 
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
                     class="w-4 h-4 cursor-pointer"
-                    @click="onClear"
+                    @click.stop="onClear"
                 >
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
@@ -38,19 +46,22 @@
             </div>
         </div>
         <ul :class="[
-            'absolute top-full left-[20px] w-[calc(100%-40px)] border border-[#dadada] border-t-0 z-10',
+            'absolute top-full max-h-[200px] border border-[#dadada] border-t-0 z-10 overflow-auto',
+            { 'w-[calc(100%-40px)] left-[20px]': !filter},
+            { 'w-full left-0': filter },
             { 'opacity-0 pointer-events-none': !visible },
             { 'opacity-100 pointer-events-auto': visible }
         ]">
             <li 
+                class="border-b border-[#dadada]"
                 v-for="option in opts" 
                 :key="option"
             >
                 <span
                     :class="[
-                        'px-3 py-0.5 block text-sm text-[#7b7b7b]',
-                        { 'cursor-default bg-green text-white': sel === option },
-                        { 'cursor-pointer bg-white hover:bg-gray-100': sel !== option }
+                        'px-3 py-1.5 block text-sm text-[#7b7b7b]',
+                        { 'cursor-default bg-green text-white': model === option },
+                        { 'cursor-pointer bg-white hover:bg-gray-100': model !== option }
                     ]"
                     @click="onChange(option)"
                 >
@@ -73,25 +84,30 @@ const props = defineProps({
         required: true,
         default: []
     },
-    selected: {
+    filter: {
+        type: Boolean,
         required: false,
-        default: null
+        default: false
     }
 })
 const emit = defineEmits(['onChange'])
 
 const opts = ref<any>(props.options)
-const sel = ref<any>(props.selected)
 const visible = ref<boolean>(false)
 
-const onChange = (option) => {
+const model = defineModel({
+    required: false
+})
+
+const onChange = (option: any) => {
     visible.value = false
-    sel.value = option
+    model.value = option
     emit('onChange', option)
 }
 
 const onClear = () => {
-    sel.value = null
+    visible.value = false
+    model.value = null
     emit('onChange', null)
 }
 </script>

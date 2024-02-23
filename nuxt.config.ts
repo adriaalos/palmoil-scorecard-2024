@@ -5,7 +5,8 @@ export default defineNuxtConfig({
         '@unocss/nuxt',
         '@pinia/nuxt',
         '@vueuse/nuxt',
-        '@vueuse/motion/nuxt'
+        '@vueuse/motion/nuxt',
+        'floating-vue/nuxt'
     ],
     css: [
         '@unocss/reset/tailwind.css',

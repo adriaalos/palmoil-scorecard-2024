@@ -32,6 +32,6 @@ const props = defineProps({
 })
 
 const ranges = computed(() => {
-    return props.norespondents ? sc.sc_ranges : sc.sc_ranges.filter(range => range.id !== 'no-data')
+    return props.norespondents ? sc.ranges : sc.ranges.filter(range => range.id !== 'no-data')
 })
 </script>

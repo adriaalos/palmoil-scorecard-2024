@@ -1,6 +1,8 @@
 <template>
     <div>
         <sc-header />
+        <sc-legend />
+        <sc-data />
     </div>
 </template>
 
