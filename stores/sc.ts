@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 export const useScStore = defineStore('scStore', () => {
     const tr = useTrStore().translations
     const companies = ref<Company[]>([])
+    const company = ref<Company|null>(null)
     const average = ref<number>(0)
     const ranges = ref<any>([
         {
@@ -365,8 +366,14 @@ export const useScStore = defineStore('scStore', () => {
         return result.sort()
     }
 
+    const setCompany = async (id: sting | number) => {
+        company.value = companies.value.find((c: Company) => c.id == id) || null
+        console.log('company', company.value)
+    }
+
     return {
         companies,
+        company,
         average,
         ranges,
         references,
@@ -380,6 +387,7 @@ export const useScStore = defineStore('scStore', () => {
         setCompaniesByRange,
         getRangeColor,
         getTotalScoreRange,
-        getListOfInCompanies
+        getListOfInCompanies,
+        setCompany
     }
 })

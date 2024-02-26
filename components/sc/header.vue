@@ -1,5 +1,4 @@
 
-import type { directiveHooks } from '@vueuse/core';
 <template>
     <header class="u-page-header">
         <div class="u-page-header__container u-container u-container--lg">
