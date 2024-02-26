@@ -192,7 +192,7 @@
                     <th @click="sortBy('companyTotalScore', 'number')">
                         <div class="th-label th-label--text-center">
                             <span>{{ tr.gl_total_score }}</span>
-                            <span>{{ tr.gl_outof }} {{ scStore.total_outof }}</span>
+                            <span>{{ tr.gl_outof }} {{ sc.total_outof }}</span>
                         </div>
                         <div class="th-sort th-sort--centered">
                             <img 
@@ -236,7 +236,7 @@
                             <span
                                 :class="[
                                     'u-range u-range--border u-range--text u-range--pointer', 
-                                    scStore.getRangeColor(company.commitments.commitTotalScore, 'commitments', true)
+                                    sc.getRangeColor(company.commitments.commitTotalScore, 'commitments', true)
                                 ]"
                             >
                                 {{ company.commitments.commitTotalScore }}
@@ -257,7 +257,7 @@
                             <span
                                 :class="[
                                     'u-range u-range--border u-range--text u-range--pointer', 
-                                    scStore.getRangeColor(company.purchasing.purchTotalCalcScore, 'purchasing', true)
+                                    sc.getRangeColor(company.purchasing.purchTotalCalcScore, 'purchasing', true)
                                 ]"
                             >
                                 {{ company.purchasing.purchTotalCalcScore }}
@@ -278,7 +278,7 @@
                             <span
                                 :class="[
                                     'u-range u-range--border u-range--text u-range--pointer', 
-                                    scStore.getRangeColor(company.suppliers.supTotalScore, 'suppliers', true)
+                                    sc.getRangeColor(company.suppliers.supTotalScore, 'suppliers', true)
                                 ]"
                             >
                                 {{ company.suppliers.supTotalScore }}
@@ -299,7 +299,7 @@
                             <span
                                 :class="[
                                     'u-range u-range--border u-range--text u-range--pointer', 
-                                    scStore.getRangeColor(company.platforms.platformsTotalScore, 'platofrms', true)
+                                    sc.getRangeColor(company.platforms.platformsTotalScore, 'platofrms', true)
                                 ]"
                             >
                                 {{ company.platforms.platformsTotalScore }}
@@ -320,7 +320,7 @@
                             <span
                                 :class="[
                                     'u-range u-range--border u-range--text u-range--pointer', 
-                                    scStore.getRangeColor(company.onTheGround.groundTotalScore, 'onTheGround', true)
+                                    sc.getRangeColor(company.onTheGround.groundTotalScore, 'onTheGround', true)
                                 ]"
                             >
                                 {{ company.onTheGround.groundTotalScore }}
@@ -341,7 +341,7 @@
                             v-if="company.respStatus"
                             :class="[
                                 'u-range u-range--border u-range--bg u-range--big', 
-                                scStore.getTotalScoreRange(company.companyTotalScore, company)
+                                sc.getTotalScoreRange(company.companyTotalScore, company)
                             ]"
                         >{{ company.companyTotalScore }}</span>
                         <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
@@ -388,7 +388,7 @@
                                 class="flex-1"
                                 :filter="true"
                                 :placeholder="tr.ho_scatter_filters_sector"
-                                :options="scStore.filter_sectors"
+                                :options="sc.filter_sectors"
                                 v-model="prefilters.sector"
                                 @on-change="onPrefilter('sector', $event)"
                             />
@@ -399,7 +399,7 @@
                                 class="flex-1"
                                 :filter="true"
                                 :placeholder="tr.ho_scatter_filters_country"
-                                :options="scStore.filter_countries"
+                                :options="sc.filter_countries"
                                 v-model="prefilters.hq"
                                 @on-change="onPrefilter('hq', $event)"
                             />
@@ -410,7 +410,7 @@
                                 class="flex-1"
                                 :filter="true"
                                 :placeholder="tr.ho_scatter_filters_region"
-                                :options="scStore.filter_regions"
+                                :options="sc.filter_regions"
                                 v-model="prefilters.regionHq"
                                 @on-change="onPrefilter('regionHq', $event)"
                             />
@@ -421,7 +421,7 @@
                                 class="flex-1"
                                 :filter="true"
                                 :placeholder="tr.ho_scatter_filters_applicSector"
-                                :options="scStore.filter_applicSector"
+                                :options="sc.filter_applicSector"
                                 v-model="prefilters.applicSector"
                                 @on-change="onPrefilter('applicSector', $event)"
                             />
@@ -493,16 +493,16 @@
 
 <script setup lang="ts">
 const tr = useTrStore().translations
-const scStore = useScStore()
+const sc = useScStore()
 
 const objIsNull = useObjIsNull
 
-scStore.filter_sectors = scStore.getListOfInCompanies(scStore.companies, 'sector')
-scStore.filter_countries = scStore.getListOfInCompanies(scStore.companies, 'hq')
-scStore.filter_regions = scStore.getListOfInCompanies(scStore.companies, 'regionHq')
-scStore.filter_applicSector = scStore.getListOfInCompanies(scStore.companies, 'applicSector')
+sc.filter_sectors = sc.getListOfInCompanies(sc.companies, 'sector')
+sc.filter_countries = sc.getListOfInCompanies(sc.companies, 'hq')
+sc.filter_regions = sc.getListOfInCompanies(sc.companies, 'regionHq')
+sc.filter_applicSector = sc.getListOfInCompanies(sc.companies, 'applicSector')
 
-const companies = ref(scStore.companies)
+const companies = ref(sc.companies)
 const sortedBy = ref({
     key: '',
     dir: ''
@@ -531,7 +531,7 @@ const search = ref<string>('')
 const modal = ref<boolean>(false)
 
 const getOutOf = ((id: any) => {
-    return scStore.categories.find((c: any) => c.id === id)?.out_of
+    return sc.categories.find((c: any) => c.id === id)?.out_of
 })
 
 const sortBy = (key: string, sorttype: string) => {
@@ -569,7 +569,7 @@ const onSearch = () => {
         totalMin: null,
         totalMax: null
     }
-    companies.value = scStore.companies
+    companies.value = sc.companies
     companies.value = companies.value.filter((c: any) => {
         return c.companyName.toLowerCase().includes(search.value.toLocaleLowerCase())
     })
@@ -604,7 +604,7 @@ const onFilter = () => {
     // Empty search
     search.value = ''
     
-    companies.value = scStore.companies
+    companies.value = sc.companies
     
     // Apply filters
     if (filters.value.sector) {

@@ -52,7 +52,6 @@ export const useScStore = defineStore('scStore', () => {
     const filter_countries = ref<Company[]>([])
     const filter_regions = ref<Company[]>([])
     const filter_applicSector = ref<Company[]>([])
-
     const categories = ref([
         {
             id: 'commitments',
