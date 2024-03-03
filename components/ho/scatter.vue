@@ -249,7 +249,7 @@ const renderTooltip = (company: Company) => {
     let str = `<div class="u-scatter-tooltip">`
     str += `<div class="w-full">`
     str += renderCategory(
-        company.purchasing.purchTotalCalcScore,
+        company.purchasing.purchTotalScore,
         def_purchasing?.out_of,
         def_purchasing?.id,
         company.respStatus,

@@ -37,6 +37,9 @@ p {
 .u-fs48 {
     @apply text-[48px] leading-[52px];
 }
+.u-fs62 {
+    @apply text-[62px];
+}
 .u-fs68 {
     @apply text-[68px] leading-[72px];
 }
@@ -247,7 +250,7 @@ p {
 }
 .u-range {
     @extend .u-fs24;
-    @apply flex items-center justify-center w-[50px] h-[50px] rounded-full font-wwf mx-auto;
+    @apply relative flex items-center justify-center w-[50px] h-[50px] rounded-full font-wwf mx-auto z-10 text-center;
     &--border {
         @apply border-2;
         &.lagging-behind { @apply border-[#E46466] }
@@ -267,14 +270,36 @@ p {
         &.middle-of-the-pack { @apply bg-[#E4C864] }
         &.intermediate { @apply bg-[#96b441] }
         &.advanced { @apply bg-[#41b464] }
+        &.non-resp { @apply bg-[#c1c1c1] text-3xl; }
     }
     &--big {
         @extend .u-fs31;
         @apply w-[65px] h-[65px];
     }
+    &--company {
+        @extend .u-fs62;
+        @apply w-[130px] h-[130px];
+    }
+    &--total {
+        @apply w-[65px] h-[65px] text-xl;
+    }
+    &--past {
+        @apply w-[35px] h-[35px] text-base;
+    }
+    &--past-total {
+        @apply w-[45px] h-[45px] text-lg;
+    }
     &--pointer {
         @apply cursor-pointer;
     }
+}
+
+.u-sc-text {
+    &.lagging-behind { @apply text-[#E46466] }
+    &.middle-of-the-pack { @apply text-[#E4C864] }
+    &.intermediate { @apply text-[#96b441] }
+    &.advanced { @apply text-[#41b464] }
+    &.non-resp { @apply text-[#c1c1c1] }
 }
 
 .u-noscore {
@@ -345,4 +370,21 @@ p {
     &__description p {
         @apply text-xs text-white uppercase font-bold;
     }
+}
+
+.u-range-balance {
+    @apply flex flex-col items-center justify-center
+    before:content-[''] before:w-px before:h-[30px] before:bg-[#F1EBDD]
+    after:content-[''] after:w-px after:h-[30px] after:bg-[#F1EBDD];
+    div {
+        @apply px-3 h-[23px] inline-flex items-center justify-center space-x-1 border border-[#D9D9D9] text-[#7B7B7B] bg-[#FBF9F6] rounded-[50px] font-wwf text-[15px]
+        ;
+        span {
+            @apply -top-0.5;
+        }
+    }
+}
+
+.u-separator {
+    @apply after:content-[''] after:w-px after:bg-[#F1EBDD] after:absolute after:top-1/2 after:left-full after:transform after:-translate-y-1/2;
 }

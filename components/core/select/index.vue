@@ -52,22 +52,27 @@
             { 'opacity-0 pointer-events-none': !visible },
             { 'opacity-100 pointer-events-auto': visible }
         ]">
-            <li 
-                class="border-b border-[#dadada]"
-                v-for="option in opts" 
-                :key="option"
+            <template
+                    v-for="option in opts" 
+                    :key="option"
             >
-                <span
-                    :class="[
-                        'px-3 py-1.5 block text-sm text-[#7b7b7b]',
-                        { 'cursor-default bg-green text-white': model === option },
-                        { 'cursor-pointer bg-white hover:bg-gray-100': model !== option }
-                    ]"
-                    @click="onChange(option)"
+                <li 
+                    v-if="useFormatString(option, ';') != '' "
+                    class="border-b border-[#dadada]"
                 >
-                    {{ option }}
-                </span>
-            </li>
+                    <span
+                        :class="[
+                            'px-3 py-1.5 block text-sm text-[#7b7b7b]',
+                            { 'cursor-default bg-green text-white': model === option },
+                            { 'cursor-pointer bg-white hover:bg-gray-100': model !== option }
+                        ]"
+                        @click="onChange(option)"
+                    >
+                        {{ useFormatString(option, ';') }}
+                    </span>
+                </li>
+            </template>
+            
         </ul>
     </div>
 </template>

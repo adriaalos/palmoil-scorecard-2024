@@ -2,6 +2,7 @@
     <div>
         <sc-co-header />
         <sc-co-resume />
+        <sc-co-stats />
     </div>
 </template>
 

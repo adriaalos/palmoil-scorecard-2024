@@ -42,6 +42,43 @@ export const useScStore = defineStore('scStore', () => {
             data: [],
         }
     ])
+    const ranges2021 = ref<any>([
+        {
+            id: 'non-respondent',
+            name: tr.sc_range_05,
+            color: '#C1C1C1',
+            range: null,
+            data: [],
+        },
+        {
+            id: 'lagging-behind',
+            name: tr.sc_range_04,
+            color: '#E46466',
+            range: [0, 10.99],
+            data: [],
+        },
+        {
+            id: 'middle-of-the-pack',
+            name: tr.sc_range_03,
+            color: '#E4C864',
+            range: [11, 16.49],
+            data: [],
+        },
+        {
+            id: 'intermediate',
+            name: tr.sc_range_02,
+            color: '#96b441',
+            range: [16.5, 19.5],
+            data: [],
+        },
+        {
+            id: 'advanced',
+            name: tr.sc_range_01,
+            color: '#41b464',
+            range: [19.5, 24],
+            data: [],
+        }
+    ])
     const references = ref<any>({
         0: [],
         1: [],
@@ -57,6 +94,7 @@ export const useScStore = defineStore('scStore', () => {
         {
             id: 'commitments',
             label: tr.sc_type_commitment,
+            total: 'commitTotalScore',
             out_of: 4,
             sections: [
                 {
@@ -237,9 +275,11 @@ export const useScStore = defineStore('scStore', () => {
         }
     ])
     const total_outof = ref<number>(24)
+    const supply_chain_own = ref<number>(18)
+    const supply_chain_beyond = ref<number>(6)
 
     const fetchScores = async () => {
-        const { data, error } = await useFetch('https://palmoiladm.panda.org/scores?_limit=-1')
+        const { data, error } = await useFetch('https://palmoiladm.panda.org/scores?year=2024')
 
         if (error.value) {
             console.error('Error fetching scores', error.value)
@@ -247,6 +287,7 @@ export const useScStore = defineStore('scStore', () => {
         }
 
         companies.value = data.value as Company[]
+        companies.value.map((c: Company) => { c.historical = false })
         await getAverage()
     }
 
@@ -339,7 +380,8 @@ export const useScStore = defineStore('scStore', () => {
         const score = total;
         if (!respondent) return ranges.value[0].id
         if (score === 2) return ranges.value[4].id
-        if (score === 1) return ranges.value[2].id
+        if (score >= 1 && score < 2) return ranges.value[3].id
+        if (score > 0 && score < 1) return ranges.value[2].id
         if (score === 0) return ranges.value[1].id
     }
 
@@ -361,14 +403,90 @@ export const useScStore = defineStore('scStore', () => {
         if (score === 0) return ranges.value[1].id
     }
 
+    const getTotalScoreRange2021 = (totalScore: number, respondent: boolean) => {
+        if (!respondent) return ranges.value[0].id
+        if (totalScore >= 19.5 && totalScore <= 24) return ranges.value[4].id
+        if (totalScore >= 16.5 && totalScore < 19.5) return ranges.value[3].id
+        if (totalScore >= 11 && totalScore < 16.5) return ranges.value[2].id
+        if (totalScore < 11) return ranges.value[1].id
+    }
+
+    const getRangeColor2021 = (
+        total: number,
+        type: string,
+        respondent: boolean
+    ): string => {
+        switch (type) {
+            case 'commitments':
+                return getCommitmentRange2021(total, respondent)
+                break
+            case 'purchasing':
+                return getPurchasingRange2021(total, respondent);
+                break
+            case 'platforms':
+                return getPlatformRange2021(total, respondent);
+                break
+            case 'suppliers':
+                return getSuppliersRange2021(total, respondent);
+                break
+            case 'onTheGround':
+            default:
+                return getOnTheGroundRange2021(total, respondent);
+                break;
+        }
+    }
+
+    const getCommitmentRange2021 = (total: number, respondent: boolean) => {
+        const score = total;
+        if (!respondent) return ranges.value[0].id
+        if (score === 4) return ranges.value[4].id
+        if (score >= 3 && score < 4) return ranges.value[3].id
+        if (score >= 2 && score < 3) return ranges.value[2].id
+        if (score >= 0 && score < 2) return ranges.value[1].id
+    }
+
+    const getPurchasingRange2021 = (total: number, respondent: boolean) => {
+        const score = total;
+        if (!respondent) return ranges.value[0].id
+        if (score >= 9 && score <= 11) return ranges.value[4].id
+        if (score >= 6 && score < 9) return ranges.value[3].id
+        if (score >= 3 && score < 6) return ranges.value[2].id
+        if (score >= 0 && score < 3) return ranges.value[1].id
+    }
+
+    const getPlatformRange2021 = (total: number, respondent: boolean) => {
+        const score = total;
+        if (!respondent) return ranges.value[0].id
+        if (score === 2) return ranges.value[4].id
+        if (score === 1) return ranges.value[2].id
+        if (score === 0) return ranges.value[1].id
+    }
+
+    const getSuppliersRange2021 = (total: number, respondent: boolean) => {
+        const score = total;
+        if (!respondent) return ranges.value[0].id
+        if (score === 3) return ranges.value[4].id
+        if (score >= 2 && score < 3) return ranges.value[3].id
+        if (score >= 1 && score < 2) return ranges.value[2].id
+        if (score >= 0 && score < 1) return ranges.value[1].id
+    }
+
+    const getOnTheGroundRange2021 = (total: number, respondent: boolean) => {
+        const score = total;
+        if (!respondent) return ranges.value[0].id
+        if (score === 4 || score === 3) return ranges.value[4].id
+        if (score === 2) return ranges.value[3].id
+        if (score === 1) return ranges.value[2].id
+        if (score === 0) return ranges.value[1].id
+    }
+
     const getListOfInCompanies = (companies: Company[], field: string) => {
         let result = [...new Set(companies.map((e: any) => e[field]))]
         return result.sort()
     }
 
-    const setCompany = async (id: sting | number) => {
+    const setCompany = async (id: any) => {
         company.value = companies.value.find((c: Company) => c.id == id) || null
-        console.log('company', company.value)
     }
 
     return {
@@ -383,10 +501,14 @@ export const useScStore = defineStore('scStore', () => {
         filter_applicSector,
         categories,
         total_outof,
+        supply_chain_own,
+        supply_chain_beyond,
         fetchScores,
         setCompaniesByRange,
         getRangeColor,
+        getRangeColor2021,
         getTotalScoreRange,
+        getTotalScoreRange2021,
         getListOfInCompanies,
         setCompany
     }

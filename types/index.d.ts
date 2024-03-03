@@ -16,6 +16,7 @@ declare global {
         ownSupplyChn: number,
         byondSupChain: number,
         respStatus: boolean,
+        historical: boolean,
         commitments: {
             commitDef: string,
             commitCpo: string,
@@ -110,6 +111,16 @@ declare global {
             investLandScape: boolean,
             investCons: boolean,
             groundTotalScore: number
+        },
+        "previousScore": {
+            "id": number,
+            "year": string,
+            "companyTotalScore": number,
+            "commitTotalScore": number,
+            "purchTotalCalcScore": number,
+            "supTotalScore": number,
+            "platformsTotalScore": number,
+            "groundTotalScore": number
         }
     }
 }

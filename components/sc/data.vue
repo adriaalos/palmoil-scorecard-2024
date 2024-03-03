@@ -46,7 +46,7 @@
                                 <span v-if="key == 'respStatus'">{{ tr.ho_scatter_filters_rspo }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMin'">Min {{ tr.ho_scatter_filters_total }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMax'">Max {{ tr.ho_scatter_filters_total }}: {{ value }}</span>
-                                <span v-else>{{ value }}</span>
+                                <span v-else>{{ useFormatString(value, ';') }}</span>
                                 <button @click="onFilterRemove(key)">
                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.7188 3.28125L3.28125 11.7188" stroke="#D86300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -125,18 +125,18 @@
                             />
                         </div>
                     </th>
-                    <th @click="sortBy('purchasing.purchTotalCalcScore', 'number')">
+                    <th @click="sortBy('purchasing.purchTotalScore', 'number')">
                         <div class="th-label th-label--text-center">
                             <span v-html="tr.sc_type_purchasing" />
                             <span>{{ tr.gl_outof }} {{ getOutOf('purchasing') }}</span>
                         </div>
                         <div class="th-sort th-sort--centered">
                             <img 
-                                :class="[{ 'opacity-30': sortedBy.key == 'purchasing.purchTotalCalcScore' && sortedBy.dir == 'asc'}]"
+                                :class="[{ 'opacity-30': sortedBy.key == 'purchasing.purchTotalScore' && sortedBy.dir == 'asc'}]"
                                 src="@/assets/img/sc-sort-asc.svg" class="w-[13px]"
                             />
                             <img 
-                                :class="[{ 'opacity-30': sortedBy.key == 'purchasing.purchTotalCalcScore' && sortedBy.dir == 'desc'}]"
+                                :class="[{ 'opacity-30': sortedBy.key == 'purchasing.purchTotalScore' && sortedBy.dir == 'desc'}]"
                                 src="@/assets/img/sc-sort-desc.svg" class="w-[13px]"
                             />
                         </div>
@@ -220,6 +220,7 @@
                 <tr
                     v-for="company in companies"
                     :key="company.id"
+                    :class="[{ 'bg-cake': company.historical}]"
                 >
                     <td>
                         <span class="block font-bold text-base">{{ company.companyName }}</span>
@@ -232,119 +233,282 @@
                         <span>{{ company.sector }}</span>
                     </td>
                     <td>
-                        <VDropdown v-if="company.respStatus">
-                            <span
-                                :class="[
-                                    'u-range u-range--border u-range--text u-range--pointer', 
-                                    sc.getRangeColor(company.commitments.commitTotalScore, 'commitments', true)
-                                ]"
-                            >
-                                {{ company.commitments.commitTotalScore }}
-                            </span>
-                            <template #popper="{ hide }">
-                                <div @click="hide()">
-                                    <core-tooltip 
-                                        :category="'commitments'" 
-                                        :company="company" 
-                                    />
-                                </div>
-                            </template>
-                        </VDropdown>
-                        <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                        <div class="flex flex-col">
+                            <div>
+                                <button 
+                                    v-if="Object.keys(company.previousScore).length > 0 && company.respStatus"
+                                    :class="[
+                                        'absolute top-4 transform rotate-90 -left-6  flex items-center space-x-1 cursor-pointer z-10 hover:opacity-60',
+                                        { 'pointer-events-none': company.historical }
+                                    ]"
+                                    @click="toggleHistorical(company)"
+                                >
+                                    <span>2024</span>
+                                    <svg
+                                        width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                        :class="[
+                                            'transform rotate-270', 
+                                            { 'opacity-0': company.historical },
+                                            { 'opacity-100': !company.historical }
+                                        ]"
+                                    >
+                                        <path d="M1 1L6.5 6.14995L12 1" stroke="#D86300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1 1L6.5 6.14995L12 1" stroke="#41B464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <VDropdown v-if="company.respStatus">
+                                    <span
+                                        :class="[
+                                            'u-range u-range--border u-range--text u-range u-range--pointer', 
+                                            sc.getRangeColor(company.commitments.commitTotalScore, 'commitments', company.respStatus)
+                                        ]"
+                                    >
+                                        {{ company.commitments.commitTotalScore }}
+                                    </span>
+                                    <template #popper="{ hide }">
+                                        <div @click="hide()">
+                                            <core-tooltip 
+                                                :category="'commitments'" 
+                                                :company="company" 
+                                            />
+                                        </div>
+                                    </template>
+                                </VDropdown>
+                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <core-range-balance 
+                                    :current="company.commitments.commitTotalScore" 
+                                    :old="company.previousScore.commitTotalScore"
+                                />
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <button 
+                                    :class="[
+                                        'absolute top-3 transform rotate-90 -left-6  flex items-center space-x-1 cursor-pointer z-10 hover:opacity-60',
+                                        { 'pointer-events-none': !company.historical }
+                                    ]"
+                                    @click="toggleHistorical(company)"
+                                >
+                                    <svg
+                                        width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                                        :class="[
+                                            'transform rotate-90', 
+                                            { 'opacity-0': !company.historical },
+                                            { 'opacity-100': company.historical }
+                                        ]"
+                                    >
+                                        <path d="M1 1L6.5 6.14995L12 1" stroke="#D86300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1 1L6.5 6.14995L12 1" stroke="#41B464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>2021</span>
+                                </button>
+                                <span
+                                    :class="[
+                                        'u-range u-range--border u-range--text', 
+                                        sc.getRangeColor2021(company.previousScore.commitTotalScore, 'commitments', company.respStatus)
+                                    ]"
+                                >
+                                    {{ company.previousScore.commitTotalScore }}
+                                </span>
+                            </div>
+                            
+                        </div> 
                     </td>
                     <td>
-                        <VDropdown v-if="company.respStatus">
-                            <span
-                                :class="[
-                                    'u-range u-range--border u-range--text u-range--pointer', 
-                                    sc.getRangeColor(company.purchasing.purchTotalCalcScore, 'purchasing', true)
-                                ]"
-                            >
-                                {{ company.purchasing.purchTotalCalcScore }}
-                            </span>
-                            <template #popper="{ hide }">
-                                <div @click="hide()">
-                                    <core-tooltip 
-                                        :category="'purchasing'" 
-                                        :company="company" 
-                                    />
-                                </div>
-                            </template>
-                        </VDropdown>
-                        <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                        <div class="flex flex-col">
+                            <div>
+                                <VDropdown v-if="company.respStatus">
+                                    <span
+                                        :class="[
+                                            'u-range u-range--border u-range--text u-range--pointer', 
+                                            sc.getRangeColor(company.purchasing.purchTotalScore, 'purchasing', company.respStatus)
+                                        ]"
+                                    >
+                                        {{ company.purchasing.purchTotalScore }}
+                                    </span>
+                                    <template #popper="{ hide }">
+                                        <div @click="hide()">
+                                            <core-tooltip 
+                                                :category="'purchasing'" 
+                                                :company="company" 
+                                            />
+                                        </div>
+                                    </template>
+                                </VDropdown>
+                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <core-range-balance 
+                                    :current="company.purchasing.purchTotalScore" 
+                                    :old="company.previousScore.purchTotalCalcScore"
+                                />
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <span
+                                    :class="[
+                                        'u-range u-range--border u-range--text', 
+                                        sc.getRangeColor2021(company.previousScore.purchTotalCalcScore, 'purchasing', company.respStatus)
+                                    ]"
+                                >
+                                    {{ company.previousScore.purchTotalCalcScore }}
+                                </span>
+                            </div>   
+                        </div> 
                     </td>
                     <td>
-                        <VDropdown v-if="company.respStatus">
-                            <span
-                                :class="[
-                                    'u-range u-range--border u-range--text u-range--pointer', 
-                                    sc.getRangeColor(company.suppliers.supTotalScore, 'suppliers', true)
-                                ]"
-                            >
-                                {{ company.suppliers.supTotalScore }}
-                            </span>
-                            <template #popper="{ hide }">
-                                <div @click="hide()">
-                                    <core-tooltip 
-                                        :category="'suppliers'" 
-                                        :company="company" 
-                                    />
-                                </div>
-                            </template>
-                        </VDropdown>
-                        <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                        <div class="flex flex-col">
+                            <div>
+                                <VDropdown v-if="company.respStatus">
+                                    <span
+                                        :class="[
+                                            'u-range u-range--border u-range--text u-range--pointer', 
+                                            sc.getRangeColor(company.suppliers.supTotalScore, 'suppliers', company.respStatus)
+                                        ]"
+                                    >
+                                        {{ company.suppliers.supTotalScore }}
+                                    </span>
+                                    <template #popper="{ hide }">
+                                        <div @click="hide()">
+                                            <core-tooltip 
+                                                :category="'suppliers'" 
+                                                :company="company" 
+                                            />
+                                        </div>
+                                    </template>
+                                </VDropdown>
+                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <core-range-balance 
+                                    :current="company.suppliers.supTotalScore" 
+                                    :old="company.previousScore.supTotalScore"
+                                />
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <span
+                                    :class="[
+                                        'u-range u-range--border u-range--text', 
+                                        sc.getRangeColor2021(company.previousScore.supTotalScore, 'suppliers', company.respStatus)
+                                    ]"
+                                >
+                                    {{ company.previousScore.supTotalScore }}
+                                </span>
+                            </div>   
+                        </div> 
                     </td>
                     <td>
-                        <VDropdown v-if="company.respStatus">
-                            <span
-                                :class="[
-                                    'u-range u-range--border u-range--text u-range--pointer', 
-                                    sc.getRangeColor(company.platforms.platformsTotalScore, 'platofrms', true)
-                                ]"
-                            >
-                                {{ company.platforms.platformsTotalScore }}
-                            </span>
-                            <template #popper="{ hide }">
-                                <div @click="hide()">
-                                    <core-tooltip 
-                                        :category="'platforms'" 
-                                        :company="company" 
-                                    />
-                                </div>
-                            </template>
-                        </VDropdown>
-                        <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                        <div class="flex flex-col">
+                            <div>
+                                <VDropdown v-if="company.respStatus">
+                                    <span
+                                        :class="[
+                                            'u-range u-range--border u-range--text u-range--pointer', 
+                                            sc.getRangeColor(company.platforms.platformsTotalScore, 'platforms', company.respStatus)
+                                        ]"
+                                    >
+                                        {{ company.platforms.platformsTotalScore }}
+                                    </span>
+                                    <template #popper="{ hide }">
+                                        <div @click="hide()">
+                                            <core-tooltip 
+                                                :category="'platforms'" 
+                                                :company="company" 
+                                            />
+                                        </div>
+                                    </template>
+                                </VDropdown>
+                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <core-range-balance 
+                                    :current="company.platforms.platformsTotalScore" 
+                                    :old="company.previousScore.platformsTotalScore"
+                                />
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <span
+                                    :class="[
+                                        'u-range u-range--border u-range--text', 
+                                        sc.getRangeColor2021(company.previousScore.platformsTotalScore, 'platforms', company.respStatus)
+                                    ]"
+                                >
+                                    {{ company.previousScore.platformsTotalScore }}
+                                </span>
+                            </div>   
+                        </div> 
                     </td>
                     <td>
-                        <VDropdown v-if="company.respStatus">
-                            <span
-                                :class="[
-                                    'u-range u-range--border u-range--text u-range--pointer', 
-                                    sc.getRangeColor(company.onTheGround.groundTotalScore, 'onTheGround', true)
-                                ]"
-                            >
-                                {{ company.onTheGround.groundTotalScore }}
-                            </span>
-                            <template #popper="{ hide }">
-                                <div @click="hide()">
-                                    <core-tooltip 
-                                        :category="'onTheGround'" 
-                                        :company="company" 
-                                    />
-                                </div>
-                            </template>
-                        </VDropdown>
-                        <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                        <div class="flex flex-col">
+                            <div>
+                                <VDropdown v-if="company.respStatus">
+                                    <span
+                                        :class="[
+                                            'u-range u-range--border u-range--text u-range--pointer', 
+                                            sc.getRangeColor(company.onTheGround.groundTotalScore, 'onTheGround', company.respStatus)
+                                        ]"
+                                    >
+                                        {{ company.onTheGround.groundTotalScore }}
+                                    </span>
+                                    <template #popper="{ hide }">
+                                        <div @click="hide()">
+                                            <core-tooltip 
+                                                :category="'onTheGround'" 
+                                                :company="company" 
+                                            />
+                                        </div>
+                                    </template>
+                                </VDropdown>
+                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <core-range-balance 
+                                    :current="company.onTheGround.groundTotalScore" 
+                                    :old="company.previousScore.groundTotalScore"
+                                />
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <span
+                                    :class="[
+                                        'u-range u-range--border u-range--text', 
+                                        sc.getRangeColor2021(company.previousScore.groundTotalScore, 'onTheGround', company.respStatus)
+                                    ]"
+                                >
+                                    {{ company.previousScore.groundTotalScore }}
+                                </span>
+                            </div>   
+                        </div> 
                     </td>
                     <td>
-                        <span
-                            v-if="company.respStatus"
-                            :class="[
-                                'u-range u-range--border u-range--bg u-range--big', 
-                                sc.getTotalScoreRange(company.companyTotalScore, company)
-                            ]"
-                        >{{ company.companyTotalScore }}</span>
-                        <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                        <div class="flex flex-col">
+                            <div>
+                                <span
+                                    v-if="company.respStatus"
+                                    :class="[
+                                        'u-range u-range--border u-range--bg u-range--big', 
+                                        sc.getTotalScoreRange(company.companyTotalScore, company.respStatus)
+                                    ]"
+                                >{{ company.companyTotalScore }}</span>
+                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <core-range-balance 
+                                    :current="company.companyTotalScore" 
+                                    :old="company.previousScore.companyTotalScore"
+                                />
+                            </div>
+                            <div v-if="Object.keys(company.previousScore).length > 0 && company.respStatus && company.historical">
+                                <span
+                                    :class="[
+                                        'u-range u-range--border u-range--bg', 
+                                        sc.getTotalScoreRange(company.previousScore.companyTotalScore, company.respStatus)
+                                    ]"
+                                >
+                                    {{ company.previousScore.companyTotalScore }}
+                                </span>
+                            </div>   
+                        </div> 
+                        
                     </td>
                     <td>
                         <nuxt-link
@@ -461,7 +625,7 @@
                                 <span v-if="key == 'respStatus'">{{ tr.ho_scatter_filters_rspo }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMin'">Min {{ tr.ho_scatter_filters_total }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMax'">Max {{ tr.ho_scatter_filters_total }}: {{ value }}</span>
-                                <span v-else>{{ value }}</span>
+                                <span v-else>{{ useFormatString(value, ';') }}</span>
                                 <button @click="onPrefilterRemove(key)">
                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.7188 3.28125L3.28125 11.7188" stroke="#D86300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -639,6 +803,10 @@ const onFilter = () => {
 
 }
 
+const toggleHistorical = (company: any) => {
+    company.historical = !company.historical
+}
+
 
 </script>
 
@@ -646,7 +814,7 @@ const onFilter = () => {
 table {
     @apply w-full;
     thead {
-        @apply sticky top-0 z-10;
+        @apply sticky top-0 z-20;
     }
     th {
         @apply align-bottom px-6 py-4 bg-cake cursor-pointer hover:bg-light;

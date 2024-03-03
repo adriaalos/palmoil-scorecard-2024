@@ -17,11 +17,11 @@
 <script setup lang="ts">
 const sc = useScStore()
 const tr = useTrStore().translations
-const items = ref([
+const items = ref(sc.company ? [
     {
         id: 'totalPalmOil',
         label: tr.sc_co_resume_totalPalmOil,
-        value: sc.company?.totalPalmOil
+        value: `${useFormatNumberWithComma(sc.company?.totalPalmOil)} Mt`
     },
     {
         id: 'hq',
@@ -31,12 +31,12 @@ const items = ref([
     {
         id: 'regionOfOper',
         label: tr.sc_co_resume_regionOfOper,
-        value: sc.company?.regionOfOper
+        value: useFormatString(sc.company?.regionOfOper, ';')
     },
     {
         id: 'topBrands',
         label: tr.sc_co_resume_topBrands,
-        value: sc.company?.topBrands
+        value: useFormatString(sc.company?.topBrands, ';')
     },
     {
         id: 'sector',
@@ -46,7 +46,7 @@ const items = ref([
     {
         id: 'applicSector',
         label: tr.sc_co_resume_applicSector,
-        value: sc.company?.applicSector
+        value: useFormatString(sc.company?.applicSector, ';')
     }
-])
+] : null)
 </script>
