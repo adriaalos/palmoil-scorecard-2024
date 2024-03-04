@@ -4,5 +4,6 @@
         <me-intro />
         <me-map />
         <me-criteria />
+        <me-closing />
     </div>
 </template>
