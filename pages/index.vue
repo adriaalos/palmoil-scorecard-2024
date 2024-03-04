@@ -7,6 +7,7 @@
         <ho-app />
         <ho-report />
         <ho-partners />
+        <ab-header />
     </div>
 </template>
 

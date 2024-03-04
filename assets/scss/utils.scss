@@ -34,8 +34,14 @@ p {
 .u-fs32 {
     @apply text-[32px] leading-[52px];
 }
+.u-fs34 {
+    @apply text-[34px] leading-[38px];
+}
 .u-fs36 {
-    @apply text-[36px] leading-[38px];
+    @apply text-[36px] leading-[40px];
+}
+.u-fs38 {
+    @apply text-[38px] leading-[42px];
 }
 .u-fs40 {
     @apply text-[40px] leading-[52px];
@@ -57,6 +63,9 @@ p {
 }
 .u-fs100 {
     @apply text-[100px] leading-[100px];
+}
+.u-fs126 {
+    @apply text-[126px] leading-[126px];
 }
 .u-fs180 {
     @apply text-[180px] leading-[180px];
@@ -132,6 +141,11 @@ p {
     }
     &--left {
         @apply text-left;
+    }
+    &--green {
+        h2 {
+            @apply text-green;
+        }
     }
 }
 .u-section {
