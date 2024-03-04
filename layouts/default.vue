@@ -1,7 +1,10 @@
 <template>
     <div>
         <core-header />
-        <nuxt-page />
+        <main role="main">
+            <nuxt-page />
+        </main>
+        <core-footer />
     </div>
 </template>
 
