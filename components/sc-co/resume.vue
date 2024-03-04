@@ -6,7 +6,7 @@
                     v-for="item in items"
                     :key="item.id"
                 >
-                    <p class="text-xs font-bold">{{ item.label }}</p>
+                    <p class="text-xs font-bold mb-0">{{ item.label }}</p>
                     <p class="text-sm">{{ item.value }}</p>
                 </div>
             </div>

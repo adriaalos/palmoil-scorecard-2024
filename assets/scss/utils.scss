@@ -34,6 +34,9 @@ p {
 .u-fs32 {
     @apply text-[32px] leading-[52px];
 }
+.u-fs36 {
+    @apply text-[36px] leading-[38px];
+}
 .u-fs40 {
     @apply text-[40px] leading-[52px];
 }
@@ -150,6 +153,7 @@ p {
     @apply bg-gradient-to-b ;
     &--horiz { @apply bg-gradient-to-r; }
     &--green-greensoft { @apply from-green to-greensoft; }
+    &--ocre-ocrelight { @apply from-ocre to-ocrelight; }
 }
 .u-scatter-tooltip {
     @apply p-6;

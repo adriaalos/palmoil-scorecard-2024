@@ -20,6 +20,7 @@ export default defineConfig({
             grayy: '#C1C1C1',
             cake: '#FFFAF3',
             ocre: '#E29F38',
+            ocrelight: '#E4C864',
             line: '#DADADA'
         },
         extend: {
