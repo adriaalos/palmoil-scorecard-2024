@@ -25,6 +25,7 @@
         "@vueuse/nuxt": "^10.7.2",
         "apexcharts": "^3.45.2",
         "floating-vue": "^5.2.2",
+        "nuxt-swiper": "^1.2.2",
         "sass": "^1.70.0",
         "vue-apexcharts": "^1.6.2",
         "vue3-apexcharts": "^1.5.2"
