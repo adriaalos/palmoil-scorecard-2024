@@ -28,6 +28,9 @@ p {
 .u-fs28 {
     @apply text-[28px];
 }
+.u-fs30 {
+    @apply text-[30px];
+}
 .u-fs31 {
     @apply text-[31px];
 }
@@ -168,6 +171,7 @@ p {
     &--horiz { @apply bg-gradient-to-r; }
     &--green-greensoft { @apply from-green to-greensoft; }
     &--ocre-ocrelight { @apply from-ocre to-ocrelight; }
+    &--cake-transparent { @apply from-cake to-transparent; }  
 }
 .u-scatter-tooltip {
     @apply p-6;
@@ -414,4 +418,14 @@ p {
 
 .u-separator {
     @apply after:content-[''] after:w-px after:bg-[#F1EBDD] after:absolute after:top-1/2 after:left-full after:transform after:-translate-y-1/2;
+}
+
+.u-list-default ul {
+    @apply list-disc pl-6;
+    li {
+        @apply mb-4;
+        &:last-child {
+            @apply mb-0;
+        }
+    }
 }

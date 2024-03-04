@@ -8,6 +8,7 @@
         <ho-report />
         <ho-partners />
         <ab-header />
+        <ab-feats />
     </div>
 </template>
 
