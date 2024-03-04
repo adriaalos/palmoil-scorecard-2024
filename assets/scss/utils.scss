@@ -99,6 +99,9 @@ p {
     &--white-ocre {
         @apply bg-white text-ocre hover:bg-white hover:text-ocre hover:opacity-90;
     }
+    &--white-green {
+        @apply bg-white text-green hover:bg-white hover:text-green hover:opacity-90;
+    }
     &--greendark {
         @apply bg-greendark text-white hover:bg-greendark hover:text-white hover:opacity-90;
     }
@@ -171,7 +174,8 @@ p {
     &--horiz { @apply bg-gradient-to-r; }
     &--green-greensoft { @apply from-green to-greensoft; }
     &--ocre-ocrelight { @apply from-ocre to-ocrelight; }
-    &--cake-transparent { @apply from-cake to-transparent; }  
+    &--cake-transparent { @apply from-cake to-transparent; }
+    &--greensoft-ocre { @apply from-greensoft to-ocre; }  
 }
 .u-scatter-tooltip {
     @apply p-6;

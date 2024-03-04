@@ -11,6 +11,7 @@
         <ab-feats />
         <ab-care />
         <ab-production />
+        <ab-closing />
     </div>
 </template>
 
