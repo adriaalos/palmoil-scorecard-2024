@@ -1,3 +1,7 @@
 <template>
-    <div>Methodology</div>
+    <div>
+        <me-header />
+        <me-intro />
+        <me-map />
+    </div>
 </template>

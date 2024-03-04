@@ -7,7 +7,10 @@ html {
 
 p {
     @extend .u-fs18;
-    @apply font-open;
+    @apply font-open mb-6 last:mb-0;
+    a {
+        @apply underline text-green;
+    }
 }
 
 .u-fs18 {
@@ -37,6 +40,9 @@ p {
 .u-fs48 {
     @apply text-[48px] leading-[52px];
 }
+.u-fs55 {
+    @apply text-[55px] leading-[62px];
+}
 .u-fs62 {
     @apply text-[62px];
 }
@@ -46,11 +52,14 @@ p {
 .u-fs88 {
     @apply text-[88px] leading-[62px];
 }
-.u-fs220 {
-    @apply text-[220px] leading-[220px];
+.u-fs100 {
+    @apply text-[100px] leading-[100px];
 }
 .u-fs180 {
     @apply text-[180px] leading-[180px];
+}
+.u-fs220 {
+    @apply text-[220px] leading-[220px];
 }
 
 .u-button {

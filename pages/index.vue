@@ -12,6 +12,6 @@
 
 <script setup lang="ts">
 const sc = useScStore()
-await sc.fetchScores()
+if (!sc.companies.length) await sc.fetchScores()
 </script>
 

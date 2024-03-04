@@ -1,7 +1,7 @@
 <template>
     <header 
         :class="[
-            'sticky top-0 font-wwf uppercase text-white bg-black z-10 transform transition-all duration-300',
+            'sticky top-0 font-wwf uppercase text-white bg-black z-30 transform transition-all duration-300',
             appStore.scrollDirection === 'down' && appStore.scrollPosition > 200 ? 'translate-y-[-150%]' : 'translate-y-0'
         ]"
     >
