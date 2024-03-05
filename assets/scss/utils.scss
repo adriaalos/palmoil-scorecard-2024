@@ -108,6 +108,9 @@ p {
     &--border {
         @apply bg-white border-2 border-green text-green hover:bg-green hover:text-white;
     }
+    &--back {
+        @apply border-2 border-white text-xs py-1.5 px-3 gap-2;
+    }
 }
 .u-container {
     @apply mx-auto max-w-[1280px] px-9;
@@ -340,6 +343,22 @@ p {
     &.non-resp { @apply text-[#c1c1c1] }
 }
 
+.u-sc-bg {
+    &.lagging-behind { @apply bg-[#E46466] }
+    &.middle-of-the-pack { @apply bg-[#E4C864] }
+    &.intermediate { @apply bg-[#96b441] }
+    &.advanced { @apply bg-[#41b464] }
+    &.non-respondent { @apply bg-[#c1c1c1] }
+}
+
+.u-sc-bg-light {
+    &.lagging-behind { @apply bg-[#E46466] bg-opacity-30; }
+    &.middle-of-the-pack { @apply bg-[#E4C864] bg-opacity-30; }
+    &.intermediate { @apply bg-[#96b441] bg-opacity-30; }
+    &.advanced { @apply bg-[#41b464] bg-opacity-30; }
+    &.non-respondent { @apply bg-[#c1c1c1] bg-opacity-30; }
+}
+
 .u-noscore {
     @apply block max-w-[40px] mx-auto font-wwf text-lg uppercase  text-[#c1c1c1] leading-tight text-center;
 }
@@ -465,5 +484,55 @@ p {
             @apply before:content-[''] before:w-px before:h-[14px] before:absolute before:-top-2 before:left-1/2 before:bg-[#7B7B7B];
         }
         
+    }
+}
+
+.u-total-map {
+    @apply absolute bottom-0 flex flex-col items-center transform -translate-x-1/2;
+    &__indicator {
+        @apply w-[35px] h-[35px] rounded-full border border-white bg-opacity-35;
+    }
+    &__line {
+        @apply w-px h-[135px] bg-white;
+    }
+    &__ground {
+        @apply w-[7px] h-[5px] rounded-full bg-white;
+    
+    }
+    &--current {
+        .u-total-map__indicator {
+            @apply w-[60px] h-[60px] bg-current border-none flex items-center justify-center;
+            span {
+                @apply font-montserrat text-chsc-dark text-sm font-bold;
+            }
+        }
+        .u-total-map__line {
+            @apply w-[2px] h-[220px] bg-current;
+        }
+        .u-total-map__ground {
+            @apply bg-current;
+        }
+    }
+}
+
+.u-total-limit {
+    @apply w-full absolute bottom-0 flex items-center;
+    &__circle {
+        @apply w-[8px] h-[8px] bg-[#C4C4C4] rounded-full;
+    }
+    &__line {
+        @apply flex-1 w-full h-[2px] bg-[#C4C4C4];
+    }
+    &__name {
+        @apply absolute -top-7 left-0 font-montserrat text-[10px] uppercase font-semibold text-[#C4C4C4];
+        &--top {
+            @apply left-auto right-0;
+        }
+    }
+}
+.u-total-median {
+    @apply absolute bottom-[10px] w-[8px] h-[8px] bg-[#C4C4C4] rounded-full;
+    span {
+        @apply absolute -top-7 left-1/2 font-montserrat text-[10px] uppercase font-semibold text-[#C4C4C4] transform -translate-x-1/2;
     }
 }

@@ -4,6 +4,7 @@
         <sc-co-resume />
         <sc-co-stats />
         <sc-co-categories />
+        <sc-co-global />
     </div>
 </template>
 
