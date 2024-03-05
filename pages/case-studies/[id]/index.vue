@@ -2,6 +2,9 @@
     <div>
         <cs-header />
         <cs-company />
+        <cs-keys />
+        <cs-methodology />
+        <cs-conclusions />
     </div>
 </template>
 

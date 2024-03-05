@@ -35,7 +35,11 @@
                 </div>
                 <div class="flex-1 min-h-full">
                     <div class="rounded-[60px] min-h-full overflow-hidden">
-                        <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="@/assets/img/ab-closing-02.png">
+                        <img 
+                            v-motion-slide-visible-once-top
+                            class="absolute top-0 left-0 w-full h-full object-cover object-center" 
+                            src="@/assets/img/ab-closing-02.png"
+                        >
                     </div>
                 </div>
             </div>

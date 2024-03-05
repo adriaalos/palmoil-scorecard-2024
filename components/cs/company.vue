@@ -1,5 +1,5 @@
 <template>
-    <section v-if="sc.company"">
+    <section v-if="sc.company">
         <div class="w-1/2 h-full absolute top-0 left-0">
             <img 
                 class="absolute top-0 left-0 w-full h-full object-cover object-center rounded-r-[60px]" 
