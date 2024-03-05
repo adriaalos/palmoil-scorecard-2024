@@ -228,7 +228,7 @@
                 </div>
             </div>
         </div>
-        <pre>{{ sc.company }}</pre>
+        <!-- <pre>{{ sc.company }}</pre> -->
     </section>
 </template>
 

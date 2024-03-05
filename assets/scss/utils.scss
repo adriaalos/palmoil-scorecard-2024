@@ -327,6 +327,9 @@ p {
     &--pointer {
         @apply cursor-pointer;
     }
+    &--cat {
+        @apply mx-0;
+    }
 }
 
 .u-sc-text {
@@ -431,5 +434,36 @@ p {
         &:last-child {
             @apply mb-0;
         }
+    }
+}
+
+.u-bar {
+    @apply h-[30px] bg-[#E6E4E9] rounded-[30px];
+    &__ranges {
+        @apply w-full h-full absolute top-0 left-0 flex items-center justify-between px-2;
+        span {
+            @apply flex-1 flex justify-center items-center text-sm font-semibold font-wwf text-[#7B7B7B];
+            &:first-of-type { @apply justify-start }
+            &:last-of-type  { @apply justify-end }
+        }
+    }
+    &__scores {
+        @apply w-[calc(100%-30px)] h-full left-0;
+    }
+    &__score {
+        @apply absolute w-[30px] h-[30px] rounded-full border-2 border-white text-base;
+    }
+    &__median {
+        @apply absolute top-0 h-[30px] text-[9px] text-[#7B7B7B] font-bold font-open transform -translate-x-1/2;
+        &__indicator {
+            @apply absolute top-0 left-0 w-px h-[30px] bg-white
+            after:content-[''] after:w-[8px] after:h-[8px] after:absolute after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:bg-white after:rounded-full ;
+            
+        }
+        &__text {
+            @apply absolute top-full left-0 transform -translate-x-1/2 translate-y-2;
+            @apply before:content-[''] before:w-px before:h-[14px] before:absolute before:-top-2 before:left-1/2 before:bg-[#7B7B7B];
+        }
+        
     }
 }

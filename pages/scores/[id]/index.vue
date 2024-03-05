@@ -3,6 +3,7 @@
         <sc-co-header />
         <sc-co-resume />
         <sc-co-stats />
+        <sc-co-categories />
     </div>
 </template>
 
