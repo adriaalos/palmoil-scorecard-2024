@@ -246,7 +246,7 @@ const renderTooltip = (company: Company) => {
     const def_onTheGround = sc.categories.find((c: any) => c.id === 'onTheGround')
 
 
-    let str = `<div class="u-scatter-tooltip">`
+    let str = `<div class="u-scatter-tooltip" style="position: relative;">`
     str += `<div class="w-full">`
     str += renderCategory(
         company.purchasing.purchTotalScore,
@@ -435,3 +435,9 @@ const onSearch = () => {
     sc.setCompaniesByRange(companies.value)
 }
 </script>
+
+<style>
+.apexcharts-tooltip.apexcharts-theme-light {
+    top: 0px!important;
+}
+</style>

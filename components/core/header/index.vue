@@ -50,7 +50,7 @@ const nav = ref([
     {
         id: 'about',
         title: tr.ab_name,
-        url: `/${tr.ab_url}`
+        url: `/#about`
     },
     {
         id: 'scores',

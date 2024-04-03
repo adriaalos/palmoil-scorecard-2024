@@ -102,7 +102,9 @@ declare global {
             poigMemeber: boolean,
             memberPlatforms: boolean,
             platformNames: string,
-            platformsTotalScore: number
+            platformsTotalScore: number,
+            pobrSrScore: number,
+            scoreCard2023: number
         },
         onTheGround: {
             haveOnTheGrnd: boolean,

@@ -1,5 +1,5 @@
 <template>
-    <section class="u-section mt-0">
+    <section class="u-section mt-0" id="about">
         <div class="py-32 u-gradient u-gradient--green-greensoft">
             <div class="u-container flex flex-col items-center">
                 <h2 class="u-fs68 text-white text-center font-wwf">ABOUT PALM OIL</h2>

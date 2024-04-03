@@ -28,7 +28,7 @@
                         :style="`left: ${sc.company.companyTotalScore / sc.total_outof * 100}%`"
                     >
                         <div class="u-total-map__indicator">
-                            <span class="text-white">{{ (sc.company.companyTotalScore / sc.total_outof * 100).toFixed(2) }}%</span>
+                            <span class="text-white">{{ sc.company.companyTotalScore }}</span>
                         </div>
                         <div :class="[`u-total-map__line u-sc-bg ${sc.getTotalScoreRange(sc.company.companyTotalScore, sc.company.respStatus)}`]"></div>
                         <div class="u-total-map__ground"></div>

@@ -5,6 +5,11 @@
         <sc-co-stats />
         <sc-co-categories />
         <sc-co-global />
+        <sc-co-results-commitments />
+        <sc-co-results-purchasing />
+        <sc-co-results-suppliers />
+        <sc-co-results-platforms />
+        <sc-co-results-ground />
     </div>
 </template>
 

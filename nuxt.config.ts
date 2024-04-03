@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+    ignore: [
+        '**/*._*'
+    ],
     devtools: { enabled: true },
     ssr: false,
     modules: [
