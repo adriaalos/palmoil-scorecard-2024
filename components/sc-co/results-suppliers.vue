@@ -90,11 +90,11 @@
                                     <h3 class="u-result-block__header noline"><span>Does the company have monitoring and response systems in place to verify supplier compliance with:</span></h3>
                                 </header>
                                 <div :class="[`u-result-card__badge ${transformBoolean(sc.company.suppliers.supMonDcfree)}`]" >
-                                    <img :src="`/${transformBoolean(sc.company.suppliers.supMonDcfree)}_invert.svg`" />
+                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supMonDcfree)}_invert.svg`" />
                                     <span>DEFORESTATION- AND/OR CONVERSION-FREE COMMITMENTS</span>
                                 </div>
                                 <div :class="[`mt-3 u-result-card__badge ${transformBoolean(sc.company.suppliers.supMonHr)}`]" >
-                                    <img :src="`/${transformBoolean(sc.company.suppliers.supMonHr)}_invert.svg`" />
+                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supMonHr)}_invert.svg`" />
                                     <span>DEFORESTATION- AND/OR CONVERSION-FREE COMMITMENTS</span>
                                 </div>
                             </div>
@@ -105,11 +105,11 @@
                                     <h3 class="u-result-block__header noline"><span>Does the company expect suppliers to source palm oil that is traceable to the mill/plantation?</span></h3>
                                 </header>
                                 <div :class="[`u-result-card__badge ${transformBoolean(sc.company.suppliers.supMill)}`]" >
-                                    <img :src="`/${transformBoolean(sc.company.suppliers.supMill)}_invert.svg`" />
+                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supMill)}_invert.svg`" />
                                     <span>has a monitoring system for Traceability to Mill (TTM) and achieves more than 50%</span>
                                 </div>
                                 <div :class="[`mt-3 u-result-card__badge ${transformBoolean(sc.company.suppliers.supPlant)}`]" >
-                                    <img :src="`/${transformBoolean(sc.company.suppliers.supPlant)}_invert.svg`" />
+                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supPlant)}_invert.svg`" />
                                     <span>has a monitoring system for Traceability to Plantation (TTP) and achieves more than 50% </span>
                                 </div>
                             </div>

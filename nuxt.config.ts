@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+    app: {
+        baseURL: '/2024'
+    },
     ignore: [
         '**/*._*'
     ],

@@ -163,7 +163,7 @@
                         </header>
                         <div class="flex m-3">
                             <div 
-                                v-for="item in PURCHASING_COUNTRIES"
+                                v-for="item in PURCHASING_COUNTRIES.filter(c => c.volume > 0)"
                                 class="w-2/12 p-3"
                             >
                                 <template v-if="item.volume > 0">

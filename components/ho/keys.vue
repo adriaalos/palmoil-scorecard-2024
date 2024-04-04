@@ -24,7 +24,7 @@
             <ul class="mt-6 flex items-center justify-center gap-4">
                 <li v-for="sm in share" :key="sm.id">
                     <a :href="sm.url" target="_blank">
-                        <img :src="`/ico-${sm.id}.svg`" :alt="sm.url">
+                        <img :src="`/2024/ico-${sm.id}.svg`" :alt="sm.url">
                     </a>
                 </li>
             </ul>

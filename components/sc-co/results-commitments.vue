@@ -60,19 +60,19 @@
                                     </div>
                                     <div class="u-result-card__checks">
                                         <div :class="[`u-result-card__check ${valuesDCFree.cpo}`]">
-                                            <img :src="`/${valuesDCFree.cpo}.svg`" />
+                                            <img :src="`/2024/${valuesDCFree.cpo}.svg`" />
                                             <span>CRUDE PALM OIL</span>
                                         </div>
                                         <div :class="[`u-result-card__check ${valuesDCFree.pke}`]">
-                                            <img :src="`/${valuesDCFree.pke}.svg`" />
+                                            <img :src="`/2024/${valuesDCFree.pke}.svg`" />
                                             <span>PALM KERNEL EXPELLER</span>
                                         </div>
                                         <div :class="[`u-result-card__check ${valuesDCFree.pko}`]">
-                                            <img :src="`/${valuesDCFree.pko}.svg`" />
+                                            <img :src="`/2024/${valuesDCFree.pko}.svg`" />
                                             <span>PALM KERNEL OIL</span>
                                         </div>
                                         <div :class="[`u-result-card__check ${valuesDCFree.pod}`]">
-                                            <img :src="`/${valuesDCFree.pod}.svg`" />
+                                            <img :src="`/2024/${valuesDCFree.pod}.svg`" />
                                             <span>PALM OIL DERIVATIVES</span>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="flex-1">
                                         <div :class="[`u-result-card__badge ${getCommitCorp()?.class}`]" >
-                                            <img :src="`/${getCommitCorp()?.class}_invert.svg`" />
+                                            <img :src="`/2024/${getCommitCorp()?.class}_invert.svg`" />
                                             <span>{{ getCommitCorp()?.text }}</span>
                                         </div>
                                     </div>
@@ -126,19 +126,19 @@
                                     </div>
                                     <div class="u-result-card__checks">
                                         <div :class="[`u-result-card__check ${valuesHR.cpo}`]">
-                                            <img :src="`/${valuesHR.cpo}.svg`" />
+                                            <img :src="`/2024/${valuesHR.cpo}.svg`" />
                                             <span>CRUDE PALM OIL</span>
                                         </div>
                                         <div :class="[`u-result-card__check ${valuesHR.pke}`]">
-                                            <img :src="`/${valuesHR.pke}.svg`" />
+                                            <img :src="`/2024/${valuesHR.pke}.svg`" />
                                             <span>PALM KERNEL EXPELLER</span>
                                         </div>
                                         <div :class="[`u-result-card__check ${valuesHR.pko}`]">
-                                            <img :src="`/${valuesHR.pko}.svg`" />
+                                            <img :src="`/2024/${valuesHR.pko}.svg`" />
                                             <span>PALM KERNEL OIL</span>
                                         </div>
                                         <div :class="[`u-result-card__check ${valuesHR.pod}`]">
-                                            <img :src="`/${valuesHR.pod}.svg`" />
+                                            <img :src="`/2024/${valuesHR.pod}.svg`" />
                                             <span>PALM OIL DERIVATIVES</span>
                                         </div>
                                     </div>
@@ -151,7 +151,7 @@
                                     </div>
                                     <div class="flex-1">
                                         <div :class="[`u-result-card__badge ${getCommitEntCorp()?.class}`]" >
-                                            <img :src="`/${getCommitEntCorp()?.class}_invert.svg`" />
+                                            <img :src="`/2024/${getCommitEntCorp()?.class}_invert.svg`" />
                                             <span>{{ getCommitEntCorp()?.text }}</span>
                                         </div>
                                     </div>
