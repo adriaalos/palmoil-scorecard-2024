@@ -12,7 +12,7 @@
                         We asked all the companies to complete a simple questionnaire. As in previous scorecards, we used information that companies provided directly to us, on their websites or in their annual reports to RSPO. We have verified this information where possible, but have relied on the companies to be transparent, truthful and accurate in their reporting. WWF urges users of the Scorecard to check the data and share any errors found with both WWF and the relevant company.
                     </p>
                     <nuxt-link 
-                        :to="`/${tr.an_url}`"
+                        :to="`/${$t('an_url')}`"
                         class="u-button mt-6"
                     >
                         <span>Contact</span>
@@ -25,7 +25,3 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>

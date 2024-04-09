@@ -11,25 +11,23 @@
             />
             <div>
                 <h2 class="u-gradient u-gradient--greensoft-ocre font-wwf uppercase u-fs68 text-center text-transparent bg-clip-text">
-                    Palm can be produced sustainably and responsibly, without deforestation and the conversion of natural ecosystems, benefitting both communities and the environment.
+                    {{ $t('ab_closing_title') }}
                 </h2>
             </div>
         </div>
         <div class="u-container u-container--md mt-20">
-            <div class="text-center">
-                <p>But, seizing this opportunity requires urgent action to hold the palm oil industry accountable and steer it towards sustainability. Companies purchasing palm oil must swiftly embrace and support the production and utilisation of sustainable palm oil. <strong>Together, we can make a significant impact.</strong></p>
-            </div>
+            <div class="text-center" v-html="$t('ab_closing_description')" />
         </div>
         <div class="u-container u-container--lg mt-20">
             <div class="flex space-x-12">
                 <div class="flex-1">
                     <div class="u-gradient u-gradient--green-greensoft p-12 rounded-[60px]">
-                        <h2 class="mb-6 font-wwf text-white u-fs55">ARE BRANDS COMMITED TO A RESPONSIBLE PALM OIL FUTURE?</h2>
+                        <h2 class="mb-6 font-wwf text-white u-fs55">{{ $t('ab_closing_cta_title') }}</h2>
                         <nuxt-link 
-                            :to="`/${tr.sc_url}`"
+                            :to="`/${$t('sc_url')}`"
                             class="u-button u-button--white-green"
                         >
-                            <span>CHECK THE BRAND’S SCORES</span>
+                            <span>{{ $t('ab_closing_cta_button') }}</span>
                         </nuxt-link>
                     </div>
                 </div>
@@ -46,7 +44,3 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>

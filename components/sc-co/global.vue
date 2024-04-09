@@ -65,7 +65,6 @@
 
 <script setup lang="ts">
 const sc = useScStore()
-const tr = useTrStore().translations
 
 const companies = ref(sc.companies.sort((a, b) => b.companyTotalScore - a.companyTotalScore))
 const position = ref(sc.company ? companies.value.findIndex((c) => c.id === sc.company.id) + 1 : 0)

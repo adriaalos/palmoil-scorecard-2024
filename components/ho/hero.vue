@@ -12,19 +12,19 @@
                 <img v-motion-slide-visible-once-bottom src="@/assets/img/ho-hero-07.png" alt="hero" class="collage__pic collage__pic--07" />
             </div>
             <header class="font-wwf uppercase text-center">
-                <h3 class="u-fs88 text-black" v-html="tr.ho_hero_year" />
-                <h1 class="-mt-8 u-fs220 text-green" v-html="tr.ho_hero_title_big" />
-                <h2 class="-mt-9 u-fs180 bg-gradient-to-b from-green via-green to-gold inline-block text-transparent bg-clip-text" v-html="tr.ho_hero_title_small" />
+                <h3 class="u-fs88 text-black" v-html="$t('ho_hero_year')" />
+                <h1 class="-mt-8 u-fs220 text-green" v-html="$t('ho_hero_title_big')" />
+                <h2 class="-mt-9 u-fs180 bg-gradient-to-b from-green via-green to-gold inline-block text-transparent bg-clip-text" v-html="$t('ho_hero_title_small')" />
             </header>
             <div class="mt-6 py-3 text-white u-fs31 uppercase text-center bg-green rounded-[42px]">
-                <p class="font-wwf">{{ tr.ho_hero_claim }}</p>
+                <p class="font-wwf">{{ $t('ho_hero_claim') }}</p>
             </div>
             <div class="flex justify-center mt-18">
                 <nuxt-link 
-                    :to="`/${tr.sc_url}`"
+                    :to="`/${$t('sc_url')}`"
                     class="u-button u-button--hero"
                 >
-                    <span>{{ tr.ho_hero_button }}</span>
+                    <span>{{ $t('ho_hero_button') }}</span>
                     <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 11.9273L6.18867 6.46365L1 1" stroke="#41B464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -33,17 +33,17 @@
         </div>
         <div class="mt-32 p-16">
             <div class="collage">
-                <img v-motion-slide-visible-once-left src="@/assets/img/ho-hero-08.png" alt="hero" class="collage__pic collage__pic--08" />
-                <img v-motion-slide-visible-once-right src="@/assets/img/ho-hero-09.png" alt="hero" class="collage__pic collage__pic--09" />
+                <!-- <img v-motion-slide-visible-once-left src="@/assets/img/ho-hero-08.png" alt="hero" class="collage__pic collage__pic--08" /> -->
+                <img v-motion-slide-visible-once-right src="@/assets/img/ho-hero-09.png" alt="hero" class="collage__pic collage__pic--09 lg:hidden" />
             </div>
             <div class="u-container u-container--lg">
-                <div class="text-center" v-html="tr.ho_hero_about_description" />
+                <div class="text-center" v-html="$t('ho_hero_about_description')" />
                 <div class="flex justify-center mt-18">
                     <nuxt-link 
-                        :to="`/${tr.ab_url}`"
+                        :to="`/${$t('ab_url')}`"
                         class="u-button"
                     >
-                        <span>{{ tr.ho_hero_about_button }}</span>
+                        <span>{{ $t('ho_hero_about_button') }}</span>
                         <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 11.9361L6.18868 6.47244L1 1.00879" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -53,10 +53,6 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>
 
 <style lang="scss" scoped>
 .collage {

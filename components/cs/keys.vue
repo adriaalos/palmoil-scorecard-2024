@@ -12,9 +12,3 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-const sc = useScStore()
-const tr = useTrStore().translations
-
-</script>

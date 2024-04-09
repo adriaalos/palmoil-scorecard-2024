@@ -4,14 +4,14 @@
             <div class="flex space-x-6">
                 <div>
                     <div :class="[`u-range u-range--results u-sc-bg ${onTheGroundColor}`]">
-                        {{ sc.company.onTheGround.groundTotalScore }}
+                        {{ sc.company.onTheGround.onTheGroundTotalScore }}
                     </div>
                     <div :class="[`my-1 text-sm font-bold text-center u-sc-text ${onTheGroundColor}`]">
                         OUT OF {{ onTheGround?.out_of }}
                     </div>
                     <core-range-balance 
                         v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"            
-                        :current="sc.company.onTheGround.groundTotalScore" 
+                        :current="sc.company.onTheGround.onTheGroundTotalScore" 
                         :old="sc.company.previousScore.groundTotalScore"
                     />
                     <div :class="[`u-range u-range--bg ${onTheGroundColor2021}`]">
@@ -90,11 +90,10 @@
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
 const sc = useScStore()
 
 const onTheGround = ref(sc.categories.find(c => c.id === 'onTheGround'))
-const onTheGroundColor = ref(sc.company ? sc.getRangeColor(sc.company.onTheGround.groundTotalScore, 'onTheGround', sc.company.respStatus) : '')
+const onTheGroundColor = ref(sc.company ? sc.getRangeColor(sc.company.onTheGround.onTheGroundTotalScore, 'onTheGround', sc.company.respStatus) : '')
 const onTheGroundColor2021 = ref(sc.company ? sc.getRangeColor2021(sc.company.previousScore.groundTotalScore, 'onTheGround', sc.company.respStatus) : '')
 const ONTHEGROUND_CARDS = ref<any>({
     haveOnTheGrnd: {

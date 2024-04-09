@@ -11,12 +11,7 @@
 <script setup lang="ts">
 import { useWindowScroll } from '@vueuse/core'
 
-const trStore = useTrStore()
 const appStore = useAppStore()
-
-if (!Object.keys(trStore.translations).length) {
-    await trStore.fetchTranslations() 
-}
 
 const prevY = ref(0)
 const y = ref(useWindowScroll().y)

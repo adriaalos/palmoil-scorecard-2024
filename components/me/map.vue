@@ -39,7 +39,6 @@
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
 const items = ref([
     {
         num: 300,

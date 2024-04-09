@@ -3,8 +3,8 @@
         <div class="w-full absolute top-0 left-0 h-[50%] u-gradient u-gradient--cake-transparent" />
         <div class="u-container u-container--md">
             <header class="u-header">
-                <h2><span class="font-wwf text-green">{{ sc.companies.length }}</span> {{ tr.ho_scatter_title }}</h2>
-                <p>{{ tr.ho_scatter_description_01 }} <span class="font-bold text-green">{{ tr.ho_scatter_description_02 }} {{ sc.average }} {{ tr.gl_outof }} {{ sc.total_outof }}</span> {{ tr.ho_scatter_description_04 }}</p>
+                <h2><span class="font-wwf text-green">{{ sc.companies.length }}</span> {{ $t('ho_scatter_title') }}</h2>
+                <p>{{ $t('ho_scatter_description_01') }} <span class="font-bold text-green">{{ $t('ho_scatter_description_02') }} {{ sc.average }} {{ $t('gl_outof') }} {{ sc.total_outof }}</span> {{ $t('ho_scatter_description_04') }}</p>
             </header>
         </div>
         <div class="u-container">
@@ -13,19 +13,19 @@
                     <div class="w-1/2 flex gap-3">
                         <core-select 
                             class="flex-1"
-                            :placeholder="tr.ho_scatter_filters_sector"
+                            :placeholder="$t('ho_scatter_filters_sector')"
                             :options="sc.filter_sectors"
                             @on-change="onFilter('sector', $event)"
                         />
                         <core-select 
                             class="flex-1"
-                            :placeholder="tr.ho_scatter_filters_country"
+                            :placeholder="$t('ho_scatter_filters_country')"
                             :options="sc.filter_countries"
                             @on-change="onFilter('hq', $event)"
                         />
                         <core-select 
                             class="flex-1"
-                            :placeholder="tr.ho_scatter_filters_region"
+                            :placeholder="$t('ho_scatter_filters_region')"
                             :options="sc.filter_regions"
                             @on-change="onFilter('regionHq', $event)"
                         />
@@ -36,7 +36,7 @@
                                 v-model="search"
                                 type="text" 
                                 class="font-open w-full border border-[#dadada] rounded-[50px] px-3 py-3.5 text-sm focus:outline-none focus:ring-1 focus:ring-gray-300" 
-                                :placeholder="tr.ho_scatter_search_placholder"
+                                :placeholder="$t('ho_scatter_search_placholder')"
                                 @keyup="onSearch"
                             />
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7b7b7b" class="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2">
@@ -48,36 +48,38 @@
                 </div>
                 <div class="u-scatter__resume">
                     <div class="u-scatter__resume__block u-scatter__resume__block--col">
-                        <h5>{{ tr.ho_scatter_resume_palmoil }}</h5>
+                        <h5>{{ $t('ho_scatter_resume_palmoil') }}</h5>
                         <h4>{{ getResumePalmoil }}</h4>
                     </div>
                     <div class="u-scatter__resume__block">
                         <h4>{{ getResumePercentage('sgip') }}%</h4>
-                        <h5>{{ tr.ho_scatter_resume_segregated }}</h5>
+                        <h5>{{ $t('ho_scatter_resume_segregated') }}</h5>
                     </div>
                     <div class="u-scatter__resume__block">
                         <h4>{{ getResumePercentage('is') }}%</h4>
-                        <h5>{{ tr.ho_scatter_resume_credits }}</h5>
+                        <h5>{{ $t('ho_scatter_resume_credits') }}</h5>
                     </div>
                     <div class="u-scatter__resume__block">
                         <h4>{{ getResumePercentage('mb') }}%</h4>
-                        <h5>{{ tr.ho_scatter_resume_mass_balance }}</h5>
+                        <h5>{{ $t('ho_scatter_resume_mass_balance') }}</h5>
                     </div>
                     <div class="u-scatter__resume__block">
                         <h4>{{ getResumePercentage('bAndG') }}%</h4>
-                        <h5>{{ tr.ho_scatter_resume_book_claim }}</h5>
+                        <h5>{{ $t('ho_scatter_resume_book_claim') }}</h5>
                     </div>
                     <div class="u-scatter__resume__block">
                         <h4>{{ getResumePercentage('uncertified') }}%</h4>
-                        <h5>{{ tr.ho_scatter_resume_uncertified }}</h5>
+                        <h5>{{ $t('ho_scatter_resume_uncertified') }}</h5>
                     </div>
                 </div>
-                <apexchart 
-                    class="w-full h-full"
-                    type="scatter" 
-                    :options="options" 
-                    :series="series"
-                />
+                <client-only>
+                    <apexchart 
+                        class="w-full h-full"
+                        type="scatter" 
+                        :options="options" 
+                        :series="series"
+                    />
+                </client-only>
                 <div 
                     class="u-scatter-item"
                     :style="{ 'left': (sc.average / sc.total_outof) * 100 + '%'}"
@@ -96,7 +98,7 @@
                     >
                         {{ sc.average }}
                         <div class="u-scatter-item__data__label">
-                            {{ tr.ho_scatter_axis_x_score_average }}
+                            {{ $t('ho_scatter_axis_x_score_average') }}
                         </div>
                     </div>
                 </div>
@@ -118,7 +120,7 @@
                     >
                         {{ sc.total_outof }}
                         <div class="u-scatter-item__data__label">
-                            {{ tr.ho_scatter_axis_x_objective }}
+                            {{ $t('ho_scatter_axis_x_objective') }}
                         </div>
                     </div>
                 </div>
@@ -130,14 +132,14 @@
         </div>
         <footer class="mt-20">
             <div class="u-container u-container--md">
-                <div class="text-center" v-html="tr.ho_scatter_closing"></div>
+                <div class="text-center" v-html="$t('ho_scatter_closing')"></div>
             </div>
         </footer>
     </section>
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
+const { $i18n } = useNuxtApp()
 const sc = useScStore()
 
 const companies = ref<Company[]>(sc.companies.filter((c: any) => c.respStatus))
@@ -160,7 +162,7 @@ const options = ref ({
             },
         },
         title: {
-            text: tr.gl_total_score,
+            text: $i18n.t('gl_total_score'),
             offsetX: -460,
             offsetY: -10,
             style: {
@@ -182,7 +184,7 @@ const options = ref ({
             },
         },
         title: {
-            text: tr.ho_scatter_axis_y_title,
+            text: $i18n.t('ho_scatter_axis_y_title'),
             style: {
                 fontFamily: 'Open Sans',
                 cssClass: 'u-scatter-yaxis-title',
@@ -282,7 +284,7 @@ const renderTooltip = (company: Company) => {
         def_platforms?.label,
     )
     str += renderCategory(
-        company.onTheGround.groundTotalScore,
+        company.onTheGround.onTheGroundTotalScore,
         def_onTheGround?.out_of,
         def_onTheGround?.id,
         company.respStatus,

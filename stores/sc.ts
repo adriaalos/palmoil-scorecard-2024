@@ -1,42 +1,42 @@
 import { defineStore } from 'pinia'
 
 export const useScStore = defineStore('scStore', () => {
-    const tr = useTrStore().translations
+    const { $i18n } = useNuxtApp()
     const companies = ref<Company[]>([])
     const company = ref<Company|null>(null)
     const average = ref<number>(0)
     const ranges = ref<any>([
         {
             id: 'non-respondent',
-            name: tr.sc_range_05,
+            name: $i18n.t('sc_range_05'),
             color: '#C1C1C1',
             range: null,
             data: [],
         },
         {
             id: 'lagging-behind',
-            name: tr.sc_range_04,
+            name: $i18n.t('sc_range_04'),
             color: '#E46466',
             range: [0, 10.99],
             data: [],
         },
         {
             id: 'middle-of-the-pack',
-            name: tr.sc_range_03,
+            name: $i18n.t('sc_range_03'),
             color: '#E4C864',
             range: [11, 16.49],
             data: [],
         },
         {
             id: 'intermediate',
-            name: tr.sc_range_02,
+            name: $i18n.t('sc_range_02'),
             color: '#96b441',
             range: [16.5, 19.5],
             data: [],
         },
         {
             id: 'advanced',
-            name: tr.sc_range_01,
+            name: $i18n.t('sc_range_01'),
             color: '#41b464',
             range: [19.5, 24],
             data: [],
@@ -45,35 +45,35 @@ export const useScStore = defineStore('scStore', () => {
     const ranges2021 = ref<any>([
         {
             id: 'non-respondent',
-            name: tr.sc_range_05,
+            name: $i18n.t('sc_range_05'),
             color: '#C1C1C1',
             range: null,
             data: [],
         },
         {
             id: 'lagging-behind',
-            name: tr.sc_range_04,
+            name: $i18n.t('sc_range_04'),
             color: '#E46466',
             range: [0, 10.99],
             data: [],
         },
         {
             id: 'middle-of-the-pack',
-            name: tr.sc_range_03,
+            name: $i18n.t('sc_range_03'),
             color: '#E4C864',
             range: [11, 16.49],
             data: [],
         },
         {
             id: 'intermediate',
-            name: tr.sc_range_02,
+            name: $i18n.t('sc_range_02'),
             color: '#96b441',
             range: [16.5, 19.5],
             data: [],
         },
         {
             id: 'advanced',
-            name: tr.sc_range_01,
+            name: $i18n.t('sc_range_01'),
             color: '#41b464',
             range: [19.5, 24],
             data: [],
@@ -93,7 +93,7 @@ export const useScStore = defineStore('scStore', () => {
     const categories = ref([
         {
             id: 'commitments',
-            label: tr.sc_type_commitment,
+            label: $i18n.t('sc_type_commitment'),
             total: 'commitTotalScore',
             out_of: 4,
             sections: [
@@ -141,7 +141,7 @@ export const useScStore = defineStore('scStore', () => {
         },
         {
             id: 'purchasing',
-            label: tr.sc_type_purchasing,
+            label: $i18n.t('sc_type_purchasing'),
             out_of: 11,
             sections: [
                 {
@@ -173,7 +173,7 @@ export const useScStore = defineStore('scStore', () => {
         },
         {
             id: 'suppliers',
-            label: tr.sc_type_suppliers,
+            label: $i18n.t('sc_type_suppliers'),
             out_of: 3,
             sections: [
                 {
@@ -220,7 +220,7 @@ export const useScStore = defineStore('scStore', () => {
         },
         {
             id: 'platforms',
-            label: tr.sc_type_platforms,
+            label: $i18n.t('sc_type_platforms'),
             out_of: 2,
             sections: [
                 {
@@ -258,7 +258,7 @@ export const useScStore = defineStore('scStore', () => {
         },
         {
             id: 'onTheGround',
-            label: tr.sc_type_ground,
+            label: $i18n.t('sc_type_ground'),
             out_of: 4,
             sections: [
                 {

@@ -42,32 +42,32 @@
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
+const { $i18n } = useNuxtApp()
 const nav = ref([
     {
         id: 'about',
-        title: tr.ab_name,
-        url: `/${tr.ab_url}`
+        title: $i18n.t('ab_name'),
+        url: `/${$i18n.t('ab_url')}`
     },
     {
         id: 'scores',
-        title: tr.sc_name,
-        url: `/${tr.sc_url}`
+        title: $i18n.t('sc_name'),
+        url: `/${$i18n.t('sc_url')}`
     },
     {
         id: 'analysis',
-        title: tr.an_name,
-        url: `/${tr.an_url}`
+        title: $i18n.t('an_name'),
+        url: `/${$i18n.t('an_url')}`
     },
     {
         id: 'recommendations',
-        title: tr.re_name,
-        url: `/${tr.re_url}`
+        title: $i18n.t('re_name'),
+        url: `/${$i18n.t('re_url')}`
     },
     {
         id: 'methodology',
-        title: tr.me_name,
-        url: `/${tr.me_url}`
+        title: $i18n.t('me_name'),
+        url: `/${$i18n.t('me_url')}`
     }
 ])
 const legal = ref([

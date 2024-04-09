@@ -202,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2 px-6 py-6">
+                <!-- <div class="w-1/2 px-6 py-6">
                     <div class="flex items-center justify-center">
                         <nuxt-link 
                             :to="`/case-studies/${sc.company.id}`"
@@ -211,7 +211,7 @@
                             <span>GO TO CASE STUDY 2024</span>
                         </nuxt-link>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -219,7 +219,6 @@
 
 <script setup lang="ts">
 const sc = useScStore()
-const tr = useTrStore().translations
 
 // Commitments
 const commitments = ref(sc.categories.find(c => c.id === 'commitments'))
@@ -255,10 +254,10 @@ const platforms_median_per = sc.companies.length && platforms.value ? sc.compani
 
 // On the ground
 const onTheGround = ref(sc.categories.find(c => c.id === 'onTheGround'))
-const onTheGround_pts = ref(sc.company ? sc.company.onTheGround.groundTotalScore : 0)
-const onTheGround_per = ref(sc.company && onTheGround.value ? sc.company.onTheGround.groundTotalScore / onTheGround.value.out_of * 100 : '')
+const onTheGround_pts = ref(sc.company ? sc.company.onTheGround.onTheGroundTotalScore : 0)
+const onTheGround_per = ref(sc.company && onTheGround.value ? sc.company.onTheGround.onTheGroundTotalScore / onTheGround.value.out_of * 100 : '')
 const onTheGround_max = ref(onTheGround.value ? onTheGround.value.out_of : 0)
-const onTheGround_color = ref(sc.company ? sc.getRangeColor(sc.company.onTheGround.groundTotalScore, 'onTheGround', sc.company.respStatus) : '')
-const onTheGround_median_per = sc.companies.length && onTheGround.value ? sc.companies.reduce((acc, c) => acc + c.onTheGround.groundTotalScore, 0) / sc.companies.length / onTheGround.value.out_of * 100 : 0
+const onTheGround_color = ref(sc.company ? sc.getRangeColor(sc.company.onTheGround.onTheGroundTotalScore, 'onTheGround', sc.company.respStatus) : '')
+const onTheGround_median_per = sc.companies.length && onTheGround.value ? sc.companies.reduce((acc, c) => acc + c.onTheGround.onTheGroundTotalScore, 0) / sc.companies.length / onTheGround.value.out_of * 100 : 0
 
 </script>

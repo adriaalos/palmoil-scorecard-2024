@@ -102,6 +102,22 @@
                                         
                                     </div>
                                 </div>
+                                <div class="u-result-card__legend">
+                                    <ul>
+                                        <li>
+                                            <span class="bg-[#41B464]"></span>
+                                            <span>SG/IP/IS</span>
+                                        </li>
+                                        <li>
+                                            <span class="bg-[#83DA9E]"></span>
+                                            <span>MB</span>
+                                        </li>
+                                        <li>
+                                            <span class="bg-[#BBE5C8]"></span>
+                                            <span>B&C</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="mt-10">
@@ -154,6 +170,22 @@
                                         
                                     </div>
                                 </div>
+                                <div class="u-result-card__legend">
+                                    <ul>
+                                        <li>
+                                            <span class="bg-[#41B464]"></span>
+                                            <span>SG/IP/IS</span>
+                                        </li>
+                                        <li>
+                                            <span class="bg-[#83DA9E]"></span>
+                                            <span>MB</span>
+                                        </li>
+                                        <li>
+                                            <span class="bg-[#BBE5C8]"></span>
+                                            <span>B&C</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -163,7 +195,7 @@
                         </header>
                         <div class="flex m-3">
                             <div 
-                                v-for="item in PURCHASING_COUNTRIES.filter(c => c.volume > 0)"
+                                v-for="item in PURCHASING_COUNTRIES"
                                 class="w-2/12 p-3"
                             >
                                 <template v-if="item.volume > 0">
@@ -223,7 +255,6 @@
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
 const sc = useScStore()
 
 const purchasing = ref(sc.categories.find(c => c.id === 'purchasing'))
@@ -248,8 +279,8 @@ const PURCHASING_CARDS = ref<any>({
 });
 
 const PURCHASING_TOOLTIPS = ref([
-    'Purchasing RSPO CSPO is a simple action any company can take towards cleaning its own supply chain and incentivising more sustainable production. Currently a significant percentage of RSPO CSPO is unsold and remains available for purchase. Closing this gap of oversupply will send an important signal to producers that markets support sustainable palm oil. WWF scored companies based on the proportion of their total palm oil sourcing that is certified as sustainable under one or more RSPO supply chain models. A bonus point is awarded to companies that have gone all the way to ensure they are 100% covered by RSPO CSPO. Data is drawn from the company\'s RSPO 2020 Annual Communication of Progress reports and represents self-declared information that has been verified by WWF.',
-    'In their 2020 Annual Communication of Progress reports, members of the RSPO were asked to provide insight into their purchases of sustainable palm oil across nine geographies they operate in. Data represented on this map are estimates based on self-declared information.',
+    'Purchasing RSPO CSPO is a simple action any company can take towards cleaning its own supply chain and incentivising more sustainable production. Currently a significant percentage of RSPO CSPO is unsold and remains available for purchase. Closing this gap of oversupply will send an important signal to producers that markets support sustainable palm oil. WWF scored companies based on the proportion of their total palm oil sourcing that is certified as sustainable under one or more RSPO supply chain models. A bonus point is awarded to companies that have gone all the way to ensure they are 100% covered by RSPO CSPO. Data is drawn from the company\'s RSPO 2022 Annual Communication of Progress reports and represents self-declared information that has been verified by WWF.',
+    'In their 2022 Annual Communication of Progress reports, members of the RSPO were asked to provide insight into their purchases of sustainable palm oil across nine geographies they operate in. Data represented on this map are estimates based on self-declared information.',
     'WWF expects palm oil buyers to disclose their palm oil usage and sustainability efforts across their entire operations — including all palm volumes and types they source, and geographies in which they operate. If a company is part of a corporate group, the same must be true for the group level.',
 ])
 

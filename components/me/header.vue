@@ -7,7 +7,3 @@
         </div>
     </header>
 </template>
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>

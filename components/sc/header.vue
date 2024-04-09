@@ -3,15 +3,15 @@
     <header class="u-page-header">
         <div class="u-page-header__container u-container u-container--lg">
             <div class="u-page-header__header">
-                <h1>{{ tr.sc_header_title }}</h1>
+                <h1>{{ $t('sc_header_title') }}</h1>
             </div>
             <div class="u-page-header__cta">
                 <a 
-                    :href="tr.ho_report_url"
+                    :href="$t('ho_report_url')"
                     target="_blank"
                     class="u-button u-button--greendark"
                 >
-                    <span>{{ tr.sc_header_download_button }}</span>
+                    <span>{{ $t('sc_header_download_button') }}</span>
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.75 13.7514L16 19L21.25 13.7514" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M16 5V18.9963" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -22,7 +22,3 @@
         </div>
     </header>
 </template>
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>

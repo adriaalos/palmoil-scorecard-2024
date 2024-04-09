@@ -14,7 +14,7 @@
                                 v-if="sc.company.respStatus"
                                 :class="[ `u-sc-text ${rangeTotal} font-bold text-sm text-center`]"
                                 >
-                                <span v-html="tr.sc_co_stats_total_outof" /> {{ sc.total_outof }} 
+                                <span v-html="$t('sc_co_stats_total_outof')" /> {{ sc.total_outof }} 
                             </div>
                         </div>
                         <div class="flex-1">
@@ -31,13 +31,13 @@
                                     <div class="flex justify-end w-[90px] font-wwf u-fs31">
                                         <span :class="[ `u-sc-text ${rangeTotal}`]">{{ sc.company.ownSupplyChn }}</span>/{{ sc.supply_chain_own }}
                                     </div>
-                                    <p class="font-bold text-xs">{{ tr.sc_co_stats_ownSupplyChn }}</p>
+                                    <p class="font-bold text-xs">{{ $t('sc_co_stats_ownSupplyChn') }}</p>
                                 </div>
                                 <div class="flex items-center space-between gap-x-5 text-[#7B7B7B]">
                                     <div class="flex justify-end w-[90px] font-wwf u-fs31">
                                         <span :class="[ `u-sc-text ${rangeTotal}`]">{{ sc.company.byondSupChain }}</span>/{{ sc.supply_chain_beyond }}
                                     </div>
-                                    <p class="font-bold text-xs">{{ tr.sc_co_stats_byondSupChain }}</p>
+                                    <p class="font-bold text-xs">{{ $t('sc_co_stats_byondSupChain') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                 >
                                     {{ sc.company.commitments.commitTotalScore }}
                                 </div>
-                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                                <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
                                 <core-range-balance 
                                     v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
                                     :current="sc.company.commitments.commitTotalScore" 
@@ -96,7 +96,7 @@
                                 >
                                     {{ sc.company.purchasing.purchTotalScore }}
                                 </div>
-                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                                <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
                                 <core-range-balance 
                                     v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
                                     :current="sc.company.purchasing.purchTotalScore" 
@@ -125,7 +125,7 @@
                                 >
                                     {{ sc.company.suppliers.supTotalScore }}
                                 </div>
-                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                                <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
                                 <core-range-balance 
                                     v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
                                     :current="sc.company.suppliers.supTotalScore" 
@@ -154,7 +154,7 @@
                                 >
                                     {{ sc.company.platforms.platformsTotalScore }}
                                 </div>
-                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                                <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
                                 <core-range-balance 
                                     v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
                                     :current="sc.company.platforms.platformsTotalScore" 
@@ -178,15 +178,15 @@
                                     v-if="sc.company.respStatus"
                                     :class="[
                                         'u-range u-range--bg', 
-                                        sc.getRangeColor(sc.company.onTheGround.groundTotalScore, onTheGround.id, true)
+                                        sc.getRangeColor(sc.company.onTheGround.onTheGroundTotalScore, onTheGround.id, true)
                                     ]"
                                 >
-                                    {{ sc.company.onTheGround.groundTotalScore }}
+                                    {{ sc.company.onTheGround.onTheGroundTotalScore }}
                                 </div>
-                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                                <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
                                 <core-range-balance
                                     v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
-                                    :current="sc.company.onTheGround.groundTotalScore" 
+                                    :current="sc.company.onTheGround.onTheGroundTotalScore" 
                                     :old="sc.company.previousScore.groundTotalScore"
                                 />
                                 <div
@@ -210,7 +210,7 @@
                                 >
                                     {{ sc.company.companyTotalScore }}
                                 </div>
-                                <span class="u-noscore" v-else>{{ tr.gl_no_score }}</span>
+                                <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
                                 <core-range-balance 
                                     v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
                                     :current="sc.company.companyTotalScore" 
@@ -234,7 +234,6 @@
 
 <script setup lang="ts">
 const sc = useScStore()
-const tr = useTrStore().translations
 
 const commitments = ref(sc.categories.find(c => c.id === 'commitments'))
 const purchasing = ref(sc.categories.find(c => c.id === 'purchasing'))

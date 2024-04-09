@@ -196,7 +196,6 @@
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
 const sc = useScStore()
 
 const commitments = ref(sc.categories.find(c => c.id === 'commitments'))
@@ -219,7 +218,7 @@ const COMMITMENTS_CARDS = ref<any>({
     },
     commitRspoCpo: {
         options: {
-            yes: 'Company has a commitment to source 100% RSPO CSPO by 2020 (or earlier)',
+            yes: 'Company has a commitment to source 100% RSPO CSPO by 2023 (or earlier)',
             partially_non_date: 'Company has a commitment to source 100% RSPO CSPO, but has not set an explicit target date',
             partially_target_date: 'Company has a commitment to source 100% RSPO CSPO, but has set a target date of ',
             no: 'Company does not has a commitment to source 100% RSPO CSPO',
@@ -230,7 +229,7 @@ const COMMITMENTS_CARDS = ref<any>({
 const COMMITMENT_TOOLTIPS = [
     'In alignment with the Accountability Framework\'s definitions, WWF expects palm oil buyers to have a commitment to sourcing palm oil that is produced without deforestation or natural ecosystem conversion. This commitment also needs to cover the company\s entire operations — including all palm oil volumes and types sourced, and geographies in which the company operates. If a company is part of a corporate group, the same must be true for the group level.',
     'In alignment with the Accountability Framework\'s definitions, WWF expects palm oil buyers to have a human rights commitment that covers the rights of all stakeholder groups that may be negatively impacted by palm oil production or trade (including Indigenous peoples, local communities, workers and others who may be impacted by company activities). This commitment also needs to cover the company\'s entire operations — including all palm oil volumes and types sourced,  and geographies in which the company operates. If a company is part of a corporate group, the same must be true for the group level.',
-    'Making a public, time-bound commitment to sourcing 100% RSPO CSPO is a simple action all palm oil buyers can take towards cleaning their own supply chain and incentivising more sustainable palm oil production. WWF expects palm oil buyers to have a sufficiently challenging target date that they have ideally already met. Although 2020 has already passed, it was the year that many companies included in the previous Palm Oil Buyers Scorecard pledged to be 100% covered by RSPO CSPO.',
+    'Making a public, time-bound commitment to sourcing 100% RSPO CSPO is a simple action all palm oil buyers can take towards cleaning their own supply chain and incentivising more sustainable palm oil production. WWF expects palm oil buyers to have a sufficiently challenging target date that they have ideally already met. Although 2023 has already passed, it was the year that many companies included in the previous Palm Oil Buyers Scorecard pledged to be 100% covered by RSPO CSPO.',
 ]
 
 const getCommitmentDescription = (field: any) => {
@@ -280,7 +279,7 @@ const getCommitCorp = () => {
     }
     if (sc.company?.commitments.commitCorp.toLowerCase().includes('company')) {
         return {
-            class: 'partially',
+            class: 'ok',
             text: 'ENTIRE COMPANY',
         }
     }
@@ -301,7 +300,7 @@ const getCommitEntCorp = () => {
     }
     if (sc.company?.commitments.commitEntCorp.toLowerCase().includes('company')) {
         return {
-            class: 'partially',
+            class: 'ok',
             text: 'ENTIRE COMPANY',
         }
     }

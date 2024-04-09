@@ -112,7 +112,8 @@ declare global {
             investForest: boolean,
             investLandScape: boolean,
             investCons: boolean,
-            groundTotalScore: number
+            groundTotalScore: number,
+            onTheGroundTotalScore: number
         },
         "previousScore": {
             "id": number,

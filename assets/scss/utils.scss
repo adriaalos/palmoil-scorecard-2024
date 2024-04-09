@@ -370,7 +370,7 @@ p {
 }
 
 .u-noscore {
-    @apply block max-w-[40px] mx-auto font-wwf text-lg uppercase  text-[#c1c1c1] leading-tight text-center;
+    @apply block mx-auto font-wwf text-lg uppercase  text-[#c1c1c1] leading-tight text-center whitespace-pre;
 }
 
 .u-modal {
@@ -678,6 +678,23 @@ p {
         }
         &__total {
             @apply w-[32px] h-[32px] absolute top-1/2 trasnfrom -translate-y-1/2 -translate-x-full rounded-full flex items-center justify-center bg-[#41b464] text-white border-2 border-white font-wwf text-sm;
+        }
+    }
+    &__legend {
+        @apply mt-6;
+        ul {
+            @apply flex items-center space-x-6;
+            li {
+                @apply flex items-center space-x-1;
+                span {
+                    &:first-child {
+                        @apply w-[18px] h-[18px] rounded-full;
+                    }
+                    &:last-child {
+                        @apply text-sm text-[#7B7B7B] font-bold;
+                    }
+                }
+            }
         }
     }
     &--yes {

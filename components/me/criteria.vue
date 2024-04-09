@@ -109,7 +109,7 @@
                                             *stakeholder groups includes workers, indigenous people, local communities, and others who may be impacted by company activities
                                         </li>
                                         <li>
-                                            <strong>1 point</strong> f human rights commitment covers the rights of all relevant stakeholder groups* and meets all of the Accountability Framework’s definitions and requirements
+                                            <strong>1 point</strong> if human rights commitment covers the rights of all relevant stakeholder groups* and meets all of the Accountability Framework’s definitions and requirements
                                         </li>
                                         <li>
                                             [<strong>1 point</strong> for commitment]
@@ -618,10 +618,6 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>
 
 <style scoped lang="scss">
 .chain {

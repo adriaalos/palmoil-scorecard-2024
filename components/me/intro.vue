@@ -1,8 +1,8 @@
 <template>
     <div class="h-[75vh] flex items-end pb-44">
-        <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="@/assets/img/me-intro.jpg" alt="HOW WERE TRADERS ASSESSED?">
+        <img class="absolute top-0 left-0 w-full h-full object-cover object-center" src="@/assets/img/me-intro.jpg" alt="HOW WERE BUYERS ASSESSED?">
         <div class="u-container u-container--lg">
-            <h2 class="font-wwf u-fs100 text-white">HOW WERE TRADERS ASSESSED?</h2>
+            <h2 class="font-wwf u-fs100 text-white">HOW WERE BUYERS ASSESSED?</h2>
         </div>
     </div>
     <div class="u-container u-container--lg">
@@ -24,7 +24,3 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>

@@ -30,7 +30,7 @@
                         <div class="u-result-grid-block border-r flex-1">
                             <div class="u-result-block">
                                 <header>
-                                    <h3 class="u-result-block__header noline"><span>Does the company expect suppliers to have a commitment to sourcing deforestation- and conversion-free palm oil?</span></h3>
+                                    <h3 class="u-result-block__header noline"><span>IS THE COMPANY A MEMBER OF THE RSPO?</span></h3>
                                 </header>
                                 <div :class="[`u-result-card u-result-card--${transformBooleanYesNo(sc.company.platforms.rspoMember)}`]">
                                     <div class="u-result-card__ans">
@@ -57,7 +57,7 @@
                         <div v-if="sc.company.platforms.rspoMember" class="u-result-grid-block border-r flex-1">
                             <div class="u-result-block">
                                 <header>
-                                    <h3 class="u-result-block__header noline"><span>if member of rspo - Score in the SR scorecard Requirement set by RSPO?</span></h3>
+                                    <h3 class="u-result-block__header noline"><span>What was your RSPO SR score?</span></h3>
                                 </header>
                                 <div :class="[`u-result-card u-result-card--yes`]">
                                     <div class="u-result-card__ans">
@@ -84,7 +84,7 @@
                         <div class="u-result-grid-block flex-1">
                             <div class="u-result-block">
                                 <header>
-                                    <h3 class="u-result-block__header noline"><span>Does the company expect suppliers to have a commitment to sourcing deforestation- and conversion-free palm oil?</span></h3>
+                                    <h3 class="u-result-block__header noline"><span>DOES THE COMPANY TAKE PART IN OTHER ACTION-ORIENTED SUSTAINABILITY PLATFORMS?</span></h3>
                                 </header>
                                 <div :class="[`u-result-card u-result-card--${transformBooleanYesNo(sc.company.platforms.poigMemeber)}`]">
                                     <div class="u-result-card__ans">
@@ -115,7 +115,6 @@
 </template>
 
 <script setup lang="ts">
-const tr = useTrStore().translations
 const sc = useScStore()
 
 const platforms = ref(sc.categories.find(c => c.id === 'platforms'))

@@ -94,7 +94,7 @@
             </div>
             <div class="flex justify-center mt-20">
                 <nuxt-link 
-                    :to="`/${tr.sc_url}`"
+                    :to="`/${$t('sc_url')}`"
                     class="u-button"
                 >
                     <span>CHECK COMPANY SCORES</span>
@@ -106,8 +106,3 @@
         </div>
     </section>
 </template>
-
-
-<script setup lang="ts">
-const tr = useTrStore().translations
-</script>
