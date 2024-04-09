@@ -12,6 +12,9 @@ p {
         @apply underline text-green;
     }
 }
+ul {
+    @extend .u-fs18;
+}
 
 .u-fs18 {
     @apply text-lg leading-[38px];
@@ -25,6 +28,9 @@ p {
 .u-fs24 {
     @apply text-[24px] leading-[48px];
 }
+.u-fs24noleaded {
+    @apply text-[24px] leading-[28px];
+}
 .u-fs28 {
     @apply text-[28px];
 }
@@ -36,6 +42,9 @@ p {
 }
 .u-fs32 {
     @apply text-[32px] leading-[52px];
+}
+.u-fs32noleaded {
+    @apply text-[32px] leading-[34px];
 }
 .u-fs34 {
     @apply text-[34px] leading-[38px];

@@ -1,5 +1,8 @@
 <template>
     <div>
-        Analysis
+        <an-header />
+        <an-intro />
+        <an-resume />
+        <an-performing />
     </div>
 </template>
