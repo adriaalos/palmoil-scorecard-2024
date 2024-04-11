@@ -46,9 +46,9 @@
                                     <ul>
                                         <li>
                                             <strong>0.5 points</strong>  if the commitment covers the entire company/corporate group (including all volumes and palm oil types)
-
                                         </li>
                                     </ul>
+                                    <p class="mt-6"><strong>[0.5 points total for scope]</strong></p>
                                 </div>
                             </div>
                             <div class="chain__block__col">
@@ -122,6 +122,7 @@
                                             <strong>0.5 points</strong> if the commitment covers the entire company/corporate group (including all volumes and palm oil types)
                                         </li>
                                     </ul>
+                                    <p class="mt-6"><strong>[0.5 points total for scope]</strong></p>
                                 </div>
                             </div>
                             <div class="chain__block__col">
@@ -374,7 +375,7 @@
                                             <strong>0.5 points</strong> if your company expects its suppliers to have a human rights commitment that covers the rights of all relevant stakeholder groups* and meets all of the Accountability Framework’s definitions and requirements
                                         </li>
                                         <li>
-                                            <strong>0.25</strong> points if your company expects its suppliers to have a human rights commitment, but does not specify at least one of the following: a) that the commitment should meet the Accountability Framework’s definitions AND/OR b) that the commitment shoul
+                                            <strong>0.25</strong> points if human rights commitment does not cover the rights of all relevant stakeholders groups or only partially meets the Accountability Framework’s definitions and requirements
                                         </li>
                                     </ul>
                                 </div>
@@ -418,7 +419,7 @@
                         </div>
                         <div class="chain__block__grid">
                             <div class="chain__block__col">
-                                <p class="chain__block__point">1.5 <span>POINTS</span></p>
+                                <p class="chain__block__point">1 <span>POINT</span></p>
                                 <div class="chain__block__label">
                                     <p>
                                         DOES YOUR COMPANY HAVE A MONITORING SYSTEM TO MEASURE TRACEABILITY OF PALM OIL PURCHASED TO THE MILL OR PLANTATION?
@@ -443,6 +444,58 @@
                                         <li><strong>0.5 points</strong> if % TTP is less than 50 %</li>
                                     </ul>
                                 </div>
+                            </div>
+                            <div class="chain__block__col">
+                                <div class="chain__block__turr">
+                                    <h4 class="chain__block__subheader">WHY ARE WE ASKING THIS?</h4>
+                                    <div class="chain__block__description">
+                                        <p>
+                                            It is important for companies to put robust systems in place to monitor and respond to non-compliance with their sourcing policies, including their commitments to source palm oil that is free from deforestation and conversion and respects human rights. Robust monitoring systems can help companies identify, mitigate, and address non-compliances with their sourcing policies.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="chain__block__turr">
+                                    <h4 class="chain__block__subheader">WHAT ARE WE LOOKING FOR?</h4>
+                                    <div class="chain__block__description">
+                                        <p>
+                                            WWF recognises that monitoring for deforestation and human rights violations is complex and selecting the best systems is often company specific, depending on factors such as the range of commodities sourced by the company, the specific geography, and the company’s position in the supply chain. We also recognise that the development of robust monitoring systems is fairly recent and there is potential for rapid improvements in the coming months and years. For these reasons, and in alignment with AFi guidance, we ask companies to select or develop a monitoring system that best addresses their individual needs and risks profiles. For the purpose of this scorecard, we award full points to any company that can demonstrate they are actively monitoring for compliance with their commitments to source palm oil that is free from deforestation and conversion, and respects human rights.
+                                        </p>
+                                        <p>
+                                            For more information on how to select the best monitoring platform for your company, please see the guidance from the Accountability Framework.
+                                        </p>
+                                        <div class="chain__block__description__note">
+                                            <p>
+                                                Monitoring: An ongoing function that uses the systematic collection of data on specific metrics to assess and document the extent to which actions, progress, performance, and compliance are being carried out or achieved.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chain__block__grid">
+                            <div class="chain__block__col">
+                                <p class="chain__block__point">1 <span>POINT</span></p>
+                                <div class="chain__block__label">
+                                    <p>
+                                        DOES YOUR COMPANY MONITOR ITS SUPPLIERS FOR COMPLIANCE WITH ITS POLICIES AND COMMITMENTS?
+                                    </p>
+                                </div>
+                                <div class="chain__block__sublabel">
+                                    <p>
+                                        Whether a company monitors suppliers for compliance with its policies and commitments
+                                    </p>
+                                </div>
+                                <div class="chain__block__points">
+                                    <ul>
+                                        <li>
+                                            <strong>0.5 point</strong> if your company has monitoring and response systems in place to monitor supplier compliance with deforestation- and/or conversion-free commitments
+                                        </li>
+                                        <li>
+                                            <strong>0.5 points</strong>  if your company has monitoring and response systems in place to monitor supplier compliance with human rights commitments
+                                        </li>
+                                    </ul>
+                                </div>
+                                
                             </div>
                             <div class="chain__block__col">
                                 <div class="chain__block__turr">
@@ -511,14 +564,14 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="chain__block__points">
+                                <!-- <div class="chain__block__points">
                                     <ul>
                                         <li>
                                             <strong>0.5 points</strong>  if the commitment covers the entire company/corporate group (including all volumes and palm oil types)
 
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="chain__block__col">
                                 <div class="chain__block__turr">
@@ -576,7 +629,7 @@
                                         <li>Supporting Landscape or jurisdictional approaches</li>
                                         <li>Protection of rare threatened and endangered (RTE) wildlife species</li>
                                     </ul>
-                                    <p>An additional 1.5 points are awarded if</p>
+                                    <p><br>An additional 1.5 points are awarded if:</p>
                                     <ul>
                                         <li>
                                             Nature of the supporting smallholder producers project matches the types of support to smallholder producers listed in Table 1 of AFI Operational Guidance on Smallholder Inclusion in Ethical Supply Chains (1.5 points), or

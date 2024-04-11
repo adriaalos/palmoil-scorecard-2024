@@ -34,8 +34,11 @@ ul {
 .u-fs28 {
     @apply text-[28px];
 }
+.u-fs28noleaded {
+    @apply text-[28px] leading-[28px];
+}
 .u-fs30 {
-    @apply text-[30px];
+    @apply text-[30px] leading-[30px];
 }
 .u-fs31 {
     @apply text-[31px];
@@ -64,23 +67,44 @@ ul {
 .u-fs44 {
     @apply text-[44px] leading-[54px];
 }
+.u-fs44noleaded {
+    @apply text-[44px] leading-[48px];
+}
 .u-fs48 {
     @apply text-[48px] leading-[52px];
 }
 .u-fs55 {
     @apply text-[55px] leading-[62px];
 }
+.u-fs58 {
+    @apply text-[58px] leading-[60px];
+}
+.u-fs60 {
+    @apply text-[60px] leading-[60px];
+}
 .u-fs62 {
-    @apply text-[62px];
+    @apply text-[62px] leading-[62px];
+}
+.u-fs65 {
+    @apply text-[65px];
 }
 .u-fs68 {
     @apply text-[68px] leading-[72px];
+}
+.u-fs72 {
+    @apply text-[72px] leading-[72px];
+}
+.u-fs78 {
+    @apply text-[78px] leading-[78px];
 }
 .u-fs88 {
     @apply text-[88px] leading-[62px];
 }
 .u-fs100 {
     @apply text-[100px] leading-[100px];
+}
+.u-fs118 {
+    @apply text-[118px] leading-[100px];
 }
 .u-fs126 {
     @apply text-[126px] leading-[126px];
@@ -128,7 +152,7 @@ ul {
     }
 }
 .u-container {
-    @apply mx-auto max-w-[1280px] px-9;
+    @apply mx-auto max-w-[1190px] px-9;
     &--lg {
         @apply max-w-[1024px];
     }
@@ -764,4 +788,127 @@ ul {
 }
 .v-popper__arrow-inner {
     border-color: rgb(255 250 243)!important;
+}
+
+.u-title-ribbon {
+    @apply mt-20 mb-16;
+    .line {
+        @apply w-full h-px bg-[#DADADA] absolute top-1/2 left-0 transform -translate-y-1/2;
+    }
+    h3 {
+        @extend .u-fs32;
+        @apply flex-inline bg-white px-6 font-wwf text-[#B7B7B7] uppercase;
+    }
+}
+
+.u-an {
+    @apply flex space-x-3;
+    &__indicator {
+        @apply flex space-x-4;
+    }
+    &__num {
+        @apply min-w-[82px] min-h-[82px] h-[82px] rounded-full flex items-center justify-center bg-green;
+        span {
+            @extend .u-fs65;
+            @apply text-white font-wwf -top-1;
+        }
+    }
+    &__separator {
+        @apply w-px h-[155px] bg-[#DADADA];
+    }
+    &__header {
+        @apply mb-6;
+        h3 {
+            @extend .u-fs32noleaded;
+            @apply font-wwf uppercase;
+        }
+    }
+    &__grid {
+        @apply flex space-x-6;
+    }
+    &__text {
+        p {
+            @apply text-base leading-loose;
+        }
+    }
+    &__badge {
+        @apply rounded-[12px] overflow-hidden;
+        &__pic {
+            @apply w-full h-full absolute top-0 left-0;
+            img {
+                @apply w-full h-full object-cover object-center;
+            }
+        }
+        &__text {
+            @apply p-6 flex flex-col space-y-1 font-wwf text-white uppercase;
+            &__grid {
+                @apply flex space-x-4;
+            }
+        }
+        &--dark {
+            .u-an__badge__text {
+                @apply text-black;
+            }
+            p {
+                @apply text-sm font-open normal-case;
+            }
+        }
+    }
+    &__mapblock {
+        @apply w-[260px] p-6 bg-cake absolute rounded-[12px];
+        .title {
+            @extend .u-fs24;
+            @apply font-wwf uppercase;
+        }
+        ul {
+            li {
+                @apply flex items-center space-x-4 border-t border-t-[#DADADA] py-2;
+                span {
+                    &:first-child {
+                        @extend .u-fs30;
+                        @apply font-wwf text-green;
+                    }
+                    &:last-child {
+                        @apply text-xs;
+                    }
+                }
+            }
+        }
+    }
+    &__ground {
+        @apply flex flex-col justify-center space-y-4 flex-1;
+        .stat {
+            @apply flex flex-col justify-center text-center font-wwf text-green;
+            span {
+                &:first-child {
+                    @extend .u-fs60;
+                }
+                &:last-child {
+                    @extend .u-fs20;
+                }
+            }
+        }
+        .name {
+            @extend .u-fs28noleaded;
+            @apply text-center text-green font-wwf uppercase;
+        }
+    }
+    &__radar {
+        @apply w-1/2 px-6 py-6;
+        h4 {
+            @apply mb-4 font-wwf uppercase text-sm;
+        }
+        .grid {
+            @apply flex;
+            > * {
+                @apply flex-1;
+            }
+            ul {
+                @apply list-disc ml-6 text-base;
+                li {
+                    @apply mb-1 last:mb-0;
+                }
+            }
+        }
+    }
 }

@@ -2,16 +2,16 @@
     <section class="u-section u-section--cake py-10">
         <div class="u-container">
             <div class="flex">
-                <div class="w-1/2">
-                    <div class="flex flex-col gap-y-8 h-full pt-12 px-12 pb-2 bg-green rounded-l-[12px]">
-                        <div v-html="$t('ho_app_text')" />
-                        <div class="flex items-baseline">
+                <div class="w-6/12">
+                    <div class="flex flex-col gap-y-8 h-full py-12 px-12 bg-green rounded-l-[12px]">
+                        <div v-html="$t('ho_app_text')" class="[&>p]:text-base" />
+                        <!-- <div class="flex items-baseline">
                             <p class="text-white text-sm">{{ $t('ho_app_by') }}</p>
                             <img src="@/assets/img/ho-app-waza.png" alt="Waza">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-                <div class="w-1/2 flex">
+                <div class="w-6/12 flex">
                     <div class="w-1/2" v-motion-slide-visible-once-bottom>
                         <img 
                             class="absolute top-1/2 transform -translate-y-1/2"

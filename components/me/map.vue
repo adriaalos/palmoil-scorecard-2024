@@ -41,20 +41,20 @@
 <script setup lang="ts">
 const items = ref([
     {
-        num: 300,
-        label: 'Number of companies assessed',
+        num: 285,
+        label: 'Number of companies approached',
     },
     {
         num: 147,
-        label: 'Companies assessed in Manufacturers',
+        label: 'Companies approached in Manufacturers',
     },
     {
         num: 63,
-        label: 'Companies assessed in Retailer',
+        label: 'Companies approached in Retailer',
     },
     {
         num: 17,
-        label: 'Companies assessed in Hospitality',
+        label: 'Companies approached in Hospitality',
     }
 ])
 </script>
