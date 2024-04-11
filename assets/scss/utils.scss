@@ -195,6 +195,12 @@ ul {
             @apply text-green;
         }
     }
+    &--case {
+        h2 {
+            @apply mb-16;
+            @extend .u-fs68;
+        }
+    }
 }
 .u-section {
     @apply mt-32;
@@ -909,6 +915,38 @@ ul {
                     @apply mb-1 last:mb-0;
                 }
             }
+        }
+    }
+}
+
+.u-cs {
+    &__approach {
+        @apply mb-32;
+        &__intro {
+            p {
+                @extend .u-fs32;
+            }
+        }
+        &__description, &__closing {
+            @apply mt-10;
+            p {
+                @extend .u-fs20;
+            }
+            ul {
+                @extend .u-fs20;
+                @apply list-disc ml-6 mb-8 last:mb-0;
+            }
+        }
+        &__description:nth-child(2) { @apply mt-0; }
+        &__closing:nth-child(2) { @apply mt-0; }
+    }
+    &__roadblocks {
+        p {
+            @extend .u-fs20;
+        }
+        ul {
+            @extend .u-fs20;
+            @apply list-disc ml-6 mb-8 last:mb-0;
         }
     }
 }

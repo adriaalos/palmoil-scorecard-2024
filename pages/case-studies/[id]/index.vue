@@ -2,9 +2,9 @@
     <div>
         <cs-header />
         <cs-company />
-        <cs-keys />
-        <cs-methodology />
-        <cs-conclusions />
+        <cs-approach />
+        <cs-roadblocks />
+        <cs-plan />
     </div>
 </template>
 

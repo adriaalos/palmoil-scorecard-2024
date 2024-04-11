@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
 export const useScStore = defineStore('scStore', () => {
+    const csStore = useCsStore()
     const { $i18n } = useNuxtApp()
     const companies = ref<Company[]>([])
     const company = ref<Company|null>(null)
@@ -487,6 +488,8 @@ export const useScStore = defineStore('scStore', () => {
 
     const setCompany = async (id: any) => {
         company.value = companies.value.find((c: Company) => c.id == id) || null
+        csStore.casestudy = csStore.casestudies.find((c: any) => c.id == id) || null
+        console.log(csStore.casestudy)
     }
 
     return {

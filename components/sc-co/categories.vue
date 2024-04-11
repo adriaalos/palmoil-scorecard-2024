@@ -202,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="w-1/2 px-6 py-6">
+                <div class="w-1/2 px-6 py-6" v-if="csStore.casestudy">
                     <div class="flex items-center justify-center">
                         <nuxt-link 
                             :to="`/case-studies/${sc.company.id}`"
@@ -211,7 +211,7 @@
                             <span>GO TO CASE STUDY 2024</span>
                         </nuxt-link>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -219,7 +219,7 @@
 
 <script setup lang="ts">
 const sc = useScStore()
-
+const csStore = useCsStore()
 // Commitments
 const commitments = ref(sc.categories.find(c => c.id === 'commitments'))
 const commitments_pts = ref(sc.company ? sc.company.commitments.commitTotalScore : 0)
