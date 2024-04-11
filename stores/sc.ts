@@ -323,7 +323,7 @@ export const useScStore = defineStore('scStore', () => {
         const scores = respondants.map((c: Company) => c.companyTotalScore)
         const total = scores.reduce((acc, cur) => acc + cur, 0)
         const avrg = total / respondants.length
-        average.value = avrg.toFixed(2) as any
+        average.value = avrg.toFixed(1) as any
     }
 
     const getTotalScoreRange = (totalScore: number, respondent: boolean) => {

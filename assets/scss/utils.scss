@@ -950,3 +950,44 @@ ul {
         }
     }
 }
+
+.u-re-header {
+    @apply mb-10 bg-gradient-to-r from-green to-greensoft rounded-[12px] py-16 px-10 overflow-hidden sticky top-0 z-10;
+    h3 {
+        @extend .u-fs36;
+        @apply font-wwf text-white;
+    }
+    img {
+        @apply absolute h-full left-0 top-1/2 transform -translate-y-1/2;
+    }
+}
+.u-re-section {
+    @apply mb-44;
+}
+.u-re-text {
+    @apply mb-10;
+}
+.u-re-tick {
+    @apply flex space-x-6 items-start;
+    .content {
+        @apply mt-4;
+        .box {
+            @apply mt-10 bg-cake p-12 rounded-[12px];
+            ul {
+                li {
+                    @apply mb-6 pl-6;
+                    &:before {
+                        @apply content-[''] w-[10px] h-[10px] rounded-full absolute top-3 left-0 bg-green;
+                    }
+                }
+            }
+        }
+    }
+}
+.u-re-sep {
+    @apply w-full h-px bg-[#DADADA] my-14;
+}
+.u-re-quote {
+    @apply text-xl text-green italic text-center max-w-[50%] mx-auto;
+}
+.u-re-pic img { @apply w-full }
