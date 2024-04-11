@@ -64,7 +64,7 @@
                                         <span>{{ sc.company.platforms.pobrSrScore }}</span>
                                     </div>
                                     <div class="u-result-card__des">
-                                        Based in the Company  score on the SR scorecard Requirement set by RSPO
+                                        Based on the Company score on the SR scorecard Requirement set by RSPO
                                     </div>
                                     <VDropdown :triggers="['hover']" class="u-result-card__tooltip">
                                         <a><img src="@/assets/img/tooltip.svg"></a>
@@ -143,11 +143,11 @@ const PLATFORMS_CARDS = ref<any>({
         options: {
             yes: {
                 ans: 'YES',
-                text: 'Company is a member of the POIG',
+                text: 'Company is a part of any action-oriented platforms.',
             },
             no: {
                 ans: 'NO',
-                text: 'Company is not a member of the POIG',
+                text: 'Company is not a part of any action-oriented platforms.',
             }
         },
     },
@@ -156,7 +156,7 @@ const PLATFORMS_CARDS = ref<any>({
 const PLATFORMS_TOOLTIPS = [
     'WWF expects palm oil buyers to join the Roundtable on Sustainable Palm Oil (RSPO) and actively contribute to its vision of making sustainable palm oil the norm.',
     'Aside from the RSPO and/or POIG, WWF expects palm oil buyers to participate in other action-oriented sustainability platforms. These platforms need to go beyond just membership and commitments on paper and must require demonstrable action and implementation by participating companies to support a sustainable palm oil industry beyond their own supply chains.',
-    'WWF encourages palm oil buyers to join the Palm Oil Innovation Group (POIG), a multi-stakeholder initiative that strives to achieve the adoption of sustainable palm oil production practices by key players in the supply chain through a credible and verifiable benchmark that builds upon the RSPO.'  
+    'WWF encourages palm oil buyers to comply with RSPO’s shared responsibility requirements.'  
 ]
 
 const getPlatformsDescription = (field: string) => {

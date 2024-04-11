@@ -68,10 +68,22 @@
                                         <span v-if="!badge.value">NO</span>
                                     </div>
                                 </div>
-                                <div class="u-otg-badge__label pt-10">{{ badge.label }}</div>
+                                <!-- <div class="u-otg-badge__label pt-10">{{ badge.label }}</div> -->
+                                <div :class="[`u-result-card__badge w-full ${transformBoolean(badge.value)} mt-10 pr-10`]" >
+                                    <!-- <img :src="`/2024/${transformBoolean(badge.value)}_invert.svg`" /> -->
+                                    <!-- <span v-html="badge.text"></span> -->
+                                    <span>{{ badge.label }}</span>
+                                    <VDropdown :triggers="['click']" :html="true" class="u-result-card__tooltip">
+                                        <a><img src="@/assets/img/tooltip.svg"></a>
+
+                                        <template #popper>
+                                            <div class="u-result-card__tooltip__content" v-html="badge.text" />
+                                        </template>
+                                    </VDropdown>
+                                </div>
                             </div>
                         </div>
-                        <div class="mt-10 flex flex-wrap justify-between -mx-6 -my-3">
+                        <!-- <div class="mt-10 flex flex-wrap justify-between -mx-6 -my-3">
                             <div 
                                 v-for="badge in ONTHEGROUND_BADGES"
                                 class="u-otg-check w-1/2 px-6 py-3"
@@ -81,7 +93,7 @@
                                     <span v-html="badge.text"></span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -111,25 +123,25 @@ const ONTHEGROUND_TOOLTIPS = ref([
 const ONTHEGROUND_BADGES = ref([
     {
         label: 'SMALLHOLDERS',
-        text: 'Nature of the supporting smallholder producers project matches the types of support to smallholder producers listed in Table 1 of <a href="https://accountability-framework.org/use-the-accountability-framework/download-the-full-framework/downloads/operational-guidance-smallholder-inclusion-in-ethical-supply-chains/" target="_blank">AFI Operational Guidance on Smallholder Inclusion in Ethical Supply Chains</a>',
+        text: 'NATURE OF THE SUPPORTING SMALLHOLDER PRODUCERS PROJECT MATCHES THE TYPES OF SUPPORT TO SMALLHOLDER PRODUCERS LISTED IN TABLE 1 OF AFI OPERATIONAL GUIDANCE ON SMALLHOLDER INCLUSION IN ETHICAL SUPPLY CHAINS',
         value: sc.company?.onTheGround.smallHolders,
         pic: 'sc-smallholders.svg',
     },
     {
         label: 'CONSERVATION PROJECTS',
-        text: 'Nature of on-the-ground projects demonstrate engagement and an impact on local communities, Indigenous people, or women. Including but not limited to intentional sourcing commitments toward these groups, gender-sensitive grievance mechanisms, and alignment with UN Women’s Empowerment Principle 5',
+        text: 'NATURE OF BIODIVERSITY CONSERVATION PROJECTS INVOLVING RESTORATION ADHERES TO THE PARAMETERS FOR EFFECTIVE ENVIRONMENTAL RESTORATION AND CONSERVATION PER AFI OPERATIONAL GUIDANCE ON ENVIRONMENTAL RESTORATION COMPENSATION',
         value: sc.company?.onTheGround.investCons,
         pic: 'sc-conservation-projects.svg',
     },
     {
         label: 'Forest protect and restoration projects',
-        text: 'Nature of biodiversity conservation proects involving restoration adheres to the parameters for effective environmental restoration and conservation per AFI Operational Guidance on Environmental Restoration Compensation',
+        text: 'NATURE OF ON-THE-GROUND PROJECTS DEMONSTRATE ENGAGEMENT AND AN IMPACT ON LOCAL COMMUNITIES, INDIGENOUS PEOPLE, OR WOMEN. INCLUDING BUT NOT LIMITED TO INTENTIONAL SOURCING COMMITMENTS TOWARD THESE GROUPS, GENDER-SENSITIVE GRIEVANCE MECHANISMS, AND ALIGNMENT WITH UN WOMEN’S EMPOWERMENT PRINCIPLE 5',
         value: sc.company?.onTheGround.investForest,
         pic: 'sc-forest-projects.svg',
     },
     {
         label: 'Jurisdictional or landscape approaches',
-        text: 'Nature of supporting landscapes and jurisdictional approaches incorporate actions specified in the <a href="https://accountability-framework.org/use-the-accountability-framework/download-the-full-framework/downloads/operational-guidance-achieving-commitments-through-collaboration/" target="_blank">AFI Operations Guidance on Achieving Commitments Through Collaboration</a>',
+        text: 'NATURE OF SUPPORTING LANDSCAPES AND JURISDICTIONAL APPROACHES INCORPORATE ACTIONS SPECIFIED IN THE AFI OPERATIONS GUIDANCE ON ACHIEVING COMMITMENTS THROUGH COLLABORATION',
         value: sc.company?.onTheGround.investLandScape,
         pic: 'sc-jurisdictional.svg',
     }

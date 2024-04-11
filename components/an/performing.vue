@@ -21,7 +21,7 @@
         </div>
         <div class="mt-20 u-container u-container--md">
             <h4 class="mb-10 font-wwf u-fs24noleaded text-green text-center uppercase">Share of respondents in select
-                markets/sectors<br> who meet key sustainability criteria</h4>
+                sectors<br> who meet key sustainability criteria</h4>
         </div>
         <div class="mb-20">
             <ClientOnly>

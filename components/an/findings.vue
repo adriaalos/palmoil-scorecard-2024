@@ -71,16 +71,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="u-an__badge" v-motion-slide-visible-once-top>
+                            <div class="u-an__badge mb-10" v-motion-slide-visible-once-top>
                                 <div class="u-an__badge__pic">
                                     <img src="@/assets/img/an-key-01-03.png" alt="03">
                                 </div>
                                 <div class="u-an__badge__text">
-                                    <div>
-                                        <span class="u-fs42">1 IN 4 respondents</span>
+                                    <div class="u-an__badge__text__grid items-center">
+                                        <span class="flex-1 u-fs118">24%</span>
+                                        <span class="flex-1 u-fs44">
+                                            of<br>
+                                            respondents
+                                        </span>
                                     </div>
                                     <div>
-                                        <span class="u-fs32noleaded">with a commitment to sourcing 100% RSPO CSPO have set a target date beyond 2020, or fail to mention any date</span>
+                                        <span class="u-fs32noleaded">WITH A COMMITMENT TO SOURCING 100% RSPO CSPO HAVE SET A TARGET DATE BEYOND 2023, and 13% FAIL TO MENTION ANY DATE</span>
                                     </div>
                                 </div>
                             </div>
@@ -351,7 +355,7 @@
             </div>
             <div class="mt-44 u-container u-container--lg" v-motion-slide-visible-once-top>
                 <div class="bg-cake rounded-[12px] p-12">
-                    <img src="@/assets/img/an-key-04-02.png" alt="02" class="mix-blend-multiply absolute bottom-0">
+                    <img src="@/assets/img/an-key-04-02.png" alt="02" class="mix-blend-multiply absolute left-0 bottom-0">
                     <div class="flex">
                         <div class="flex-1"></div>
                         <div class="flex-1 font-wwf uppercase">
@@ -474,7 +478,7 @@
                                 Companies must clean up their supply chains while focusing on fostering inclusive rural economies and protecting natural ecosystems and local community rights. Supporting such initiatives aligns with long-term supply goals and drives tangible on-the-ground impact. From conservation and forest protection projects to smallholder capacity building or jurisdictional/landscape approaches, there is a myriad of investments companies can make to drive positive impact.
                             </p>
                             <p>
-                                The scorecard introduced significant changes this year, emphasizing alignment with Accountability Framework Initiative (AFI) Operational Guidance (OG) to ensure companies contribute to broader sustainability goals.
+                                The scorecard introduced significant changes this year, emphasising alignment with Accountability Framework Initiative (AFI) Operational Guidance (OG) to ensure companies contribute to broader sustainability goals.
                             </p>
                         </div>
                         <div class="flex-1 px-20">

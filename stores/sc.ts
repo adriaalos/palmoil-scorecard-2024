@@ -32,7 +32,7 @@ export const useScStore = defineStore('scStore', () => {
             id: 'intermediate',
             name: $i18n.t('sc_range_02'),
             color: '#96b441',
-            range: [16.5, 19.5],
+            range: [16.5, 19.49],
             data: [],
         },
         {

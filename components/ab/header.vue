@@ -77,7 +77,7 @@
             <div>
                 <img src="@/assets/img/ab-intro-04.svg" />
                 <div class="absolute left-[35%] bottom-12 u-gradient u-gradient--green-greensoft p-6 rounded-[12px] font-wwf text-white uppercase">
-                    <span class="block u-fs38">73.4 million MT</span>
+                    <span class="block u-fs38">77.6 million MT</span>
                     <span class="block text-sm">total volume of palm oil produced globally</span>
                     <span class="block u-fs24 leading-[24px]">the equivalent of 20,000<br> olympic swimming pools</span>
                 </div>
@@ -89,7 +89,7 @@
                         <span>Min</span>
                         <span>Max</span>
                     </div>
-                    <span class="mt-2 block">Source: United States Department of Agriculture Foreign Agricultural Service (2020). Production, Supply and Distribution database; Ramankutty et al. (2008). Farming the planet: 2. Geographic distribution of crop areas, yields, physiological types, and net primary production in the year 2000.</span>
+                    <span class="mt-2 block">Source: United States Department of Agriculture Foreign Agricultural Service (2022). Production, Supply and Distribution database; Ramankutty et al. (2008). Farming the planet: 2. Geographic distribution of crop areas, yields, physiological types, and net primary production in the year 2022.</span>
                 </div>
             </div>
             <div class="flex justify-center mt-20">
