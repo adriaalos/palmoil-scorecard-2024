@@ -46,7 +46,7 @@
                                 <span v-if="key == 'respStatus'">{{ $t('ho_scatter_filters_rspo') }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMin'">Min {{ $t('ho_scatter_filters_total') }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMax'">Max {{ $t('ho_scatter_filters_total') }}: {{ value }}</span>
-                                <span v-else>{{ useFormatString(value, ';') }}</span>
+                                <span v-else>{{ formatString(value, ';') }}</span>
                                 <button @click="onFilterRemove(key)">
                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.7188 3.28125L3.28125 11.7188" stroke="#D86300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -242,7 +242,7 @@
                             <span class="block font-bold">{{ company.companyName }}</span>
                         </td>
                         <td>
-                            <span>{{ useFormatNumberWithComma(company.totalPalmOil) }}</span>
+                            <span>{{ formatNumberWithComma(company.totalPalmOil) }}</span>
                         </td>
                         <td>
                             <span>{{ company.hq }}</span>
@@ -644,7 +644,7 @@
                                 <span v-if="key == 'respStatus'">{{ $t('ho_scatter_filters_rspo') }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMin'">Min {{ $t('ho_scatter_filters_total') }}: {{ value }}</span>
                                 <span v-else-if="key == 'totalMax'">Max {{ $t('ho_scatter_filters_total') }}: {{ value }}</span>
-                                <span v-else>{{ useFormatString(value, ';') }}</span>
+                                <span v-else>{{ formatString(value, ';') }}</span>
                                 <button @click="onPrefilterRemove(key)">
                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.7188 3.28125L3.28125 11.7188" stroke="#D86300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -677,8 +677,6 @@
 <script setup lang="ts">
 const { $i18n } = useNuxtApp()
 const sc = useScStore()
-
-const objIsNull = useObjIsNull
 
 sc.filter_sectors = sc.getListOfInCompanies(sc.companies, 'sector')
 sc.filter_countries = sc.getListOfInCompanies(sc.companies, 'hq')

@@ -22,7 +22,7 @@ const items = ref(sc.company ? [
     {
         id: 'totalPalmOil',
         label: $i18n.t('sc_co_resume_totalPalmOil'),
-        value: `${useFormatNumberWithComma(sc.company?.totalPalmOil)} Mt`
+        value: `${formatNumberWithComma(sc.company?.totalPalmOil)} Mt`
     },
     {
         id: 'hq',
@@ -32,12 +32,12 @@ const items = ref(sc.company ? [
     {
         id: 'regionOfOper',
         label: $i18n.t('sc_co_resume_regionOfOper'),
-        value: useFormatString(sc.company?.regionOfOper, ';')
+        value: formatString(sc.company?.regionOfOper, ';')
     },
     {
         id: 'topBrands',
         label: $i18n.t('sc_co_resume_topBrands'),
-        value: useFormatString(sc.company?.topBrands, ';')
+        value: formatString(sc.company?.topBrands, ';')
     },
     {
         id: 'sector',
@@ -47,7 +47,7 @@ const items = ref(sc.company ? [
     {
         id: 'applicSector',
         label: $i18n.t('sc_co_resume_applicSector'),
-        value: useFormatString(sc.company?.applicSector, ';')
+        value: formatString(sc.company?.applicSector, ';')
     }
 ] : null)
 </script>

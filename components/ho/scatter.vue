@@ -180,7 +180,7 @@ const options = ref ({
         tickAmount: 4,
         labels: {
             formatter: function (val: number) {
-                return useFormatNumberWithComma(+val.toFixed(0))
+                return formatNumberWithComma(+val.toFixed(0))
             },
         },
         title: {
@@ -215,8 +215,8 @@ const totalColor = ref(sc.ranges.find((r: any) => r.id == totalId.value).color)
 
 const getResumePalmoil = computed(() => {
     const sumTotalPalmOil = companies.value.reduce((acc, company) => acc + company.totalPalmOil, 0)
-    useFormatNumberWithComma
-    return useFormatNumberWithComma(+sumTotalPalmOil.toFixed(0)) + ' MT'
+    formatNumberWithComma
+    return formatNumberWithComma(+sumTotalPalmOil.toFixed(0)) + ' MT'
 })
 
 const getResumePercentage = (field: string) => {
@@ -367,7 +367,7 @@ const renderTotalScore = (
         <div class="u-scatter-tooltip__summary">
             <h5>${companyName}</h5>
             <p class="u-scatter-tooltip__hq">${country}</p>
-            <p class="u-scatter-tooltip__mt">${useFormatNumberWithComma(totalPalm.toFixed(1))} MT</p>
+            <p class="u-scatter-tooltip__mt">${formatNumberWithComma(totalPalm.toFixed(1))} MT</p>
         </div>
     </div>`
     return str

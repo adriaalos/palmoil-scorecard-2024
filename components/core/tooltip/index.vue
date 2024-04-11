@@ -123,7 +123,7 @@ const getPlatformMemberOfDescription = (c: any) => {
         return (
             c['yes'] +
             ' ' +
-            useFormatString(props.company[props.category].platformNames, ';')
+            formatString(props.company[props.category].platformNames, ';')
         );
     } else {
         return c['no'];

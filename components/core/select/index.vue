@@ -57,7 +57,7 @@
                     :key="option"
             >
                 <li 
-                    v-if="useFormatString(option, ';') != '' "
+                    v-if="formatString(option, ';') != '' "
                     class="border-b border-[#dadada]"
                 >
                     <span
@@ -68,7 +68,7 @@
                         ]"
                         @click="onChange(option)"
                     >
-                        {{ useFormatString(option, ';') }}
+                        {{ formatString(option, ';') }}
                     </span>
                 </li>
             </template>
