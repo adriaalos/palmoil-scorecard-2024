@@ -29,6 +29,7 @@
                 </li>
             </ul>
         </div>
+        <core-cases />
     </section>
 </template>
 

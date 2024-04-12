@@ -1,5 +1,5 @@
 <template>
-    <section class="u-section mb-32" v-if="cs && cs.plan">
+    <section class="u-section mb-32 u-cs__approach" v-if="cs && cs.plan">
         <div class="py-12 u-gradient u-gradient--green-greensoft">
             <img class="absolute top-0 -left-16 mix-blend-color-burn" src="@/assets/img/cs-04.png">
             <div class="u-container u-container--lg">
@@ -12,9 +12,9 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute right-0 top-1/2 transform -translate-y-1/2">
+            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 max-h-[120%] overflow-hidden rounded-[60px]">
                 <img 
-                    class="w-full"
+                    class="w-full h-full object-cover object-center"
                     src="@/assets/img/cs-03.png"
                 >
             </div>

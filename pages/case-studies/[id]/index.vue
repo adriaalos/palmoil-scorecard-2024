@@ -5,6 +5,7 @@
         <cs-approach />
         <cs-roadblocks />
         <cs-plan />
+        <core-cases />
     </div>
 </template>
 

@@ -946,7 +946,16 @@ ul {
         }
         ul {
             @extend .u-fs20;
-            @apply list-disc ml-6 mb-8 last:mb-0;
+            @apply list-disc ml-6 mb-8 last:mb-0; 
+        }
+    }
+    &__plan {
+        p {
+            @extend .u-fs20;
+        }
+        ul {
+            @extend .u-fs20;
+            @apply list-disc ml-6 mb-8 last:mb-0; 
         }
     }
 }

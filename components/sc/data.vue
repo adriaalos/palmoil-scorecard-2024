@@ -173,6 +173,22 @@
                                 />
                             </div>
                         </th>
+                        <th @click="sortBy('traceability.supTraceScore', 'number')">
+                            <div class="th-label th-label--text-center">
+                                <span v-html="$t('sc_type_traceability')" />
+                                <span>{{ $t('gl_outof') }} {{ getOutOf('traceability') }}</span>
+                            </div>
+                            <div class="th-sort th-sort--centered">
+                                <img 
+                                    :class="[{ 'opacity-30': sortedBy.key == 'traceability.supTraceScore' && sortedBy.dir == 'asc'}]"
+                                    src="@/assets/img/sc-sort-asc.svg" class="w-[13px]"
+                                />
+                                <img 
+                                    :class="[{ 'opacity-30': sortedBy.key == 'traceability.supTraceScore' && sortedBy.dir == 'desc'}]"
+                                    src="@/assets/img/sc-sort-desc.svg" class="w-[13px]"
+                                />
+                            </div>
+                        </th>
                         <th @click="sortBy('platforms.platformsTotalScore', 'number')">
                             <div class="th-label th-label--text-center">
                                 <span v-html="$t('sc_type_platforms')" />
@@ -413,6 +429,31 @@
                                         {{ company.previousScore.supTotalScore }}
                                     </span>
                                 </div>   
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="flex flex-col">
+                                <div>
+                                    <VDropdown v-if="company.respStatus">
+                                        <span
+                                            :class="[
+                                                'u-range u-range--border u-range--text u-range--pointer', 
+                                                sc.getRangeColor(company.traceability.supTraceScore, 'traceability', company.respStatus)
+                                            ]"
+                                        >
+                                            {{ company.traceability.supTraceScore }}
+                                        </span>
+                                        <template #popper="{ hide }">
+                                            <div @click="hide()">
+                                                <core-tooltip 
+                                                    :category="'traceability'" 
+                                                    :company="company" 
+                                                />
+                                            </div>
+                                        </template>
+                                    </VDropdown>
+                                    <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
+                                </div>                                
                             </div> 
                         </td>
                         <td>

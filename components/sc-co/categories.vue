@@ -122,6 +122,46 @@
                         </div>
                     </div>
                 </div>
+                <div v-if="traceability" class="w-1/2 px-6 py-6">
+                    <div class="flex justify-between items-end mb-3">
+                        <div class="flex-1 flex space-x-3 items-center">
+                            <div :class="[`u-range u-range--cat u-range--bg ${traceability_color}`]">
+                                {{ traceability_pts }}
+                            </div>
+                            <div>
+                                <h4 class="text-xl leading-[18px] text-[#7B7B7B] font-wwf uppercase" v-html="traceability.label"></h4>
+                            </div>
+                        </div>
+                        <div>
+                            <p :class="[`font-montserrat font-semibold text-xs u-sc-text ${traceability_color}`]">
+                                {{ traceability_pts }} OF {{ traceability_max }}  ({{ traceability_per.toFixed(2)  }}%)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="u-bar">
+                        <div class="u-bar__ranges">
+                            <span>0</span>
+                            <span>·</span>
+                            <span>·</span>
+                            <span>{{ traceability_max / 2 }}</span>
+                            <span>·</span>
+                            <span>·</span>
+                            <span>{{ traceability_max }}</span>
+                        </div>
+                        <div class="u-bar__scores">
+                            <div 
+                                :class="[`u-bar__score u-range u-range--bg ${traceability_color}`]"
+                                :style="`left: ${traceability_per.toFixed(2)}%`"
+                            >
+                                {{ traceability_pts }}
+                            </div>
+                        </div>
+                        <div class="u-bar__median" :style="`left: ${traceability_median_per.toFixed(2)}%`">
+                            <span class="u-bar__median__indicator"></span>
+                            <span class="u-bar__median__text">MEDIAN</span>
+                        </div>
+                    </div>
+                </div>
                 <div v-if="platforms" class="w-1/2 px-6 py-6">
                     <div class="flex justify-between items-end mb-3">
                         <div class="flex-1 flex space-x-3 items-center">
@@ -202,13 +242,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2 px-6 py-6" v-if="csStore.casestudy">
+                <div class="w-full px-6 py-6 mt-6" v-if="csStore.casestudy">
                     <div class="flex items-center justify-center">
                         <nuxt-link 
                             :to="`/case-studies/${sc.company.id}`"
                             class="u-button"
                         >
-                            <span>GO TO CASE STUDY 2024</span>
+                            <span>GO TO CASE STUDY</span>
                         </nuxt-link>
                     </div>
                 </div>
@@ -243,6 +283,14 @@ const suppliers_per = ref(sc.company && suppliers.value ? sc.company.suppliers.s
 const suppliers_max = ref(suppliers.value ? suppliers.value.out_of : 0)
 const suppliers_color = ref(sc.company ? sc.getRangeColor(sc.company.suppliers.supTotalScore, 'suppliers', sc.company.respStatus) : '')
 const suppliers_median_per = sc.companies.length && suppliers.value ? sc.companies.reduce((acc, c) => acc + c.suppliers.supTotalScore, 0) / sc.companies.length / suppliers.value.out_of * 100 : 0
+
+// Traceability
+const traceability = ref(sc.categories.find(c => c.id === 'traceability'))
+const traceability_pts = ref(sc.company ? sc.company.traceability.supTraceScore : 0)
+const traceability_per = ref(sc.company && traceability.value ? sc.company.traceability.supTraceScore / traceability.value.out_of * 100 : '')
+const traceability_max = ref(traceability.value ? traceability.value.out_of : 0)
+const traceability_color = ref(sc.company ? sc.getRangeColor(sc.company.traceability.supTraceScore, 'traceability', sc.company.respStatus) : '')
+const traceability_median_per = sc.companies.length && traceability.value ? sc.companies.reduce((acc, c) => acc + c.traceability.supTraceScore, 0) / sc.companies.length / traceability.value.out_of * 100 : 0
 
 // Platforms
 const platforms = ref(sc.categories.find(c => c.id === 'platforms'))

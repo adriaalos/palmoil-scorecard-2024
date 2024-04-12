@@ -141,6 +141,35 @@
                                     {{ sc.company.previousScore.supTotalScore }}
                                 </div>
                             </div>
+                            <div v-if="traceability" class="flex-1">
+                                <div class="flex items-center justify-center font-wwf text-[#7B7B7B] text-sm text-center uppercase leading-[14px] min-h-[60px] ">
+                                    <span v-html="traceability.label" />
+                                </div>
+                                <div
+                                    v-if="sc.company.respStatus"
+                                    :class="[
+                                        'u-range u-range--bg', 
+                                        sc.getRangeColor(sc.company.traceability.supTraceScore, traceability.id, true)
+                                    ]"
+                                >
+                                    {{ sc.company.traceability.supTraceScore }}
+                                </div>
+                                <span class="u-noscore" v-else>{{ $t('gl_no_score') }}</span>
+                                <!-- <core-range-balance 
+                                    v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
+                                    :current="sc.company.traceability.supTraceScore" 
+                                    :old="sc.company.previousScore.supTraceScore"
+                                />
+                                <div
+                                    v-if="Object.keys(sc.company.previousScore).length > 0 && sc.company.respStatus"
+                                    :class="[
+                                        'u-range u-range--bg u-range--past', 
+                                        sc.getRangeColor2021(sc.company.previousScore.supTraceScore, traceability.id, true)
+                                    ]"
+                                >
+                                    {{ sc.company.previousScore.supTraceScore }}
+                                </div> -->
+                            </div>
                             <div v-if="platforms" class="flex-1">
                                 <div class="flex items-center justify-center font-wwf text-[#7B7B7B] text-sm text-center uppercase leading-[14px] min-h-[60px] ">
                                     <span v-html="platforms.label" />
@@ -238,6 +267,7 @@ const sc = useScStore()
 const commitments = ref(sc.categories.find(c => c.id === 'commitments'))
 const purchasing = ref(sc.categories.find(c => c.id === 'purchasing'))
 const suppliers = ref(sc.categories.find(c => c.id === 'suppliers'))
+const traceability = ref(sc.categories.find(c => c.id === 'traceability'))
 const platforms = ref(sc.categories.find(c => c.id === 'platforms'))
 const onTheGround = ref(sc.categories.find(c => c.id === 'onTheGround'))
 

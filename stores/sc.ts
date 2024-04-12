@@ -175,7 +175,7 @@ export const useScStore = defineStore('scStore', () => {
         {
             id: 'suppliers',
             label: $i18n.t('sc_type_suppliers'),
-            out_of: 3,
+            out_of: 2,
             sections: [
                 {
                     description:
@@ -202,7 +202,14 @@ export const useScStore = defineStore('scStore', () => {
                             property: 'supHr',
                         },
                     ],
-                },
+                }
+            ],
+        },
+        {
+            id: 'traceability',
+            label: $i18n.t('sc_type_traceability'),
+            out_of: 1,
+            sections: [
                 {
                     description:
                         'Does the company expect suppliers to source palm oil that is traceable to the mill/plantation?',
@@ -352,6 +359,9 @@ export const useScStore = defineStore('scStore', () => {
             case 'suppliers':
                 return getSuppliersRange(total, respondent);
                 break
+            case 'traceability':
+                return getTraceabilityRange(total, respondent);
+                break
             case 'onTheGround':
             default:
                 return getOnTheGroundRange(total, respondent);
@@ -389,10 +399,19 @@ export const useScStore = defineStore('scStore', () => {
     const getSuppliersRange = (total: number, respondent: boolean) => {
         const score = total;
         if (!respondent) return ranges.value[0].id
-        if (score === 3) return ranges.value[4].id
-        if (score >= 2 && score < 3) return ranges.value[3].id
-        if (score >= 1 && score < 2) return ranges.value[2].id
-        if (score >= 0 && score < 1) return ranges.value[1].id
+        if (score >= 1.5) return ranges.value[4].id
+        if (score >= 1 && score < 1.5) return ranges.value[3].id
+        if (score >= 0.5 && score < 1) return ranges.value[2].id
+        if (score >= 0 && score < 0.5) return ranges.value[1].id
+    }
+
+    const getTraceabilityRange = (total: number, respondent: boolean) => {
+        const score = total;
+        if (!respondent) return ranges.value[0].id
+        if (score >= 0.75) return ranges.value[4].id
+        if (score >= 0.5 && score < 0.75) return ranges.value[3].id
+        if (score >= 0.25 && score < 0.5) return ranges.value[2].id
+        if (score >= 0 && score < 0.25) return ranges.value[1].id
     }
 
     const getOnTheGroundRange = (total: number, respondent: boolean) => {
