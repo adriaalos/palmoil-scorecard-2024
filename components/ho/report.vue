@@ -1,8 +1,8 @@
 <template>
     <section class="u-section">
         <div class="u-container">
-            <div class="bg-ocre py-20 rounded-[12px]" v-motion-pop-visible-once>
-                <div class="flex justify-center items-center gap-x-12">
+            <div class="bg-ocre py-20 rounded-[12px] <md:py-12" v-motion-pop-visible-once>
+                <div class="flex justify-center items-center gap-x-12 <md:flex-col <md:gap-x-0 <md:gap-y-4">
                     <h3 class="u-fs48 font-wwf text-white">{{ $t('ho_report_text') }}</h3>
                     <a 
                         :href="$t('ho_report_url')"

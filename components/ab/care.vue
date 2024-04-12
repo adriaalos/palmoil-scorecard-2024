@@ -9,7 +9,7 @@
             <Swiper
                 :slidesPerView="1.5"
                 :modules="[SwiperPagination]"
-                :spaceBetween="150"
+                :spaceBetween="distance"
                 :centeredSlides="true"
                 :pagination="{
                     clickable: true,
@@ -57,7 +57,7 @@
             <header class="u-header u-header--left">
                 <h3>{{ $t('ab_care_cols_title') }}</h3>
             </header>
-            <div class="flex space-x-10 -mt-12">
+            <div class="flex space-x-10 -mt-12 <sm:flex-col <sm:space-x-0">
                 <div class="flex-1" v-html="$t('ab_care_cols_01')" />
                 <div class="flex-1" v-html="$t('ab_care_cols_02')" />
             </div>
@@ -80,6 +80,16 @@
     </section>
 </template>
 
+<script setup lang="ts">
+import { useWindowSize } from '@vueuse/core'
+const { width, height } = useWindowSize()
+
+const distance = ref(150)
+if (width.value <= 1024) distance.value = 100
+if (width.value <= 768) distance.value = 75
+if (width.value <= 640) distance.value = 50
+</script>
+
 <style lang="scss">
 .swiper {
     @apply overflow-y-visible;
@@ -88,7 +98,7 @@
     @apply top-[100%] mt-6;
 }
 .swiper-pagination-bullet {
-    @apply w-[12px] h-[12px] rounded-full;
+    @apply w-[12px] h-[12px] rounded-full <md:w-[8px] <md:h-[8px];
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
     @apply bg-green;

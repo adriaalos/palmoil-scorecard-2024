@@ -1,25 +1,28 @@
 
 <template>
     <section class="">
-        <div class="u-container u-container--md py-28">
-            <div class="collage">
+        <div class="u-container u-container--md py-28 <sm:py-12">
+            <div class="collage <sm:hidden">
                 <img v-motion-slide-top src="@/assets/img/ho-hero-01.png" alt="hero" class="collage__pic collage__pic--01" />
                 <img v-motion-slide-top src="@/assets/img/ho-hero-02.png" alt="hero" class="collage__pic collage__pic--02" />
-                <img v-motion-slide-right src="@/assets/img/ho-hero-03.png" alt="hero" class="collage__pic collage__pic--03" />
-                <img v-motion-slide-left src="@/assets/img/ho-hero-04.png" alt="hero" class="collage__pic collage__pic--04" />
+                <img v-motion-slide-right src="@/assets/img/ho-hero-03.png" alt="hero" class="collage__pic collage__pic--03 <lg:hidden" />
+                <img v-motion-slide-left src="@/assets/img/ho-hero-04.png" alt="hero" class="collage__pic collage__pic--04 <lg:hidden" />
                 <img v-motion-slide-bottom src="@/assets/img/ho-hero-05.png" alt="hero" class="collage__pic collage__pic--05" />
                 <img v-motion-slide-bottom src="@/assets/img/ho-hero-06.png" alt="hero" class="collage__pic collage__pic--06" />
-                <img v-motion-slide-visible-once-bottom src="@/assets/img/ho-hero-07.png" alt="hero" class="collage__pic collage__pic--07" />
+                <img v-motion-slide-visible-once-bottom src="@/assets/img/ho-hero-07.png" alt="hero" class="collage__pic collage__pic--07 <lg:hidden" />
             </div>
             <header class="font-wwf uppercase text-center">
                 <h3 class="u-fs88 text-black" v-html="$t('ho_hero_year')" />
                 <h1 class="-mt-8 u-fs220 text-green" v-html="$t('ho_hero_title_big')" />
                 <h2 class="-mt-9 u-fs180 bg-gradient-to-b from-green via-green to-gold inline-block text-transparent bg-clip-text" v-html="$t('ho_hero_title_small')" />
             </header>
-            <div class="mt-6 py-3 text-white u-fs31 uppercase text-center bg-green rounded-[42px]">
-                <p class="font-wwf">{{ $t('ho_hero_claim') }}</p>
+            <div class="flex justify-center">
+                <div class="mt-6 py-3 px-32 text-white u-fs31 uppercase text-center bg-green rounded-[42px] <xl:px-28 <lg:px-20 <md:px-16 <md:px-6">
+                    <p class="font-wwf">{{ $t('ho_hero_claim') }}</p>
+                </div>
             </div>
-            <div class="flex justify-center mt-18">
+            
+            <div class="flex justify-center mt-18 <md:mt-14 <sm:mt-12">
                 <nuxt-link 
                     :to="`/${$t('sc_url')}`"
                     class="u-button u-button--hero"
@@ -31,14 +34,14 @@
                 </nuxt-link>
             </div>
         </div>
-        <div class="mt-32 p-16">
+        <div class="mt-32 p-16 <lg:mt-12 <md:px-6 <sm:mt-0 <sm:p-0">
             <div class="collage">
                 <!-- <img v-motion-slide-visible-once-left src="@/assets/img/ho-hero-08.png" alt="hero" class="collage__pic collage__pic--08" /> -->
-                <img v-motion-slide-visible-once-right src="@/assets/img/ho-hero-09.png" alt="hero" class="collage__pic collage__pic--09 lg:hidden" />
+                <img v-motion-slide-visible-once-right src="@/assets/img/ho-hero-09.png" alt="hero" class="collage__pic collage__pic--09 <lg:hidden" />
             </div>
             <div class="u-container u-container--lg">
                 <div class="text-center" v-html="$t('ho_hero_about_description')" />
-                <div class="flex justify-center mt-18">
+                <div class="flex justify-center mt-18 <sm:mt-10">
                     <nuxt-link 
                         :to="`/${$t('ab_url')}`"
                         class="u-button"

@@ -10,22 +10,26 @@
         >
             <div class="self-start">
                 <nuxt-link 
-                    class="absolute top-0 left-0 transform" 
+                    class="absolute top-0 left-0 transform z-1" 
                     to="/"
                 >   
                     <img 
-                        src="@/assets/img/wwf.png" 
+                        src="@/assets/img/wwf.png"
+                        class="<xl:w-[100px] <md:w-[90px]" 
                     />
                 </nuxt-link>
                 <nuxt-link 
                     to="/"
-                    class="block ml-30 py-5 u-fs28"
+                    class="block ml-30 py-5 u-fs28 <md:ml-26"
                 >
                     <span>{{ $t('app') }}</span>
                 </nuxt-link>
             </div>
-            <nav>
-                <ul class="flex items-center gap-x-8 u-fs18">
+            <nav :class="['<lg:fixed <lg:w-screen <lg:h-[calc(100vh-76px)] <lg:bg-black <lg:top-[76px] <lg:flex <lg:left-0 <lg:items-center <lg:justify-center <lg:transition <md:h-[calc(100vh-76px)] <md:top-[76px]', {
+                '<lg:pointer-events-none <lg:opacity-0': !collapsed,
+                '<lg:pointer-events-auto <lg:opacity-100': collapsed,
+            }]">
+                <ul class="flex items-center gap-x-8 text-xl <lg:flex-col <lg:gap-x-0 <lg:gap-y-2">
                     <li
                         v-for="item in nav"
                         :key="item.id"
@@ -33,12 +37,17 @@
                         <router-link 
                             :to="item.url"
                             class="hover:text-green"
+                            @click="collapsed = false"
                         >
                             <span>{{ item.title }}</span>
                         </router-link>
                     </li> 
                 </ul>
             </nav>
+            <button :class="['u-burger', { 'u-burger--opened': collapsed }]" @click="toggleNav">
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 </template>
@@ -73,4 +82,8 @@ const nav = ref([
         url: `/${$i18n.t('me_url')}`
     }
 ])
+const collapsed = ref(false)
+const toggleNav = () => {
+    collapsed.value = !collapsed.value
+}
 </script>

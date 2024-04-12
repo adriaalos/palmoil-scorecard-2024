@@ -17,22 +17,27 @@ ul {
 }
 
 .u-fs18 {
-    @apply text-lg leading-[38px];
+    @apply text-lg leading-[38px]
+    <xl:text-base;
 }
 .u-fs20 {
-    @apply text-[20px];
+    @apply text-[20px]
+    <md:text-[18px];
 }
 .u-fs22 {
-    @apply text-[22px];
+    @apply text-[22px]
+    <xl:text-[20px];
 }
 .u-fs24 {
-    @apply text-[24px] leading-[48px];
+    @apply text-[24px] leading-[48px]
+    <md:text-[21px] <md:leading-[38px];
 }
 .u-fs24noleaded {
     @apply text-[24px] leading-[28px];
 }
 .u-fs28 {
-    @apply text-[28px];
+    @apply text-[28px]
+    <xl:text-[24px];
 }
 .u-fs28noleaded {
     @apply text-[28px] leading-[28px];
@@ -44,16 +49,28 @@ ul {
     @apply text-[31px];
 }
 .u-fs32 {
-    @apply text-[32px] leading-[52px];
+    @apply text-[32px] leading-[52px]
+    <xl:text-[30px] <xl:leading-[48px]
+    <lg:text-[24px] <lg:leading-[38px]
+    <md:text-[22px] <lg:leading-[32px]
+    <sm:text-[20px] <lg:leading-[28px];
 }
 .u-fs32noleaded {
-    @apply text-[32px] leading-[34px];
+    @apply text-[32px] leading-[34px]
+    <xl:text-[30px] <xl:leading-[32px]
+    <lg:text-[24px] <lg:leading-[28px]
+    <md:text-[22px] <lg:leading-[26px]
+    <sm:text-[20px] <lg:leading-[24px];
 }
 .u-fs34 {
     @apply text-[34px] leading-[38px];
 }
 .u-fs36 {
-    @apply text-[36px] leading-[40px];
+    @apply text-[36px] leading-[40px]
+    <xl:text-[34px] <xl:leading-[38px]
+    <lg:text-[24px] <lg:leading-[38px]
+    <md:text-[21px] <lg:leading-[31px]
+    <sm:text-[19px] <lg:leading-[27px];
 }
 .u-fs38 {
     @apply text-[38px] leading-[42px];
@@ -74,7 +91,11 @@ ul {
     @apply text-[48px] leading-[52px];
 }
 .u-fs55 {
-    @apply text-[55px] leading-[62px];
+    @apply text-[55px] leading-[62px]
+    <xl:text-[51px] <xl:leading-[58px]
+    <lg:text-[48px] <lg:leading-[54px]
+    <md:text-[44px] <lg:leading-[50px]
+    <sm:text-[41px] <lg:leading-[48px];
 }
 .u-fs58 {
     @apply text-[58px] leading-[60px];
@@ -89,7 +110,11 @@ ul {
     @apply text-[65px];
 }
 .u-fs68 {
-    @apply text-[68px] leading-[72px];
+    @apply text-[68px] leading-[72px]
+    <xl:text-[62px] <xl:leading-[68px]
+    <lg:text-[58px] <lg:leading-[64px]
+    <md:text-[50px] <lg:leading-[56px]
+    <sm:text-[46px] <lg:leading-[50px];
 }
 .u-fs72 {
     @apply text-[72px] leading-[72px];
@@ -98,22 +123,42 @@ ul {
     @apply text-[78px] leading-[78px];
 }
 .u-fs88 {
-    @apply text-[88px] leading-[62px];
+    @apply text-[88px] leading-[62px]
+    <xl:text-[80px] <xl:leading-[62px]
+    <lg:text-[72px] <lg:leading-[62px]
+    <md:text-[62px] <md:leading-[62px]
+    <sm:text-[48px] <sm:leading-[52px];
 }
 .u-fs100 {
-    @apply text-[100px] leading-[100px];
+    @apply text-[100px] leading-[100px]
+    <xl:text-[90px] <xl:leading-[100px]
+    <lg:text-[80px] <lg:leading-[90px]
+    <md:text-[72px] <md:leading-[80px]
+    <sm:text-[68px] <sm:leading-[76px];
 }
 .u-fs118 {
     @apply text-[118px] leading-[100px];
 }
 .u-fs126 {
-    @apply text-[126px] leading-[126px];
+    @apply text-[126px] leading-[126px]
+    <xl:text-[100px] <xl:leading-[100px]
+    <lg:text-[90px] <lg:leading-[100px]
+    <md:text-[80px] <md:leading-[92px]
+    <sm:text-[72px] <sm:leading-[84px];
 }
 .u-fs180 {
-    @apply text-[180px] leading-[180px];
+    @apply text-[180px] leading-[180px]
+    <xl:text-[160px] <xl:leading-[160px]
+    <lg:text-[140px] <lg:leading-[140px]
+    <md:text-[120px] <md:leading-[120px]
+    <sm:text-[80px] <sm:leading-[90px];
 }
 .u-fs220 {
-    @apply text-[220px] leading-[220px];
+    @apply text-[220px] leading-[220px]
+    <xl:text-[180px] <xl:leading-[190px]
+    <lg:text-[160px] <lg:leading-[180px]
+    <md:text-[140px] <md:leading-[160px]
+    <sm:text-[100px] <sm:leading-[130px];
 }
 
 .u-button {
@@ -127,7 +172,8 @@ ul {
     }
     &--hero {
         @extend .u-fs22;
-        @apply px-12 py-5 text-green bg-white border-2 border-green hover:bg-green hover:text-white;
+        @apply px-12 py-5 text-green bg-white border-2 border-green hover:bg-green hover:text-white
+        <xl:py-4;
         svg {
             @apply top-0.5;
             path {
@@ -152,7 +198,7 @@ ul {
     }
 }
 .u-container {
-    @apply mx-auto max-w-[1190px] px-9;
+    @apply mx-auto max-w-[1190px] px-9 <md:px-6;
     &--lg {
         @apply max-w-[1024px];
     }
@@ -202,16 +248,32 @@ ul {
         }
     }
 }
+.u-burger {
+    @apply hidden flex-col space-y-1 <lg:flex;
+    span {
+        @apply w-[30px] h-px bg-white transform transition-all;
+    } 
+    &--opened {
+        span {
+            &:first-child {
+                @apply transform rotate-45 translate-y-1;
+            }
+            &:last-child {
+                @apply transform -rotate-45 translate-y-[-1px];
+            }
+        }
+    }
+}
 .u-section {
-    @apply mt-32;
+    @apply mt-32 <lg:mt-28 <md:mt-24 <sm:mt-20;
     &--padded {
-        @apply py-32;
+        @apply py-32 <lg:py-28 <md:py-24 <sm:py-20;
     }
     &--padded-t {
-        @apply pt-32;
+        @apply pt-32 <lg:pt-28 <md:pt-24 <sm:pt-20;
     }
     &--extra-mb {
-        @apply mb-60;
+        @apply mb-60 <lg:mb-44 <md:mb-32 <sm:mb-26;
     
     }
     &--cake { @apply bg-cake; }
@@ -262,12 +324,12 @@ ul {
     
 }
 .u-scatter__resume {
-    @apply flex items-center mb-8 border boder-[#dadada] rounded-[12px] bg-white;
+    @apply flex items-center mb-8 border boder-[#dadada] rounded-[12px] bg-white <lg:flex-wrap;
     &__block {
-        @apply flex items-center space-x-3 flex-1 py-3 px-5;
+        @apply flex items-center space-x-3 flex-1 py-3 px-5 <lg:flex-initial <lg:w-1/3 <sm:w-1/2;
         &:after {
             content: '';
-            @apply block w-px h-6 bg-[#dadada] absolute top-1/2 right-0 transform -translate-y-1/2;
+            @apply block w-px h-6 bg-[#dadada] absolute top-1/2 right-0 transform -translate-y-1/2 <lg:hidden;
         }
         h4 {
             @extend .u-fs20;

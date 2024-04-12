@@ -1,16 +1,16 @@
 <template>
     <section class="u-section">
         <div class="u-container">
-            <div class="flex flex-wrap">
-                <div class="w-1/2">
+            <div class="flex flex-wrap <md:flex-col-reverse <md:flex-nowrap">
+                <div class="w-1/2 <md:w-full">
                     <div class="pic pic--end">
                         <img v-motion-slide-visible-once-left src="@/assets/img/ho-rean-01.jpg">
                     </div>
                     <div class="pic pic--end">
-                        <img v-motion-slide-visible-once-left src="@/assets/img/ho-rean-02.jpg">
+                        <img v-motion-slide-visible-once-left src="@/assets/img/ho-rean-02.jpg" class="<md:-left-6">
                     </div>
                 </div>
-                <div class="w-1/2 pl-12 sticky top-3 self-start">
+                <div class="w-1/2 pl-12 sticky top-3 self-start <md:w-full <md:relative">
                     <div class="u-header u-header--left">
                         <h2>{{ $t('ho_rean_re_title') }}</h2>
                         <h3>{{ $t('ho_rean_re_subtitle') }}</h3>
@@ -29,8 +29,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-wrap mt-20">
-                <div class="w-1/2 pr-12 sticky top-3 self-start">
+            <div class="flex flex-wrap mt-20 <md:flex-nowrap <md:flex-col">
+                <div class="w-1/2 pr-12 sticky top-3 self-start <md:w-full <md:relative">
                     <div class="u-header u-header--left">
                         <h2>{{ $t('ho_rean_me_title') }}</h2>
                         <h3>{{ $t('ho_rean_me_subtitle') }}</h3>
@@ -48,7 +48,7 @@
                     </div>
                     </div>
                 </div>
-                <div class="w-1/2">
+                <div class="w-1/2 <md:w-full">
                     <div class="pic pic--start">
                         <img v-motion-slide-visible-once-right src="@/assets/img/ho-rean-03.jpg">
                     </div>
@@ -62,7 +62,7 @@
 .pic {
     @apply mb-20 flex;
     img {
-        @apply max-w-none;
+        @apply max-w-none <sm:max-w-full;
     }
     &--end {
         @apply justify-end;

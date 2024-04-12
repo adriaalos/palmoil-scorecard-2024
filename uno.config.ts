@@ -23,15 +23,13 @@ export default defineConfig({
             ocrelight: '#E4C864',
             line: '#DADADA'
         },
-        extend: {
-            screens: {
-                '2xl': {'max': '1536px'},
-                'xl': {'max': '1280px'},
-                'lg': {'max': '1024px'},
-                'md': {'max': '768px'},
-                'sm': {'max': '640px'},
-                'xs': {'max': '414px'},
-            }
+        breakpoints: {
+            '2xl': '1536.1px',
+            'xl': '1280.1px',
+            'lg': '1024.1px',
+            'md': '768.1px',
+            'sm': '640.1px',
+            'xs': '414.1px',
         }
     },
     presets: [

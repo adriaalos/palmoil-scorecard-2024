@@ -1,14 +1,14 @@
 <template>
     <section class="u-section mt-0" id="about">
-        <div class="py-32 u-gradient u-gradient--green-greensoft">
+        <div class="py-32 u-gradient u-gradient--green-greensoft <md:py-24 <sm:py-20">
             <div class="u-container flex flex-col items-center">
                 <h2 class="u-fs68 text-white text-center font-wwf">ABOUT PALM OIL</h2>
                 <span class="mt-6 w-[110px] h-px bg-[#88D7A0]"></span>
             </div>
         </div>
         <div class="u-container mt-12">
-            <div class="flex flex-wrap items-center">
-                <div class="w-1/2 flex justify-end">
+            <div class="flex flex-wrap items-center <md:flex-nowrap <md:flex-col-reverse">
+                <div class="w-1/2 flex justify-end <md:hidden">
                     <img 
                         v-motion-slide-visible-once-right
                         class="max-w-none rounded-r-[60px]" 
@@ -16,7 +16,7 @@
                         alt="PALM OIL"
                     />
                 </div>
-                <div class="w-1/2 pl-12">
+                <div class="w-1/2 pl-12 <md:w-full <md:pl-0 <md:text-center">
                     <h3 class="u-fs126 font-wwf u-gradient u-gradient--green-greensoft inline-block text-transparent bg-clip-text">PALM OIL</h3>
                     <h4 class="u-fs68 font-wwf uppercase">
                         A versatile and widely used oil, powering industries and households globally
@@ -33,7 +33,7 @@
         </div>
         <div class="u-container mt-12">
             <div class="flex z-10">
-                <div class="flex-1"></div>
+                <div class="flex-1 <md:hidden"></div>
                 <div class="flex-1">
                     <header class="u-header u-header--green u-header--left">
                         <h2>EVERY PART OF THE OIL PALM PLANT CAN BE USED</h2>
@@ -43,7 +43,7 @@
                     </header>
                 </div>
             </div>
-            <div class="mt-[-325px]">
+            <div class="mt-[-325px] <md:mt-[-20px]">
                 <img 
                     v-motion-slide-visible-once-top
                     src="@/assets/img/ab-intro-02.svg"
@@ -74,14 +74,14 @@
                     </p>
                 </div>
             </div>
-            <div>
-                <img src="@/assets/img/ab-intro-04.svg" />
-                <div class="absolute left-[35%] bottom-12 u-gradient u-gradient--green-greensoft p-6 rounded-[12px] font-wwf text-white uppercase">
+            <div class="<md:px-6 <md:flex <md:flex-wrap">
+                <img src="@/assets/img/ab-intro-04.svg" class="<md:full"/>
+                <div class="absolute left-[35%] bottom-12 u-gradient u-gradient--green-greensoft p-6 rounded-[12px] font-wwf text-white uppercase <md:relative <md:left-0 <md:w-1/2 <md:bottom-0 <sm:w-full">
                     <span class="block u-fs38">77.6 million MT</span>
                     <span class="block text-sm">total volume of palm oil produced globally</span>
                     <span class="block u-fs24 leading-[24px]">the equivalent of 20,000<br> olympic swimming pools</span>
                 </div>
-                <div class="max-w-[35%] absolute left-[60%] -bottom-6 text-[10px] text-[#7b7b7b]">
+                <div class="max-w-[35%] absolute left-[60%] -bottom-6 text-[10px] text-[#7b7b7b] <md:relative <md:left-0 <md:bottom-0 <md:max-w-none <md:w-1/2 <md:bottom-0 <md:pl-6 <sm:w-full <sm:pl-0 <sm:mt-6">
                     <span class="block u-fs24 font-wwf text-green">GLOBAL PALM OIL PRODUCTION & TRADE</span>
                     <span class="block">Palm oil production</span>
                     <div class="w-[150px] h-[7px] rounded-[12px] u-gradient u-gradient--horiz from-[#C6FB88] to-[#3D6041]"></div>

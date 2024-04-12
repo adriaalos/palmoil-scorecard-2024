@@ -8,9 +8,9 @@
             </header>
         </div>
         <div class="u-container">
-            <div class="w-[1110px] flex flex-col justify-center mx-auto">
-                <div class="flex items-center gap-3 mb-10">
-                    <div class="w-1/2 flex gap-3">
+            <div class="w-[1110px] flex flex-col justify-center mx-auto <xl:w-full">
+                <div class="flex items-center gap-3 mb-10 <lg:flex-wrap <lg:gap-0 <sm:hidden">
+                    <div class="w-1/2 flex gap-3 <lg:w-full <sm:flex-col">
                         <core-select 
                             class="flex-1"
                             :placeholder="$t('ho_scatter_filters_sector')"
@@ -30,7 +30,7 @@
                             @on-change="onFilter('regionHq', $event)"
                         />
                     </div>
-                    <div class="w-1/2">
+                    <div class="w-1/2 <lg:w-full <lg:mt-3">
                         <div>
                             <input 
                                 v-model="search"
@@ -74,14 +74,14 @@
                 </div>
                 <client-only>
                     <apexchart 
-                        class="w-full h-full"
+                        class="w-full h-full <sm:hidden"
                         type="scatter" 
                         :options="options" 
                         :series="series"
                     />
                 </client-only>
                 <div 
-                    class="u-scatter-item"
+                    class="u-scatter-item <sm:hidden"
                     :style="{ 'left': (sc.average / sc.total_outof) * 100 + '%'}"
                 >
                     <div 
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <div 
-                    class="u-scatter-item"
+                    class="u-scatter-item <sm:hidden"
                     :style="{ 'left': (sc.total_outof / sc.total_outof) * 100 + '%'}"
                 >
                     <div 
@@ -115,22 +115,22 @@
                         :style="{ 'background-color': totalColor }"
                     />
                     <div
-                        class="u-scatter-item__data"
+                        class="u-scatter-item__data "
                         :style="{ 'background-color': totalColor }"
                     >
                         {{ sc.total_outof }}
-                        <div class="u-scatter-item__data__label">
+                        <div class="u-scatter-item__data__label <xl:left-initial <xl:right-[120%]">
                             {{ $t('ho_scatter_axis_x_objective') }}
                         </div>
                     </div>
                 </div>
                 
             </div>
-            <div class="flex justify-center mt-16">
+            <div class="flex justify-center mt-16 <sm:hidden">
                 <core-score-ranges :norespondents="false" />
             </div> 
         </div>
-        <footer class="mt-20">
+        <footer class="mt-20 <sm:mt-10">
             <div class="u-container u-container--md">
                 <div class="text-center" v-html="$t('ho_scatter_closing')"></div>
             </div>
@@ -244,6 +244,7 @@ const renderTooltip = (company: Company) => {
     const def_commitments = sc.categories.find((c: any) => c.id === 'commitments')
     const def_purchasing = sc.categories.find((c: any) => c.id === 'purchasing')
     const def_suppliers = sc.categories.find((c: any) => c.id === 'suppliers')
+    const def_traceability = sc.categories.find((c: any) => c.id === 'traceability')
     const def_platforms = sc.categories.find((c: any) => c.id === 'platforms')
     const def_onTheGround = sc.categories.find((c: any) => c.id === 'onTheGround')
 
@@ -275,6 +276,13 @@ const renderTooltip = (company: Company) => {
         def_suppliers?.id,
         company.respStatus,
         def_suppliers?.label,
+    )
+    str += renderCategory(
+        company.traceability.supTraceScore,
+        def_traceability?.out_of,
+        def_traceability?.id,
+        company.respStatus,
+        def_traceability?.label,
     )
     str += renderCategory(
         company.platforms.platformsTotalScore,

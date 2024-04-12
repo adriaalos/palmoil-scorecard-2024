@@ -2,7 +2,7 @@
     <section class="u-section u-section--padded">
         <div class="absolute w-full h-[300px] top-0 left-0 u-gradient u-gradient--cake-transparent"></div>
         <div class="u-container u-container--lg">
-            <div class="flex space-x-6">
+            <div class="flex space-x-6 <sm:flex-col <sm:space-x-0">
                 <div class="flex-1">
                     <header class="u-header u-header--left">
                         <h3>{{ $t('ab_feats_where_title') }}</h3>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="u-container u-container--lg mt-20">
-            <div class="flex space-x-6">
+            <div class="flex space-x-6 <sm:flex-col-reverse <sm:space-x-0">
                 <div class="flex-1 flex items-center">
                     <img 
                         v-motion-slide-visible-once-left
@@ -43,7 +43,7 @@
             </div>
             <img 
                 v-motion-slide-visible-once-top
-                class="-mt-52 w-full"
+                class="-mt-12 w-full"
                 src="@/assets/img/ab-feats-03.png"
             />
         </div>

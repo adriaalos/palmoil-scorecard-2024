@@ -5,7 +5,7 @@
                 class="mx-auto"
                 src="@/assets/img/wwf-logo.png" alt="WWF" 
             />
-            <ul class="mt-6 flex items-center justify-center gap-x-8">
+            <ul class="mt-6 flex items-center justify-center gap-x-8 <sm:flex-col <sm:gap-x-0">
                 <li
                     v-for="item in nav"
                     :key="item.id"

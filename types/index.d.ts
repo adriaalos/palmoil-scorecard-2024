@@ -97,6 +97,13 @@ declare global {
             supPlant: boolean,
             supTotalScore: number
         },
+        traceability: {
+            supMill: boolean,
+            supPlant: boolean,
+            supTraceMillPer: number,
+            supTracePlantPer: number,
+            supTraceScore: number
+        },
         platforms: {
             rspoMember: boolean,
             poigMemeber: boolean,
