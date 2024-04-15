@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="u-container u-container--lg">
-        <div class="-mt-28 bg-cake p-20 rounded-[20px]">
+        <div class="-mt-28 bg-cake p-20 rounded-[20px] <sm:p-6">
             <div>
                 <p>
                     Palm oil buyers continue to fall short of implementing the necessary transformative actions needed to halt the destruction of the world's most crucial forests and natural ecosystems. Despite efforts, companies are only averaging a score of 14.7 points out of 24. This score underscores the significant distance that remains for these companies to demonstrate a genuine commitment to establishing palm oil supply chains that are devoid of deforestation, ecosystem conversion, and human rights abuses.

@@ -40,7 +40,8 @@ ul {
     <xl:text-[24px];
 }
 .u-fs28noleaded {
-    @apply text-[28px] leading-[28px];
+    @apply text-[28px] leading-[28px]
+    <xl:text-[24px];
 }
 .u-fs30 {
     @apply text-[30px] leading-[30px];
@@ -82,13 +83,21 @@ ul {
     @apply text-[42px] leading-[46px];
 }
 .u-fs44 {
-    @apply text-[44px] leading-[54px];
+    @apply text-[44px] leading-[54px]
+    <xl:text-[42px] <xl:leading-[46px]
+    <lg:text-[40px] <lg:leading-[44px]
+    <md:text-[38px] <md:leading-[42px]
+    <sm:text-[34px] <sm:leading-[38px];
 }
 .u-fs44noleaded {
     @apply text-[44px] leading-[48px];
 }
 .u-fs48 {
-    @apply text-[48px] leading-[52px];
+    @apply text-[48px] leading-[52px]
+    <xl:text-[46px] <xl:leading-[50px]
+    <lg:text-[44px] <lg:leading-[48px]
+    <md:text-[40px] <lg:leading-[46px]
+    <sm:text-[36px] <lg:leading-[42px];
 }
 .u-fs55 {
     @apply text-[55px] leading-[62px]
@@ -104,7 +113,11 @@ ul {
     @apply text-[60px] leading-[60px];
 }
 .u-fs62 {
-    @apply text-[62px] leading-[62px];
+    @apply text-[62px] leading-[62px]
+    <xl:text-[51px] <xl:leading-[58px]
+    <lg:text-[48px] <lg:leading-[54px]
+    <md:text-[44px] <lg:leading-[50px]
+    <sm:text-[41px] <lg:leading-[48px];
 }
 .u-fs65 {
     @apply text-[65px];
@@ -117,10 +130,18 @@ ul {
     <sm:text-[46px] <lg:leading-[50px];
 }
 .u-fs72 {
-    @apply text-[72px] leading-[72px];
+    @apply text-[72px] leading-[72px]
+    <xl:text-[62px] <xl:leading-[68px]
+    <lg:text-[58px] <lg:leading-[64px]
+    <md:text-[50px] <lg:leading-[56px]
+    <sm:text-[46px] <lg:leading-[50px];
 }
 .u-fs78 {
-    @apply text-[78px] leading-[78px];
+    @apply text-[78px] leading-[78px]
+    <xl:text-[80px] <xl:leading-[62px]
+    <lg:text-[72px] <lg:leading-[62px]
+    <md:text-[62px] <md:leading-[62px]
+    <sm:text-[48px] <sm:leading-[52px];
 }
 .u-fs88 {
     @apply text-[88px] leading-[62px]
@@ -137,7 +158,11 @@ ul {
     <sm:text-[68px] <sm:leading-[76px];
 }
 .u-fs118 {
-    @apply text-[118px] leading-[100px];
+    @apply text-[118px] leading-[100px]
+    <xl:text-[100px] <xl:leading-[100px]
+    <lg:text-[90px] <lg:leading-[100px]
+    <md:text-[80px] <md:leading-[92px]
+    <sm:text-[72px] <sm:leading-[84px];
 }
 .u-fs126 {
     @apply text-[126px] leading-[126px]
@@ -870,7 +895,7 @@ ul {
 }
 
 .u-an {
-    @apply flex space-x-3;
+    @apply flex space-x-3 <md:flex-col <md:space-x-0 <md:space-y-6;
     &__indicator {
         @apply flex space-x-4;
     }
@@ -882,7 +907,7 @@ ul {
         }
     }
     &__separator {
-        @apply w-px h-[155px] bg-[#DADADA];
+        @apply w-px h-[155px] bg-[#DADADA] <md:hidden;
     }
     &__header {
         @apply mb-6;
@@ -892,7 +917,7 @@ ul {
         }
     }
     &__grid {
-        @apply flex space-x-6;
+        @apply flex space-x-6 <md:flex-col <md:space-x-0 <md:space-y-6;
     }
     &__text {
         p {
@@ -923,7 +948,8 @@ ul {
         }
     }
     &__mapblock {
-        @apply w-[260px] p-6 bg-cake absolute rounded-[12px];
+        @apply w-[260px] p-6 bg-cake absolute rounded-[12px]
+        <lg:relative <lg:top-initial <lg:left-initial <lg:bottom-initial <lg:right-initial <lg:w-full <lg:mb-2;
         .title {
             @extend .u-fs24;
             @apply font-wwf uppercase;
@@ -945,6 +971,9 @@ ul {
     }
     &__ground {
         @apply flex flex-col justify-center space-y-4 flex-1;
+        .pic {
+            @apply <sm:mx-auto;
+        }
         .stat {
             @apply flex flex-col justify-center text-center font-wwf text-green;
             span {
@@ -962,12 +991,12 @@ ul {
         }
     }
     &__radar {
-        @apply w-1/2 px-6 py-6;
+        @apply w-1/2 px-6 py-6 <sm:w-full;
         h4 {
             @apply mb-4 font-wwf uppercase text-sm;
         }
         .grid {
-            @apply flex;
+            @apply flex <md:flex-col <md:space-y-6;
             > * {
                 @apply flex-1;
             }

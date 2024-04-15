@@ -1,7 +1,7 @@
 <template>
-    <section class="u-section">
+    <section class="u-section overflow-x-hidden">
         <div class="u-container u-container">
-            <div class="py-20 bg-gradient-to-r from-ocre to-ocrelight rounded-[12px]">
+            <div class="py-20 bg-gradient-to-r from-ocre to-ocrelight rounded-[12px] <md:py-14 <sm:py-10">
                 <h2 class="u-fs48 font-wwf text-white text-center">KEY FINDINGS</h2>
             </div>
         </div>
@@ -36,7 +36,7 @@
                                 Following the guidance provided in the Accountability Framework, palm oil buyers are encouraged to supplement their deforestation-free pledge with a commitment to avoiding conversion, thereby safeguarding diverse natural ecosystems beyond forests. These ecosystems play a crucial role in carbon sequestration, biodiversity preservation, water resource maintenance, disaster risk reduction, climate change adaptation, and the welfare of local communities. Moreover, the disparity in commitment levels demonstrates a need for clearer timelines and strategic planning to ensure the effective realisation of sustainable sourcing goals.
                             </p>
                         </div>
-                        <div class="flex-1 px-20">
+                        <div class="flex-1 px-20 <sm:px-0">
                             <div class="u-an__badge mb-10" v-motion-slide-visible-once-top>
                                 <div class="u-an__badge__pic">
                                     <img src="@/assets/img/an-key-01-01.png" alt="01">
@@ -119,7 +119,7 @@
                                 North America, Europe and UK-based respondents have the highest uptake of RSPO CSPO. Conversely, respondents from Asia and Africa lag behind, indicating the need for significant progress in narrowing the certification gap in these regions.
                             </p>
                         </div>
-                        <div class="flex-1 px-20">
+                        <div class="flex-1 px-20 <sm:px-9">
                             <div class="u-an__badge mb-10" v-motion-slide-visible-once-top>
                                 <div class="u-an__badge__pic">
                                     <img src="@/assets/img/an-key-02-01.png" alt="01">
@@ -145,9 +145,9 @@
                 
             </div>
         </div>
-        <div class="mt-72">
-            <img src="@/assets/img/an-key-02-map.png">
-            <div class="u-an__mapblock top-[-10%] left-[12%]">
+        <div class="mt-72 <lg:px-6 <sm:mt-20">
+            <img src="@/assets/img/an-key-02-map.png" class="<lg:w-full">
+            <div class="u-an__mapblock top-[-10%] left-[12%] <lg:top-0 <lg:left-0">
                 <div class="title">NORTH AMERICAN</div>
                 <ul>
                     <li>
@@ -164,7 +164,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="u-an__mapblock top-[-20%] left-[45%]">
+            <div class="u-an__mapblock top-[-20%] left-[45%] <lg:top-0 <lg:left-0">
                 <div class="title">europe & UK</div>
                 <ul>
                     <li>
@@ -181,7 +181,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="u-an__mapblock top-[25%] left-[50%]">
+            <div class="u-an__mapblock top-[25%] left-[50%] <lg:top-0 <lg:left-0">
                 <div class="title">africa</div>
                 <ul>
                     <li>
@@ -198,7 +198,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="u-an__mapblock top-[20%] right-[10%]">
+            <div class="u-an__mapblock top-[20%] right-[10%] <xl:right-[2%] <lg:top-0 <lg:right-0">
                 <div class="title">asia & australia</div>
                 <ul>
                     <li>
@@ -215,21 +215,21 @@
                     </li>
                 </ul>
             </div>
-            <div class="u-an__badge bg-green w-[380px] absolute bottom-[5%] left-[40%]" v-motion-slide-visible-once-top>
+            <div class="u-an__badge bg-green w-[380px] absolute bottom-[5%] left-[40%] <lg:relative <lg:bottom-0 <lg:left-0 <lg:my-6 <lg:w-full" v-motion-slide-visible-once-top>
                 <div class="u-an__badge__text">
                     <div>
                         <span class="u-fs24noleaded">Palm oil buyers should urgently increase their sourcing of certified sustainable palm oil across all markets and close the certification gap</span>
                     </div>
                 </div>
             </div>
-            <div class="u-an__badge w-[250px] absolute top-[30%] left-[25%]" v-motion-slide-visible-once-top>
+            <div class="u-an__badge w-[250px] absolute top-[30%] left-[25%] <lg:hidden <lg:left-0" v-motion-slide-visible-once-top>
                 <div class="u-an__badge__text">
                     <div>
                         <span class="u-fs32noleaded text-green">UPTAKE OF RSPO-CERTIFIED SUSTAINABLE PALM OIL BY REGION*</span>
                     </div>
                 </div>
             </div>
-            <div class="absolute bottom-0 left-[20%] text-sm">*based on respondents’ headquarters</div>
+            <div class="absolute bottom-0 left-[20%] text-sm <lg:relative <lg:left-0">*based on respondents’ headquarters</div>
         </div>
         <div class="mt-20 u-container">
             <div class="u-an">
@@ -252,7 +252,7 @@
                             The RSPO impact report for 2023 shows that more Mass Balance (MB) mills have been established than Identity Preserved (IP) mills adding to the current limitation.
                         </p>
                     </div>
-                    <div class="mt-10 flex space-x-6">
+                    <div class="mt-10 flex space-x-6 <sm:flex-col <sm:space-x-0 <sm:space-y-6">
                         <div class="flex-1">
                             <div class="u-an__badge u-an__badge--dark bg-cake" v-motion-slide-visible-once-top>
                                 <div class="u-an__badge__text">
@@ -331,7 +331,7 @@
                                 Palm oil buyers should establish robust monitoring, verification and reporting systems using the Accountability Framework as a common reference. They should also engage their suppliers more comprehensively by requesting and incentivising suppliers to be sustainable across all of their operations
                             </p>
                         </div>
-                        <div class="flex-1 px-20">
+                        <div class="flex-1 px-20 <sm:px-0">
                             <div class="u-an__badge mb-10" v-motion-slide-visible-once-top>
                                 <div class="u-an__badge__pic">
                                     <img src="@/assets/img/an-key-04-01.png" alt="01">
@@ -353,11 +353,11 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-44 u-container u-container--lg" v-motion-slide-visible-once-top>
+            <div class="mt-44 u-container u-container--lg <md:mt-10 <sm:px-0" v-motion-slide-visible-once-top>
                 <div class="bg-cake rounded-[12px] p-12">
-                    <img src="@/assets/img/an-key-04-02.png" alt="02" class="mix-blend-multiply absolute left-0 bottom-0">
+                    <img src="@/assets/img/an-key-04-02.png" alt="02" class="mix-blend-multiply absolute left-0 bottom-0 <md:hidden">
                     <div class="flex">
-                        <div class="flex-1"></div>
+                        <div class="flex-1 <md:hidden"></div>
                         <div class="flex-1 font-wwf uppercase">
                             <div class="u-fs58">47% OF RESPONDENTS</div>
                             <div class="u-fs32noleaded">
@@ -393,7 +393,7 @@
                                 Companies are investing in traceability to comply with evolving regulatory frameworks like the EUDR and mitigate legal risks. While traceability doesn't ensure palm oil sustainability alone, it helps companies identify and address social and environmental risks in their supply chain more effectively. Palm oil buyers wield significant influence to ensure collaborative implementation of traceability mechanisms and reporting with their suppliers.
                             </p>
                         </div>
-                        <div class="flex-1 px-20">
+                        <div class="flex-1 px-20 <sm:px-0">
                             <div class="u-an__badge mb-10 py-20" v-motion-slide-visible-once-top>
                                 <div class="u-an__badge__pic">
                                     <img src="@/assets/img/an-key-05-01.png" alt="01">
@@ -481,7 +481,7 @@
                                 The scorecard introduced significant changes this year, emphasising alignment with Accountability Framework Initiative (AFI) Operational Guidance (OG) to ensure companies contribute to broader sustainability goals.
                             </p>
                         </div>
-                        <div class="flex-1 px-20">
+                        <div class="flex-1 px-20 <sm:px-0">
                             <div class="p-12 bg-green rounded-[12px] text-white font-wwf uppercase">
                                 <div class="u-fs78">
                                     39% of<br> respondents 
@@ -496,7 +496,7 @@
             </div>
         </div>
         <div class="mt-16 u-container u-container--lg">
-            <div class="flex space-x-12 items-start">
+            <div class="flex space-x-12 items-start <sm:flex-col <sm:space-x-0 <sm:space-y-6 <sm:items-center">
                 <div class="u-an__ground">
                     <div class="stat">
                         <span>92%</span>

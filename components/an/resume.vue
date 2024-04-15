@@ -12,7 +12,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex-1"></div>
+                <div class="flex-1 <sm:hidden"></div>
             </div>
             <div class="mt-6">
                 <div class="flex items-center">

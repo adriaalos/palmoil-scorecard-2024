@@ -1,9 +1,9 @@
 <template>
     <section class="u-section">
         <div class="u-container u-container--lg">
-            <div class="flex space-x-10">
+            <div class="flex space-x-10 <sm:flex-col <sm:space-x-0 <sm:space-y-6">
                 <div class="flex-1">
-                    <h3 class="u-fs40 font-wwf text-green uppercase text-right">How companies are performing ON
+                    <h3 class="u-fs40 font-wwf text-green uppercase text-right <sm:text-left">How companies are performing ON
                         FUNDAMENTAL ACTION AREAS</h3>
                 </div>
                 <div class="flex-1">
@@ -19,18 +19,18 @@
                 </div>
             </div>
         </div>
-        <div class="mt-20 u-container u-container--md">
+        <div class="mt-20 u-container u-container--md <sm:hidden">
             <h4 class="mb-10 font-wwf u-fs24noleaded text-green text-center uppercase">Share of respondents in select
                 sectors<br> who meet key sustainability criteria</h4>
         </div>
-        <div class="mb-20">
+        <div class="mb-20 <sm:hidden">
             <ClientOnly>
                 <div class="w-full h-[75vh] flex justify-center">
                     <Radar :options="chartOptions" :data="chartData" />
                 </div>
             </ClientOnly>
         </div>
-        <div class="u-container u-container--lg">
+        <div class="u-container u-container--lg <sm:mt-10">
             <div class="flex flex-wrap -mx-6 -my-6">
                 <div class="u-an__radar">
                     <h4>Food Manufacturers</h4>
