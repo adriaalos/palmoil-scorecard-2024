@@ -7,7 +7,7 @@
                 :src="`/2024/cs-${cs.casestudy.company}-header.jpg`"                
             >
         </div>
-        <div class="u-container u-container--lg pt-96 pb-32">
+        <div class="u-container u-container--lg pt-96 pb-32 <lg:pt-44 <lg:pb-20">
             <header class="font-wwf text-white uppercase">
                 <h2 class="u-fs40">{{ sc.company.hq }}</h2>
                 <h1 class="u-fs100">{{ sc.company.companyName }}</h1>
