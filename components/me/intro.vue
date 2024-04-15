@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="u-container u-container--lg">
-        <div class="-mt-28 bg-cake p-20 rounded-[20px]">
+        <div class="-mt-28 bg-cake p-20 rounded-[20px] <md:p-9">
             <h3 class="u-fs32 font-bold">
                 The 2024 edition of the scorecard aims to measure the progress and performance of 300+ major retailers, manufacturers, food service, and hospitality companies on key actions they are taking to source and support sustainable palm oil.
             </h3>

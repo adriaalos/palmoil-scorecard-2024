@@ -1,6 +1,6 @@
 <template>
     <section class="u-section">
-        <div class="u-container">
+        <div class="u-container <sm:hidden">
             <img 
                 v-motion-slide-visible-once-top
                 class="mx-auto" 
@@ -9,7 +9,7 @@
             />
         </div>
         <div class="u-container u-container--lg">
-            <div class="flex border border-[#DADADA] rounded-[14px]">
+            <div class="flex border border-[#DADADA] rounded-[14px] <sm:flex-col">
                 <div 
                     v-for="item in items"
                     :key="item.num"
@@ -20,11 +20,11 @@
                 </div>
             </div>
             <div class="mt-20">
-                <div class="flex gap-x-10">
-                    <div class="w-5/12">
+                <div class="flex gap-x-10 <md:gap-x-0 <md:flex-col <md:text-center <md:space-y-6">
+                    <div class="w-5/12 <md:w-full">
                         <h3 class="font-wwf u-fs55">WHAT DATA DID WE COLECT?</h3>
                     </div>
-                    <div class="w-7/12">
+                    <div class="w-7/12 <md:w-full">
                         <p>
                             It is important to note that the questions are not exhaustive of the actions that companies can take to support sustainable palm oil, but represent some key areas identified by WWF, including embracing the RSPO standard (P&C 2018) and efforts to address deforestation, conversion and human rights issues in the palm oil sector.
                         </p>
@@ -61,15 +61,15 @@ const items = ref([
 
 <style lang="scss" scoped>
 .data {
-    @apply flex-1 flex items-center px-12 space-x-2 py-3;
+    @apply flex-1 flex items-center px-12 space-x-2 py-3 <md:px-3 <sm:py-2;
     &__num {
-        @apply flex-1 font-wwf;
+        @apply flex-1 font-wwf <sm:flex-initial;
     }
     &__label {
         @apply text-sm text-[#7B7B7B];
     }
     &:before {
-        @apply content-[''] absolute top-1/2 left-0 w-px h-6 bg-[#DADADA] transform -translate-y-1/2;
+        @apply content-[''] absolute top-1/2 left-0 w-px h-6 bg-[#DADADA] transform -translate-y-1/2 <md:hidden;
     }
     &:first-child:before {
         @apply hidden;

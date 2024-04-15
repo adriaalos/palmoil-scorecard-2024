@@ -6,7 +6,7 @@
             alt=""
         />
         <div class="u-container u-container--lg">
-            <div class="p-20 rounded-[60px] bg-cake">
+            <div class="p-20 rounded-[60px] bg-cake <md:p-9">
                 <div class="text-center">
                     <p>
                         We asked all the companies to complete a simple questionnaire. As in previous scorecards, we used information that companies provided directly to us, on their websites or in their annual reports to RSPO. We have verified this information where possible, but have relied on the companies to be transparent, truthful and accurate in their reporting. WWF urges users of the Scorecard to check the data and share any errors found with both WWF and the relevant company.

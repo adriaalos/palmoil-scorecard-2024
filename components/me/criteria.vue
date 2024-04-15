@@ -697,7 +697,7 @@
             
         }
         &__col {
-            @apply w-1/2 p-8 last:border-l border-[#DADADA];
+            @apply w-1/2 p-8 last:border-l border-[#DADADA] <md:w-full <md:border-l-none <md:border-t <md:first:border-t-none;
         }
         &__point {
             @apply mb-0 text-xs text-[#7B7B7B] font-open font-bold;
@@ -743,7 +743,7 @@
             }
         }
         &__high {
-            @apply mt-4 p-6 flex space-x-4 bg-cake rounded-[12px];
+            @apply mt-4 p-6 flex space-x-4 bg-cake rounded-[12px] <sm:flex-col <sm:space-x-0 <sm:space-y-4;
             &__num {
                 @apply self-start min-w-[35px] min-h-[35px] rounded-full border border-[#7B7B7B] text-[#7B7B7B] text-center font-bold flex items-center justify-center;
             }
