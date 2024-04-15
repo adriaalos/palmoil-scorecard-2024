@@ -1,11 +1,11 @@
 <template>
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 <md:flex-wrap <md:space-x-0 <md:-m-3">
         <template 
             v-for="range in ranges"
             :key="range.id"
         >
             <div
-                class="flex items-center space-x-1"
+                class="flex items-center space-x-1  <md:w-1/3 <md:p-3 <sm:w-1/2"
             >
                 <div
                     :class="['w-[48px] h-[48px] rounded-full flex items-center justify-center text-sm text-white font-wwf']"

@@ -3,8 +3,8 @@
     <section class="mt-20">
         <div>
             <div class="u-container">
-                <div class="flex items-center gap-x-6">
-                    <div class="w-3/4">
+                <div class="flex items-center gap-x-6 <md:flex-wrap <md:gap-x-0 <md:justify-center <md:gap-y-3">
+                    <div class="w-3/4 <md:w-full">
                         <div>
                             <input 
                                 v-model="search"
@@ -19,7 +19,7 @@
 
                         </div>
                     </div>
-                    <div class="w-1/4">
+                    <div class="w-1/4 <md:w-full <md:flex <md:justify-center">
                         <button 
                             class="u-button u-button--border py-[4px]"
                             @click="modal = true"
@@ -80,7 +80,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('totalPalmOil', 'number')">
+                        <th @click="sortBy('totalPalmOil', 'number')" class="<md:hidden">
                             <div class="th-label">
                                 <span>PO USED (Mt)</span>
                             </div>
@@ -95,7 +95,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('hq', 'string')">
+                        <th @click="sortBy('hq', 'string')" class="<md:hidden">
                             <div class="th-label">
                                 <span>COUNTRY OF HQ</span>
                             </div>
@@ -110,7 +110,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('sector', 'string')">
+                        <th @click="sortBy('sector', 'string')" class="<md:hidden">
                             <div class="th-label">
                                 <span>SECTOR</span>
                             </div>
@@ -125,7 +125,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('commitments.commitTotalScore', 'number')">
+                        <th @click="sortBy('commitments.commitTotalScore', 'number')" class="<md:hidden">
                             <div class="th-label th-label--text-center">
                                 <span v-html="$t('sc_type_commitment')" />
                                 <span>{{ $t('gl_outof') }} {{ getOutOf('commitments') }}</span>
@@ -141,7 +141,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('purchasing.purchTotalScore', 'number')">
+                        <th @click="sortBy('purchasing.purchTotalScore', 'number')" class="<md:hidden">
                             <div class="th-label th-label--text-center">
                                 <span v-html="$t('sc_type_purchasing')" />
                                 <span>{{ $t('gl_outof') }} {{ getOutOf('purchasing') }}</span>
@@ -157,7 +157,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('suppliers.supTotalScore', 'number')">
+                        <th @click="sortBy('suppliers.supTotalScore', 'number')" class="<md:hidden">
                             <div class="th-label th-label--text-center">
                                 <span v-html="$t('sc_type_suppliers')" />
                                 <span>{{ $t('gl_outof') }} {{ getOutOf('suppliers') }}</span>
@@ -173,7 +173,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('traceability.supTraceScore', 'number')">
+                        <th @click="sortBy('traceability.supTraceScore', 'number')" class="<md:hidden">
                             <div class="th-label th-label--text-center">
                                 <span v-html="$t('sc_type_traceability')" />
                                 <span>{{ $t('gl_outof') }} {{ getOutOf('traceability') }}</span>
@@ -189,7 +189,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('platforms.platformsTotalScore', 'number')">
+                        <th @click="sortBy('platforms.platformsTotalScore', 'number')" class="<md:hidden">
                             <div class="th-label th-label--text-center">
                                 <span v-html="$t('sc_type_platforms')" />
                                 <span>{{ $t('gl_outof') }} {{ getOutOf('platforms') }}</span>
@@ -205,7 +205,7 @@
                                 />
                             </div>
                         </th>
-                        <th @click="sortBy('onTheGround.onTheGroundTotalScore', 'number')">
+                        <th @click="sortBy('onTheGround.onTheGroundTotalScore', 'number')" class="<md:hidden">
                             <div class="th-label th-label--text-center">
                                 <span v-html="$t('sc_type_ground')" />
                                 <span>{{ $t('gl_outof') }} {{ getOutOf('onTheGround') }}</span>
@@ -257,16 +257,16 @@
                         <td>
                             <span class="block font-bold">{{ company.companyName }}</span>
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <span>{{ formatNumberWithComma(company.totalPalmOil) }}</span>
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <span>{{ company.hq }}</span>
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <span>{{ company.sector }}</span>
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <div class="flex flex-col">
                                 <div>
                                     <button 
@@ -349,7 +349,7 @@
                                 
                             </div> 
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <div class="flex flex-col">
                                 <div>
                                     <VDropdown v-if="company.respStatus">
@@ -390,7 +390,7 @@
                                 </div>   
                             </div> 
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <div class="flex flex-col">
                                 <div>
                                     <VDropdown v-if="company.respStatus">
@@ -431,7 +431,7 @@
                                 </div>   
                             </div> 
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <div class="flex flex-col">
                                 <div>
                                     <VDropdown v-if="company.respStatus">
@@ -456,7 +456,7 @@
                                 </div>                                
                             </div> 
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <div class="flex flex-col">
                                 <div>
                                     <VDropdown v-if="company.respStatus">
@@ -497,7 +497,7 @@
                                 </div>   
                             </div> 
                         </td>
-                        <td>
+                        <td class="<md:hidden">
                             <div class="flex flex-col">
                                 <div>
                                     <VDropdown v-if="company.respStatus">
@@ -605,8 +605,8 @@
                     </button>
                 </header>
                 <div class="py-12 px-6">
-                    <div class="flex flex-wrap -my-3 -mx-6">
-                        <div class="w-1/2 py-3 px-6">
+                    <div class="flex flex-wrap -my-3 -mx-6 <md:-my-1.5">
+                        <div class="w-1/2 py-3 px-6 <md:w-full <md:py-1.5">
                             <label class="u-label">{{ $t('gl_by') }} {{ $t('ho_scatter_filters_sector') }}</label>
                             <core-select 
                                 class="flex-1"
@@ -617,7 +617,7 @@
                                 @on-change="onPrefilter('sector', $event)"
                             />
                         </div>
-                        <div class="w-1/2 py-3 px-6">
+                        <div class="w-1/2 py-3 px-6 <md:w-full <md:py-1.5">
                             <label class="u-label">{{ $t('gl_by') }} {{ $t('ho_scatter_filters_country') }}</label>
                             <core-select 
                                 class="flex-1"
@@ -628,7 +628,7 @@
                                 @on-change="onPrefilter('hq', $event)"
                             />
                         </div>
-                        <div class="w-1/2 py-3 px-6">
+                        <div class="w-1/2 py-3 px-6 <md:w-full <md:py-1.5">
                             <label class="u-label">{{ $t('gl_by') }} {{ $t('ho_scatter_filters_region') }}</label>
                             <core-select 
                                 class="flex-1"
@@ -639,7 +639,7 @@
                                 @on-change="onPrefilter('regionHq', $event)"
                             />
                         </div>
-                        <div class="w-1/2 py-3 px-6">
+                        <div class="w-1/2 py-3 px-6 <md:w-full <md:py-1.5">
                             <label class="u-label">{{ $t('gl_by') }} {{ $t('ho_scatter_filters_applicSector') }}</label>
                             <core-select 
                                 class="flex-1"
@@ -650,7 +650,7 @@
                                 @on-change="onPrefilter('applicSector', $event)"
                             />
                         </div>
-                        <div class="w-1/2 py-3 px-6">
+                        <div class="w-1/2 py-3 px-6 <md:w-full <md:py-1.5">
                             <label class="u-label">{{ $t('gl_by') }} {{ $t('ho_scatter_filters_rspo') }}</label>
                             <core-select 
                                 class="flex-1"
@@ -661,7 +661,7 @@
                                 @on-change="onPrefilter('respStatus', $event)"
                             />
                         </div>
-                        <div class="w-1/2 py-3 px-6">
+                        <div class="w-1/2 py-3 px-6 <md:w-full <md:py-1.5">
                             <label class="u-label">{{ $t('gl_by') }} Total Palm Oil Purchase</label>
                             <div class="flex items-center gap-x-1">
                                 <input placeholder="Min" class="u-input" type="number" v-model="totalMin" @keyup="onPrefilter('totalMin', totalMin)" />

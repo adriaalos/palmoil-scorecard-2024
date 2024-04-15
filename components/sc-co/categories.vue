@@ -2,7 +2,7 @@
     <section v-if="sc.company" class="mt-16">
         <div class="u-container u-container--lg">
             <div class="flex flex-wrap items-center">
-                <div v-if="commitments" class="w-1/2 px-6 py-6">
+                <div v-if="commitments" class="w-1/2 px-6 py-6 <sm:w-full">
                     <div class="flex justify-between items-end mb-3">
                         <div class="flex-1 flex space-x-3 items-center">
                             <div :class="[`u-range u-range--cat u-range--bg ${commitments_color}`]">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="purchasing" class="w-1/2 px-6 py-6">
+                <div v-if="purchasing" class="w-1/2 px-6 py-6 <sm:w-full">
                     <div class="flex justify-between items-end mb-3">
                         <div class="flex-1 flex space-x-3 items-center">
                             <div :class="[`u-range u-range--cat u-range--bg ${purchasing_color}`]">
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="suppliers" class="w-1/2 px-6 py-6">
+                <div v-if="suppliers" class="w-1/2 px-6 py-6 <sm:w-full">
                     <div class="flex justify-between items-end mb-3">
                         <div class="flex-1 flex space-x-3 items-center">
                             <div :class="[`u-range u-range--cat u-range--bg ${suppliers_color}`]">
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="traceability" class="w-1/2 px-6 py-6">
+                <div v-if="traceability" class="w-1/2 px-6 py-6 <sm:w-full">
                     <div class="flex justify-between items-end mb-3">
                         <div class="flex-1 flex space-x-3 items-center">
                             <div :class="[`u-range u-range--cat u-range--bg ${traceability_color}`]">
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="platforms" class="w-1/2 px-6 py-6">
+                <div v-if="platforms" class="w-1/2 px-6 py-6 <sm:w-full">
                     <div class="flex justify-between items-end mb-3">
                         <div class="flex-1 flex space-x-3 items-center">
                             <div :class="[`u-range u-range--cat u-range--bg ${platforms_color}`]">
@@ -202,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="onTheGround" class="w-1/2 px-6 py-6">
+                <div v-if="onTheGround" class="w-1/2 px-6 py-6 <sm:w-full">
                     <div class="flex justify-between items-end mb-3">
                         <div class="flex-1 flex space-x-3 items-center">
                             <div :class="[`u-range u-range--cat u-range--bg ${onTheGround_color}`]">

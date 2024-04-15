@@ -1,8 +1,8 @@
 <template>
     <section v-if="sc.company && sc.company.respStatus" class="u-section">
         <div class="u-container u-container--lg">
-            <div class="flex space-x-6">
-                <div>
+            <div class="flex space-x-6 <sm:space-x-0 <sm:flex-col">
+                <div class="<sm:flex <sm:items-center <sm:space-x-4">
                     <div :class="[`u-range u-range--results u-sc-bg ${commitmentsColor}`]">
                         {{ sc.company.commitments.commitTotalScore }}
                     </div>
@@ -30,8 +30,8 @@
                         <header>
                             <h3 class="u-result-block__header"><span>Does the company have a public commitment to sourcing deforestation- and conversion-free palm oil?</span></h3>
                         </header>
-                        <div class="flex gap-x-4">
-                            <div class="flex-1">
+                        <div class="flex gap-x-4 <md:flex-wrap <md:gap-x-0 <md:-m-3">
+                            <div class="flex-1 <md:flex-initial <md:w-1/2 <md:p-3 <sm:w-full">
                                 <div :class="[`u-result-card u-result-card u-result-card--${sc.company.commitments.commitDef.toLowerCase()}`]">
                                     <div class="u-result-card__ans">
                                         <span>{{ sc.company.commitments.commitDef.toLowerCase() }}</span>
@@ -53,7 +53,7 @@
                                     </VDropdown>
                                 </div>
                             </div>
-                            <div class="flex-1">
+                            <div class="flex-1 <md:flex-initial <md:w-1/2 <md:p-3 <sm:w-full">
                                 <div :class="[`u-result-card u-result-card u-result-card--border`]">
                                     <div class="u-result-card__que">
                                         What palm oil types does the commitment cover?
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex-1">
+                            <div class="flex-1 <md:flex-initial <md:w-1/2 <md:p-3 <sm:w-full">
                                 <div :class="[`u-result-card u-result-card u-result-card--border`]">
                                     <div class="u-result-card__que">
                                         Does the commitment cover the entire corporate group or just the company itself?
@@ -97,8 +97,8 @@
                         <header>
                             <h3 class="u-result-block__header"><span>Does the company have a public commitment to sourcing palm oil that respects human rights?</span></h3>
                         </header>
-                        <div class="flex gap-x-4">
-                            <div class="flex-1">
+                        <div class="flex gap-x-4 <md:flex-wrap <md:gap-x-0 <md:-m-3">
+                            <div class="flex-1 <md:flex-initial <md:w-1/2 <md:p-3 <sm:w-full">
                                 <div :class="[`u-result-card u-result-card u-result-card--${sc.company.commitments.commitHr.toLowerCase()}`]">
                                     <div class="u-result-card__ans">
                                         <span>{{ sc.company.commitments.commitHr.toLowerCase() }}</span>
@@ -119,7 +119,7 @@
                                     </VDropdown>
                                 </div>
                             </div>
-                            <div class="flex-1">
+                            <div class="flex-1 <md:flex-initial <md:w-1/2 <md:p-3 <sm:w-full">
                                 <div :class="[`u-result-card u-result-card u-result-card--border`]">
                                     <div class="u-result-card__que">
                                         What palm oil types does the commitment cover?
@@ -144,7 +144,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex-1">
+                            <div class="flex-1 <md:flex-initial <md:w-1/2 <md:p-3 <sm:w-full">
                                 <div :class="[`u-result-card u-result-card u-result-card--border`]">
                                     <div class="u-result-card__que">
                                         Does the commitment cover the entire corporate group or just the company itself?
@@ -164,7 +164,7 @@
                             <h3 class="u-result-block__header"><span>Does the company have a public commitment to sourcing 100% RSPO certified sustainable palm oil?</span></h3>
                         </header>
                         <div class="flex">
-                            <div class="w-1/2">
+                            <div class="w-1/2 <sm:w-full">
                                 <div :class="[`u-result-card u-result-card--flex u-result-card u-result-card--${transformValue(sc.company.commitments.commitRspoCpo)}`]">
                                     <div class="u-result-card__ans">
                                         <span>{{ transformValue(sc.company.commitments.commitRspoCpo) }}</span>

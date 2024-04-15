@@ -1,8 +1,8 @@
 <template>
-    <section v-if="sc.company && sc.company.respStatus" class="border-t pt-20 mt-20">
+    <section v-if="sc.company && sc.company.respStatus" class="border-t pt-20 mt-20 <md:overflow-hidden">
         <div class="u-container u-container--lg">
-            <div class="flex space-x-6">
-                <div>
+            <div class="flex space-x-6 <sm:space-x-0 <sm:flex-col">
+                <div class="<sm:flex <sm:items-center <sm:space-x-4">
                     <div :class="[`u-range u-range--results u-sc-bg ${onTheGroundColor}`]">
                         {{ sc.company.onTheGround.onTheGroundTotalScore }}
                     </div>
@@ -30,8 +30,8 @@
                         <header>
                             <h3 class="u-result-block__header"><span>Does the company have on the ground investments?</span></h3>
                         </header>
-                        <div class="flex">
-                            <div class="w-1/2">
+                        <div class="flex <md:mb-10">
+                            <div class="w-1/2 <md:w-full">
                                 <div :class="[`u-result-card u-result-card--flex u-result-card u-result-card--${transformValue(onTheGroundVal)}`]">
                                     <div class="u-result-card__ans">
                                         <span>{{ onTheGroundVal }}</span>
@@ -53,11 +53,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-10 flex justify-between space-x-6">
+                        <div class="mt-10 flex justify-between space-x-6 <md:flex-wrap <md:space-x-0 <md:-m-3 <md:justify-initial">
                             <div 
                                 v-for="badge in ONTHEGROUND_BADGES"
                                 :class="[
-                                    'u-otg-badge',
+                                    'u-otg-badge <md:w-1/2 <md:p-3 <md:flex-initial',
                                     { 'u-otg-badge--disabled': !badge.value }
                                 ]"
                             >

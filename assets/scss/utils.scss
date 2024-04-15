@@ -190,7 +190,7 @@ ul {
     @extend .u-fs18;
     @apply inline-flex items-center gap-4 px-12 py-3 font-wwf text-white uppercase bg-green rounded-[50px] hover:bg-gold;
     svg {
-           @apply top-0.5;
+           @apply top-0.5 <xl:max-h-[22px];
             path {
                 @apply stroke-current;
             }  
@@ -402,7 +402,8 @@ ul {
     @extend .u-gradient ,.u-gradient--horiz, .u-gradient--green-greensoft;
     @apply py-6;
     &__container {
-        @apply flex items-ctenter justify-between;
+        @apply flex justify-between
+        <md:flex-col <md:space-y-3;
     }
     &__header {
         @apply font-wwf text-white;
@@ -505,7 +506,8 @@ ul {
         @apply w-full h-full bg-black bg-opacity-50 absolute top-0 left-0;
     }
     &__content {
-        @apply w-[960px] max-h-[calc(100vh-100px)] bg-white rounded-[12px] overflow-auto;
+        @apply w-[960px] max-h-[calc(100vh-100px)] bg-white rounded-[12px] overflow-auto
+        <md:max-w-[calc(100vw-50px)];
         header {
             @apply flex items-center justify-between p-6 border-b boder-[#dadada];
             h3 {
@@ -568,7 +570,8 @@ ul {
 .u-range-balance {
     @apply flex flex-col items-center justify-center
     before:content-[''] before:w-px before:h-[30px] before:bg-[#F1EBDD]
-    after:content-[''] after:w-px after:h-[30px] after:bg-[#F1EBDD];
+    after:content-[''] after:w-px after:h-[30px] after:bg-[#F1EBDD]
+    <sm:after:hidden <sm:before:hidden;
     div {
         @apply px-3 h-[23px] inline-flex items-center justify-center space-x-1 border border-[#D9D9D9] text-[#7B7B7B] bg-[#FBF9F6] rounded-[50px] font-wwf text-[15px]
         ;
@@ -629,7 +632,7 @@ ul {
         @apply w-[35px] h-[35px] rounded-full border border-white bg-opacity-35;
     }
     &__line {
-        @apply w-px h-[135px] bg-white;
+        @apply w-px h-[135px] bg-white <sm:h-[65px];
     }
     &__ground {
         @apply w-[7px] h-[5px] rounded-full bg-white;
@@ -643,7 +646,7 @@ ul {
             }
         }
         .u-total-map__line {
-            @apply w-[2px] h-[220px] bg-current;
+            @apply w-[2px] h-[220px] bg-current <sm:h-[120px];
         }
         .u-total-map__ground {
             @apply bg-current;
@@ -678,9 +681,9 @@ ul {
     @apply font-wwf mt-4 mb-3;
 }
 .u-result-grid {
-    @apply flex flex-wrap -mx-6;
+    @apply flex flex-wrap -m-6;
     .u-result-grid-block {
-        @apply px-6;
+        @apply p-6;
         &--border {
             @apply border-r;
         }

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="<sm:overflow-x-hidden">
         <sc-co-header />
         <sc-co-resume />
         <sc-co-stats />

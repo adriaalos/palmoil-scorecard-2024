@@ -10,7 +10,7 @@
         <div class="u-container u-container--lg">
             <div class="w-full mt-52">
                 <img src="@/assets/img/sc-global.png">
-                <div class="w-[calc(100%-180px)] h-[42.5%] absolute top-0 left-1/2 transform -translate-x-1/2">
+                <div class="w-[calc(100%-180px)] h-[42.5%] absolute top-0 left-1/2 transform -translate-x-1/2 <md:w-[calc(100%-125px)] <sm:w-[calc(100%-60px)]">
                     <template
                         v-for="company in sc.companies"
                         :key="company.id"

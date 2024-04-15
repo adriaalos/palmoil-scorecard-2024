@@ -1,8 +1,8 @@
 <template>
     <section v-if="sc.company && sc.company.respStatus" class="border-t pt-20 mt-20">
         <div class="u-container u-container--lg">
-            <div class="flex space-x-6">
-                <div>
+            <div class="flex space-x-6 <sm:space-x-0 <sm:flex-col">
+                <div class="<sm:flex <sm:items-center <sm:space-x-4">
                     <div :class="[`u-range u-range--results u-sc-bg ${purchasingColor}`]">
                         {{ sc.company.purchasing.purchTotalScore }}
                     </div>
@@ -31,7 +31,7 @@
                             <h3 class="u-result-block__header"><span>Are all of the company’s palm oil volumes 100% RSPO certified?</span></h3>
                         </header>
                         <div class="flex">
-                            <div class="w-1/2">
+                            <div class="w-1/2 <md:w-full">
                                 <div :class="[`u-result-card u-result-card--flex u-result-card u-result-card--${transformValue(sc.company.purchasing.rspoCert)}`]">
                                     <div class="u-result-card__ans">
                                         <span>{{ transformValue(sc.company.purchasing.rspoCert) }}</span>
@@ -51,9 +51,7 @@
                                         </template>
                                     </VDropdown>
                                 </div>
-                            </div>
-                            
-                            
+                            </div>                      
                         </div>
                         <div class="mt-10">
                             <div :class="[`u-result-card u-result-card u-result-card--border`]">
@@ -225,7 +223,7 @@
                             <h3 class="u-result-block__header"><span>Did the company report palm oil quantities for its entire operations?</span></h3>
                         </header>
                         <div class="flex">
-                            <div class="w-1/2">
+                            <div class="w-1/2 <md:w-full">
                                 <div :class="[`u-result-card u-result-card--flex u-result-card u-result-card--${transformValue(sc.company.purchasing.entireOps)}`]">
                                     <div class="u-result-card__ans">
                                         <span>{{ transformValue(sc.company.purchasing.entireOps) }}</span>

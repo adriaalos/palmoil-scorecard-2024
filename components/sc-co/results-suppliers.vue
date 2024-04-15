@@ -1,8 +1,8 @@
 <template>
     <section v-if="sc.company && sc.company.respStatus" class="mt-20 py-20 border-t">
         <div class="u-container u-container--lg">
-            <div class="flex space-x-6">
-                <div>
+            <div class="flex space-x-6 <sm:space-x-0 <sm:flex-col">
+                <div class="<sm:flex <sm:items-center <sm:space-x-4">
                     <div :class="[`u-range u-range--results u-sc-bg ${suppliersColor}`]">
                         {{ sc.company.suppliers.supTotalScore }}
                     </div>
@@ -27,7 +27,7 @@
                         <h2 class="u-result-cat">SUPPLIERS REQUIREMENTS</h2>
                     </header>
                     <div class="u-result-grid">
-                        <div class="u-result-grid-block border-r w-1/2">
+                        <div class="u-result-grid-block border-r w-1/2 <md:w-full <md:border-none">
                             <div class="u-result-block">
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>Does the company expect suppliers to have a commitment to sourcing deforestation- and conversion-free palm oil?</span></h3>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="u-result-grid-block w-1/2">
+                        <div class="u-result-grid-block w-1/2 <md:w-full <md:border-none">
                             <div class="u-result-block">
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>Does the company expect suppliers to have a commitment to sourcing palm oil that respects human rights?</span></h3>
@@ -83,8 +83,8 @@
                         </div>
                         
                     </div>
-                    <div class="u-result-grid mt-20">
-                        <div class="u-result-grid-block border-r w-1/2">
+                    <div class="u-result-grid mt-20 <md:mt-12">
+                        <div class="u-result-grid-block border-r w-1/2 <md:w-full <md:border-none">
                             <div class="u-result-block">
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>Does the company have monitoring and response systems in place to verify supplier compliance with:</span></h3>
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="u-result-grid-block w-1/2">
+                        <div class="u-result-grid-block w-1/2 <md:w-full">
                             <div class="u-result-block">
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>Does the company measure traceability of palm oil purchased?</span></h3>

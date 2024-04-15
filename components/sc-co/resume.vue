@@ -1,11 +1,11 @@
 <template>
     <section v-if="sc.company" class="u-section u-section--cake mt-0 py-12">
         <div class="u-container u-container--lg">
-            <div class="grid flex flex-wrap -mx-2 -my-1">
+            <div class="grid flex flex-wrap -mx-2 -my-2">
                 <div
                     v-for="item in items"
                     :key="item.id"
-                    class="w-1/4 px-2 py-1"
+                    class="w-1/4 px-2 py-2 <lg:w-1/3 <sm:w-1/2"
                 >
                     <p class="text-xs font-bold mb-0">{{ item.label }}</p>
                     <p class="text-sm">{{ item.value }}</p>

@@ -1,8 +1,8 @@
 <template>
     <section v-if="sc.company && sc.company.respStatus" class="mt-20 py-20 border-t">
         <div class="u-container u-container--lg">
-            <div class="flex space-x-6">
-                <div>
+            <div class="flex space-x-6 <sm:space-x-0 <sm:flex-col">
+                <div class="<sm:flex <sm:items-center <sm:space-x-4">
                     <div :class="[`u-range u-range--results u-sc-bg ${platformsColor}`]">
                         {{ sc.company.platforms.platformsTotalScore }}
                     </div>
@@ -27,7 +27,7 @@
                         <h2 class="u-result-cat">ACTION ORIENTED PLATFORMS</h2>
                     </header>
                     <div class="u-result-grid">
-                        <div class="u-result-grid-block border-r flex-1">
+                        <div class="u-result-grid-block border-r flex-1 <md:flex-initial <md:w-1/2 <sm:w-full <sm:border-0">
                             <div class="u-result-block">
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>IS THE COMPANY A MEMBER OF THE RSPO?</span></h3>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-if="sc.company.platforms.rspoMember" class="u-result-grid-block border-r flex-1">
+                        <div v-if="sc.company.platforms.rspoMember" class="u-result-grid-block border-r flex-1 <md:flex-initial <md:w-1/2 <sm:w-full <sm:border-0">
                             <div class="u-result-block">
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>What was your RSPO SR score?</span></h3>
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="u-result-grid-block flex-1">
+                        <div class="u-result-grid-block flex-1 <md:flex-initial <md:w-1/2 <sm:w-full">
                             <div class="u-result-block">
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>DOES THE COMPANY TAKE PART IN OTHER ACTION-ORIENTED SUSTAINABILITY PLATFORMS?</span></h3>
