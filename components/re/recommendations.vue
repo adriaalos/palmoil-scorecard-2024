@@ -5,9 +5,9 @@
                 <h2 class="font-wwf text-center u-fs68">RECOMMENDATIONS</h2>
             </div>
         </header>
-        <div class="flex bg-cake">
-            <aside class="min-h-full bg-cake max-w-[25%] border-t border-t-[#f1ebdd sticky top-0 self-start">
-                <ul>
+        <div class="flex bg-cake <md:flex-col">
+            <aside class="min-h-full bg-cake max-w-[25%] border-t border-t-[#f1ebdd sticky top-0 self-start <md:max-w-none <md:min-h-none <md:w-full">
+                <ul class="<md:flex <md:flex-wrap">
                     <li v-for="anchor in anchors" :key="anchor.id">
                         <a href="#" v-scroll-to="'policymakers'" class="flex items-center text-base space-x-6 justify-between font-bold px-9 py-7 border-b border-b-[#f1ebdd] hover:bg-[#f1ebdd]">
                             <span>{{ anchor.title }}</span>

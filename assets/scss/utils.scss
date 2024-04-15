@@ -1065,17 +1065,21 @@ ul {
     }
 }
 .u-re-section {
-    @apply mb-44;
+    @apply mb-44 <md:mb-32 <sm:mb-20;
 }
 .u-re-text {
     @apply mb-10;
 }
 .u-re-tick {
-    @apply flex space-x-6 items-start;
+    @apply flex space-x-6 items-start <md:space-x-0;
+    > img { @apply <xl:max-w-[40px] <md:absolute <md:max-w-[30px] <md:top-[8px]; }
     .content {
         @apply mt-4;
+        .title {
+            @apply <md:pl-[42px];
+        }
         .box {
-            @apply mt-10 bg-cake p-12 rounded-[12px];
+            @apply mt-10 bg-cake p-12 rounded-[12px] <md:p-9 <sm:px-6;
             ul {
                 li {
                     @apply mb-6 pl-6;
@@ -1091,6 +1095,6 @@ ul {
     @apply w-full h-px bg-[#DADADA] my-14;
 }
 .u-re-quote {
-    @apply text-xl text-green italic text-center max-w-[50%] mx-auto;
+    @apply text-xl text-green italic text-center max-w-[50%] mx-auto <md:max-w-[75%] <sm:max-w-none;
 }
 .u-re-pic img { @apply w-full }

@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="u-container u-container--lg">
-        <div class="-mt-28 bg-cake p-20 rounded-[20px]">
+        <div class="-mt-28 bg-cake p-20 rounded-[20px] <md:p-12">
             <div>
                 <p>
                     As we move into recovery from the COVID-19 pandemic, it is imperative that we address the underlying causes of the outbreak. These are part of a much larger systemic crisis, one in which our relationship with nature is pushing Earth’s ecological balance to the brink of collapse. From deforestation to biodiversity loss to global warming, unsustainable practices by parts of the palm oil industry have contributed to the planetary emergency we currently face.
