@@ -417,7 +417,7 @@ export const useScStore = defineStore('scStore', () => {
     const getOnTheGroundRange = (total: number, respondent: boolean) => {
         const score = total;
         if (!respondent) return ranges.value[0].id
-        if (score === 4 || score === 3) return ranges.value[4].id
+        if (score > 3) return ranges.value[4].id
         if (score === 2) return ranges.value[3].id
         if (score === 1) return ranges.value[2].id
         if (score === 0) return ranges.value[1].id

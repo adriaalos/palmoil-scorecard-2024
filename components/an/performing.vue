@@ -76,7 +76,7 @@
                                 <li>Retailers make up 32% of all assessed companies.</li>
                                 <li>Majority use palm oil in their own brand food products (71%).</li>
                                 <li>76% of palm products consumed by retailers are CPO, followed by POD at 19% and PKO making up the rest.</li>
-                                <li><strong>90%</strong> have made public commitments to source 100% RSPO CSPO, with 61% achieving this target by 2023.</li>
+                                <li><strong>93%</strong> have made public commitments to source 100% RSPO CSPO, with 63% achieving this target by 2023.</li>
                                 <li><strong>Only 17%</strong> can trace a portion of their palm oil back to the plantations.</li>
                             </ul>
                         </div>
@@ -193,7 +193,7 @@ const chartData = ref({
     datasets: [
         {
             label: 'FOOD MANUFACTURERS',
-            data: [36, 49, 77, 52, 38, 85, 93, 70, 0, 77, 46, 89, 39, 41, 36, 28,25, 41, 64, 98, 48, 49, 38, 36],
+            data: [34,52,80,46,47,90,91,59,60,77,47,93,47,41,34,30,25,51,68,95,59,55,48,45],
             fill: true,
             backgroundColor: 'rgba(228, 100, 102, 0.2)',
             borderColor: 'rgba(228, 100, 102, 1)',
@@ -204,7 +204,7 @@ const chartData = ref({
         },
         {
             label: 'NON-FOOD MANUFACTURERS',
-            data: [32,55,82,23,68,91,91,23,0,86,55,95,68,68,64,64,59,77,82,91,68,74,73,68],
+            data: [32,55,82,23,68,91,91,23,73,86,55,95,68,68,64,64,59,77,82,91,68,74,73,68],
             fill: true,
             backgroundColor: 'rgba(228, 200, 100, 0.2)',
             borderColor: 'rgba(228, 200, 100, 1)',
@@ -215,7 +215,7 @@ const chartData = ref({
         },
         {
             label: 'RETAILERS',
-            data: [32,56,83,46,51,98,90,61,0,71,44,98,49,27,15,17,7,54,66,90,73,54,51,49],
+            data: [32,56,83,46,51,98,93,63,92,71,44,98,49,27,15,17,7,54,66,90,73,54,51,49],
             fill: true,
             backgroundColor: 'rgba(65, 180, 100, 0.2)',
             borderColor: 'rgba(65, 180, 100, 1)',
@@ -226,7 +226,7 @@ const chartData = ref({
         },
         {
             label: 'FEED AND BIOFUEL',
-            data: [25,50,75,75,25,75,50,0,0,75,50,100,25,25,25,25,25,25,75,100,25,49,25,25],
+            data: [25,50,75,75,25,75,50,0,5,75,50,100,25,25,25,25,25,25,75,100,25,49,25,25],
             fill: true,
             backgroundColor: 'rgba(158, 104, 226, 0.2)',
             borderColor: 'rgba(158, 104, 226, 1)',

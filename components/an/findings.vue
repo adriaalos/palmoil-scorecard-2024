@@ -159,9 +159,21 @@
                         <span>RSPO CSPO uptake</span>
                     </li>
                     <li>
+                        <span>7.4%</span>
+                        <span>SG/IP/IS</span>
+                    </li>
+                    <li>
+                        <span>56.6%</span>
+                        <span>MB</span>
+                    </li>
+                    <li>
+                        <span>28.7%</span>
+                        <span>B&C</span>
+                    </li>
+                    <!-- <li>
                         <span>7.4%<br>56.6%<br>28.7%</span>
                         <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="u-an__mapblock top-[-20%] left-[45%] <lg:top-0 <lg:left-0">
@@ -176,9 +188,21 @@
                         <span>RSPO CSPO uptake</span>
                     </li>
                     <li>
+                        <span>19.8%</span>
+                        <span>SG/IP/IS</span>
+                    </li>
+                    <li>
+                        <span>25.2%</span>
+                        <span>MB</span>
+                    </li>
+                    <li>
+                        <span>6.4%</span>
+                        <span>B&C</span>
+                    </li>
+                    <!-- <li>
                         <span>19.8%<br>25.2%<br>6.4%</span>
                         <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="u-an__mapblock top-[25%] left-[50%] <lg:top-0 <lg:left-0">
@@ -193,9 +217,21 @@
                         <span>RSPO CSPO uptake</span>
                     </li>
                     <li>
+                        <span>0%</span>
+                        <span>SG/IP/IS</span>
+                    </li>
+                    <li>
+                        <span>12.8%</span>
+                        <span>MB</span>
+                    </li>
+                    <li>
+                        <span>0%</span>
+                        <span>B&C</span>
+                    </li>
+                    <!-- <li>
                         <span>0%<br>12.8%<br>0%</span>
                         <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="u-an__mapblock top-[20%] right-[10%] <xl:right-[2%] <lg:top-0 <lg:right-0">
@@ -210,9 +246,21 @@
                         <span>RSPO CSPO uptake</span>
                     </li>
                     <li>
-                        <span>10.5%<br>10.4%<br>11.7%</span>
-                        <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
+                        <span>10.5%</span>
+                        <span>SG/IP/IS</span>
                     </li>
+                    <li>
+                        <span>10.4%</span>
+                        <span>MB</span>
+                    </li>
+                    <li>
+                        <span>11.7%</span>
+                        <span>B&C</span>
+                    </li>
+                    <!-- <li>
+                        <span>10.5%<br>10.4%<br></span>
+                        <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
+                    </li> -->
                 </ul>
             </div>
             <div class="u-an__badge bg-green w-[380px] absolute bottom-[5%] left-[40%] <lg:relative <lg:bottom-0 <lg:left-0 <lg:my-6 <lg:w-full" v-motion-slide-visible-once-top>

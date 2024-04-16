@@ -58,29 +58,18 @@
                                 v-for="badge in ONTHEGROUND_BADGES"
                                 :class="[
                                     'u-otg-badge <md:w-1/2 <md:p-3 <md:flex-initial',
-                                    { 'u-otg-badge--disabled': !badge.value }
+                                    /* { 'u-otg-badge--disabled': !badge.value } */
                                 ]"
                             >
                                 <div>
                                     <img :src="`/2024/${badge.pic}`" :alt="badge.label">
-                                    <div class="u-otg-badge__ans">
+                                    <!-- <div class="u-otg-badge__ans">
                                         <span v-if="badge.value">YES</span>
                                         <span v-if="!badge.value">NO</span>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- <div class="u-otg-badge__label pt-10">{{ badge.label }}</div> -->
-                                <div :class="[`u-result-card__badge w-full ${transformBoolean(badge.value)} mt-10 pr-10`]" >
-                                    <!-- <img :src="`/2024/${transformBoolean(badge.value)}_invert.svg`" /> -->
-                                    <!-- <span v-html="badge.text"></span> -->
-                                    <span>{{ badge.label }}</span>
-                                    <VDropdown :triggers="['hover']" :html="true" class="u-result-card__tooltip">
-                                        <a><img src="@/assets/img/tooltip.svg"></a>
-
-                                        <template #popper>
-                                            <div class="u-result-card__tooltip__content" v-html="badge.text" />
-                                        </template>
-                                    </VDropdown>
-                                </div>
+                                
                             </div>
                         </div>
                         <!-- <div class="mt-10 flex flex-wrap justify-between -mx-6 -my-3">
@@ -152,6 +141,22 @@ const getOnTheGroundDescription = (field: string, val: string) => {
     if (sc.company) {
         return ONTHEGROUND_CARDS.value[field].options[val.toLowerCase()]
     }
+}
+const getOnTheGroundColor = () => {
+    let color = ''
+    if (sc.company?.onTheGround.onTheGroundTotalScore == 0) {
+        color = 'not'
+    }
+
+    if (sc.company?.onTheGround.onTheGroundTotalScore == 2) {
+        color = 'partially'
+    }
+
+    if (sc.company?.onTheGround.onTheGroundTotalScore >= 3) {
+        color = 'ok'
+    }
+
+    return color
 }
 
 

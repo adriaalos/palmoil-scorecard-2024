@@ -72,6 +72,11 @@ const nav = ref([
         url: `/${$i18n.t('an_url')}`
     },
     {
+        id: 'financial',
+        title: 'Financial Flows',
+        url: `/financial`
+    },
+    {
         id: 'recommendations',
         title: $i18n.t('re_name'),
         url: `/${$i18n.t('re_url')}`
