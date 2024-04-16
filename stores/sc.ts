@@ -408,10 +408,10 @@ export const useScStore = defineStore('scStore', () => {
     const getTraceabilityRange = (total: number, respondent: boolean) => {
         const score = total;
         if (!respondent) return ranges.value[0].id
-        if (score >= 0.75) return ranges.value[4].id
-        if (score >= 0.5 && score < 0.75) return ranges.value[3].id
-        if (score >= 0.25 && score < 0.5) return ranges.value[2].id
-        if (score >= 0 && score < 0.25) return ranges.value[1].id
+        if (score >= 1) return ranges.value[4].id
+        if (score >= 0.5 && score < 1) return ranges.value[3].id
+        /* if (score >= 05 && score < 0.5) return ranges.value[2].id */
+        if (score >= 0 && score < 0.5) return ranges.value[1].id
     }
 
     const getOnTheGroundRange = (total: number, respondent: boolean) => {

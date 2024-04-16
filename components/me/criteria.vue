@@ -557,12 +557,13 @@
                                         </li>
                                         <li>
                                             <strong>1 point</strong> if the company is an RSPO member and scores 10/10 on the SR scorecard (Shared Responsibility) Requirement set by RSPO.<br>
-                                            (points will be prorated based on the SR scorecard)
+                                            (0.1 point to be deducted for every low score on SR)
                                         </li>
                                         <li>
-                                            <strong>0.5 point</strong> for being a member of the POIG or other action-oriented sustainable palm oil platforms
+                                            <strong>0.5 point</strong> for being a member of the POCG or other* action-oriented sustainable palm oil platforms, such as ISCC, POTC, ASD, RPOG, Polish Coalition for Sustainable Palm Oil.
                                         </li>
                                     </ul>
+                                    <p class="mt-6">*We are in the process of compiling a list of sustainable palm oil platforms that would qualify for full points on this indicator.</p>
                                 </div>
                                 <!-- <div class="chain__block__points">
                                     <ul>

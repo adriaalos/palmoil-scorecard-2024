@@ -497,7 +497,7 @@
                                 </div>   
                             </div> 
                         </td>
-                        <td class="<md:hidden">
+                        <td>
                             <div class="flex flex-col">
                                 <div>
                                     <VDropdown v-if="company.respStatus">

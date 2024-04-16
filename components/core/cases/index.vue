@@ -20,10 +20,10 @@
                 <SwiperSlide
                     v-for="casestudy in cs.casestudies"
                 >
-                    <div class="flex flex-col bg-green rounded-[60px] overflow-hidden h-[500px]">
+                    <div class="flex flex-col bg-green rounded-[60px] overflow-hidden h-[500px] <sm:h-[400px]">
                         <nuxt-link
                             :to="`/case-studies/${casestudy.id}`"
-                            class="group h-[300px] overflow-hidden"
+                            class="group h-[300px] overflow-hidden <sm:h-[250px]"
                         >
                             <img 
                                 class="w-full h-full object-cover object-center transform group-hover:scale-115 transition-transform duration-500 ease-in-out"
@@ -37,7 +37,7 @@
                             <nuxt-link
                                 :to="`/case-studies/${casestudy.id}`"
                                 class="absolute bottom-8 right-8 u-link u-link--white flex justify-end mt-2 hover:opacity-80">
-                                <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" class="<lg:w-[48px]">
+                                <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" class="<lg:w-[48px] <sm:w-[38px]">
                                     <path d="M26 32.9273L31.1887 27.4636L26 22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M52.5 27C52.5 41.0833 41.0833 52.5 27 52.5C12.9167 52.5 1.5 41.0833 1.5 27C1.5 12.9167 12.9167 1.5 27 1.5C41.0833 1.5 52.5 12.9167 52.5 27Z" stroke="white" stroke-width="3"/>
                                 </svg>

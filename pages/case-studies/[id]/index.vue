@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="<sm:overflow-x-hidden">
         <cs-header />
         <cs-company />
         <cs-approach />

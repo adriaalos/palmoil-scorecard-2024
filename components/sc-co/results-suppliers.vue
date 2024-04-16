@@ -98,23 +98,7 @@
                                     <span>Human rights commitments</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="u-result-grid-block w-1/2 <md:w-full">
-                            <div class="u-result-block">
-                                <header>
-                                    <h3 class="u-result-block__header noline"><span>Does the company measure traceability of palm oil purchased?</span></h3>
-                                </header>
-                                <div :class="[`u-result-card__badge ${transformBoolean(sc.company.suppliers.supMill)}`]" >
-                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supMill)}_invert.svg`" />
-                                    <span>has a monitoring system for Traceability to Mill (TTM) and achieves more than 50%</span>
-                                </div>
-                                <div :class="[`mt-3 u-result-card__badge ${transformBoolean(sc.company.suppliers.supPlant)}`]" >
-                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supPlant)}_invert.svg`" />
-                                    <span>has a monitoring system for Traceability to Plantation (TTP) and achieves more than 50% </span>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        </div> 
                     </div>
                     
                 </div>

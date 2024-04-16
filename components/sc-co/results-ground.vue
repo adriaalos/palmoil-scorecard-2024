@@ -73,7 +73,7 @@
                                     <!-- <img :src="`/2024/${transformBoolean(badge.value)}_invert.svg`" /> -->
                                     <!-- <span v-html="badge.text"></span> -->
                                     <span>{{ badge.label }}</span>
-                                    <VDropdown :triggers="['click']" :html="true" class="u-result-card__tooltip">
+                                    <VDropdown :triggers="['hover']" :html="true" class="u-result-card__tooltip">
                                         <a><img src="@/assets/img/tooltip.svg"></a>
 
                                         <template #popper>

@@ -160,7 +160,7 @@
                     </li>
                     <li>
                         <span>7.4%<br>56.6%<br>28.7%</span>
-                        <span>RSPO CSPO uptake</span>
+                        <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
                     </li>
                 </ul>
             </div>
@@ -177,7 +177,7 @@
                     </li>
                     <li>
                         <span>19.8%<br>25.2%<br>6.4%</span>
-                        <span>RSPO CSPO uptake</span>
+                        <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
                     </li>
                 </ul>
             </div>
@@ -194,7 +194,7 @@
                     </li>
                     <li>
                         <span>0%<br>12.8%<br>0%</span>
-                        <span>RSPO CSPO uptake</span>
+                        <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
                     </li>
                 </ul>
             </div>
@@ -211,7 +211,7 @@
                     </li>
                     <li>
                         <span>10.5%<br>10.4%<br>11.7%</span>
-                        <span>RSPO CSPO uptake</span>
+                        <span>Breakdown of supply chain model (%SG/IP/IS;%MB;%B&C)</span>
                     </li>
                 </ul>
             </div>

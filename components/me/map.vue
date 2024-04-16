@@ -45,15 +45,15 @@ const items = ref([
         label: 'Number of companies approached',
     },
     {
-        num: 147,
+        num: 163,
         label: 'Companies approached in Manufacturers',
     },
     {
-        num: 63,
+        num: 60,
         label: 'Companies approached in Retailer',
     },
     {
-        num: 17,
+        num: 13,
         label: 'Companies approached in Hospitality',
     }
 ])
