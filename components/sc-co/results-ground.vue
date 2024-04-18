@@ -62,7 +62,7 @@
                                 ]"
                             >
                                 <div>
-                                    <img :src="`/2024/${badge.pic}`" :alt="badge.label">
+                                    <img :src="`/${badge.pic}`" :alt="badge.label">
                                     <!-- <div class="u-otg-badge__ans">
                                         <span v-if="badge.value">YES</span>
                                         <span v-if="!badge.value">NO</span>
@@ -78,7 +78,7 @@
                                 class="u-otg-check w-1/2 px-6 py-3"
                             >
                                 <div :class="[`u-result-card__badge ${transformBoolean(badge.value)}`]" >
-                                    <img :src="`/2024/${transformBoolean(badge.value)}_invert.svg`" />
+                                    <img :src="`/${transformBoolean(badge.value)}_invert.svg`" />
                                     <span v-html="badge.text"></span>
                                 </div>
                             </div>

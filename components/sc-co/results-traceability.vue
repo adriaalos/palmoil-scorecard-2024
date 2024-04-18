@@ -24,28 +24,28 @@
                                     v-if="sc.company.traceability.supMill"
                                     :class="[`u-result-card__badge ${transformBoolean(sc.company.traceability.supMill)}`]" 
                                 >
-                                    <img :src="`/2024/${transformBoolean(sc.company.traceability.supMill)}_invert.svg`" />
+                                    <img :src="`/${transformBoolean(sc.company.traceability.supMill)}_invert.svg`" />
                                     <span>Yes, traceable to the mill.</span>
                                 </div>
                                 <div 
                                     v-if="!sc.company.traceability.supMill"
                                     :class="[`u-result-card__badge ${transformBoolean(sc.company.traceability.supMill)}`]" 
                                 >
-                                    <img :src="`/2024/${transformBoolean(sc.company.traceability.supMill)}_invert.svg`" />
+                                    <img :src="`/${transformBoolean(sc.company.traceability.supMill)}_invert.svg`" />
                                     <span>No, not traceable to the mill</span>
                                 </div>
                                 <div 
                                     v-if="sc.company.traceability.supPlant"
                                     :class="[`mt-3 u-result-card__badge ${transformBoolean(sc.company.traceability.supPlant)}`]" 
                                 >
-                                    <img :src="`/2024/${transformBoolean(sc.company.traceability.supPlant)}_invert.svg`" />
+                                    <img :src="`/${transformBoolean(sc.company.traceability.supPlant)}_invert.svg`" />
                                     <span>Yes, traceable to plantations.</span>
                                 </div>
                                 <div 
                                     v-if="!sc.company.traceability.supPlant"
                                     :class="[`mt-3 u-result-card__badge ${transformBoolean(sc.company.traceability.supPlant)}`]" 
                                 >
-                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supPlant)}_invert.svg`" />
+                                    <img :src="`/${transformBoolean(sc.company.suppliers.supPlant)}_invert.svg`" />
                                     <span>No, not traceable to plantations.</span>
                                 </div>
                             </div>

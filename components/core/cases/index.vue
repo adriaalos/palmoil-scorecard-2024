@@ -27,7 +27,7 @@
                         >
                             <img 
                                 class="w-full h-full object-cover object-center transform group-hover:scale-115 transition-transform duration-500 ease-in-out"
-                                :src="`/2024/cs-${casestudy.company}-thumb.jpg`"
+                                :src="`/cs-${casestudy.company}-thumb.jpg`"
                                 alt=""
                             />
                         </nuxt-link>

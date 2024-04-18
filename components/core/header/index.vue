@@ -59,7 +59,7 @@ const nav = ref([
     {
         id: 'about',
         title: $i18n.t('ab_name'),
-        url: `/${$i18n.t('ab_url')}`
+        url: `/#about`
     },
     {
         id: 'scores',

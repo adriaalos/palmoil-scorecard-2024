@@ -341,12 +341,12 @@ const renderCategory = (
         if (scoreOfCategory > index) {
             str += `<img
             class="palm"
-            src="/2024/sc-palm-${color}.png"
+            src="/sc-palm-${color}.png"
             alt="sc-palm-${color}" />`
         } else {
             str += `<img
             class="palm"
-            src="/2024/sc-palm-none.png"/>`
+            src="/sc-palm-none.png"/>`
         }
     }
     str += `</div>

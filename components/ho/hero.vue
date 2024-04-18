@@ -43,7 +43,7 @@
                 <div class="text-center" v-html="$t('ho_hero_about_description')" />
                 <div class="flex justify-center mt-18 <sm:mt-10">
                     <nuxt-link 
-                        :to="`/${$t('ab_url')}`"
+                        :to="`/#about`"
                         class="u-button"
                     >
                         <span>{{ $t('ho_hero_about_button') }}</span>

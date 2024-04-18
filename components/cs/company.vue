@@ -4,7 +4,7 @@
             <img 
                 v-motion-fade-visible-once
                 class="absolute top-0 left-0 w-full h-full object-cover object-center" 
-                :src="`/2024/cs-${cs.casestudy.company}-header.jpg`"                
+                :src="`/cs-${cs.casestudy.company}-header.jpg`"                
             >
         </div>
         <div class="u-container u-container--lg pt-96 pb-32 <lg:pt-44 <lg:pb-20">

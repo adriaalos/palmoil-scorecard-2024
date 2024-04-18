@@ -90,11 +90,11 @@
                                     <h3 class="u-result-block__header noline"><span>Does the company have monitoring and response systems in place to verify supplier compliance with:</span></h3>
                                 </header>
                                 <div :class="[`u-result-card__badge ${transformBoolean(sc.company.suppliers.supMonDcfree)}`]" >
-                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supMonDcfree)}_invert.svg`" />
+                                    <img :src="`/${transformBoolean(sc.company.suppliers.supMonDcfree)}_invert.svg`" />
                                     <span>DEFORESTATION- AND/OR CONVERSION-FREE COMMITMENTS</span>
                                 </div>
                                 <div :class="[`mt-3 u-result-card__badge ${transformBoolean(sc.company.suppliers.supMonHr)}`]" >
-                                    <img :src="`/2024/${transformBoolean(sc.company.suppliers.supMonHr)}_invert.svg`" />
+                                    <img :src="`/${transformBoolean(sc.company.suppliers.supMonHr)}_invert.svg`" />
                                     <span>Human rights commitments</span>
                                 </div>
                             </div>

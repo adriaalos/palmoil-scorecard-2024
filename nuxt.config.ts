@@ -1,6 +1,25 @@
 export default defineNuxtConfig({
-    app: {
+    /* app: {
         baseURL: '/2024'
+    }, */
+    app: {
+        head: {
+          script: [
+            { 
+                async: true,
+                src: 'https://www.googletagmanager.com/gtag/js?id=UA-84202334-1',
+            },
+            {
+                innerHTML: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                    dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+                `
+            }
+          ],
+        },
     },
     ignore: [
         '**/*._*'

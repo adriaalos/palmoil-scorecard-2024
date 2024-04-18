@@ -5,7 +5,7 @@
                 <div class="flex justify-center items-center gap-x-12 <md:flex-col <md:gap-x-0 <md:gap-y-4">
                     <h3 class="u-fs48 font-wwf text-white">{{ $t('ho_report_text') }}</h3>
                     <a 
-                        href="/2024/WWF_POBS_2023_3_ONLINE.pdf"
+                        href="/WWF_POBS_2023_3_ONLINE.pdf"
                         target="_blank"
                         class="u-button u-button--white-ocre"
                     >
