@@ -327,7 +327,7 @@
                     <div class="u-re-tick">
                         <img src="@/assets/img/re-tick.svg"/>
                         <div class="content">
-                            <div class="title"><strong>Explore the contextual information provided in the scorecard</strong>, WWF’s educational videos and the interactive website to familiarise themselves with the key issues and challenges characterising palm oil production, as well the path forward.</div>
+                            <div class="title"><strong>Explore the contextual information provided in the scorecard</strong>, WWF’s <a href="https://www.youtube.com/watch?v=b3SFtMHHbeA" target="_blank">educational videos</a> and the interactive website to familiarise themselves with the key issues and challenges characterising palm oil production, as well the path forward.</div>
                             <div class="u-re-sep"></div>
                         </div>
                     </div>

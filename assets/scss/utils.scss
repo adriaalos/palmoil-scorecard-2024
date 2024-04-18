@@ -1077,6 +1077,9 @@ ul {
         @apply mt-4;
         .title {
             @apply <md:pl-[42px];
+            a {
+                @apply text-green underline;
+            }
         }
         .box {
             @apply mt-10 bg-cake p-12 rounded-[12px] <md:p-9 <sm:px-6;

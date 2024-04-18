@@ -135,7 +135,7 @@ export const useCsStore = defineStore('csStore', () => {
             roadblocks: "<p>Our progress in achieving sustainable and deforestation-free palm oil highlights the challenges, particularly in securing enough sustainable palm kernel oil. To enact meaningful change, we've moved beyond relying solely on limited certified sources. Instead, we're engaging with independent mills and smallholders, often overlooked in certified supply chains. By directly purchasing from mills, we drive demand for sustainable production, incentivising smallholders and mills to adopt higher standards. This approach fosters inclusive supply chains, ensuring that smallholders aren't marginalised in an ever-changing industry landscape.</p>",
             plan: "<p>Unilever remains steadfast in our commitment to sustainability, collaborating with partners and industry peers to implement our People and Nature Policy for a sustainable palm oil supply chain.</p><ul><li>We will continue to invest in our infrastructure to sustain and strengthen the impact of our deforestation free supply chain.</li><li> We will leverage technology partnerships to drive exponential progress in traceability and transparency.</li><li>We will seek to strengthen and expand our impact on sustainable livelihoods through our investment in smallholder development hubs working with 40,000 smallholder farmers.</li><li> Advancing change beyond our own supply chain with our strategy to invest in landscape and jurisdictional approaches that seek to protect and restore natural ecosystems, drive responsible production at scale and empower whole communities.</li><li>Invest in product innovation and reformulation to ensure growth with diversified and sustainable feedstocks and manage a just transition to net zero.</li></ul>"
         },
-        {
+        /* {
             id: 276,
             company: 'edeka',
             approach: {
@@ -145,7 +145,7 @@ export const useCsStore = defineStore('csStore', () => {
             },
             roadblocks: "<p>EDEKA is strongly committed to reduce its environmental footprint. For this purpose a sustainable conception, sourcing and production of EDEKA’s private label assortment are key elements. To design a sustainable palm oil sourcing, our activities focus on:<p><li>Ensuring deforestation and conversion free supply chains for EDEKA’s private label products according to the specifications of the Accountability Framework Initiative (AFi) until 2025.</p><ul><li> Mapping of the palm oil supply chain and analysis of EDEKA’s real deforestation and conversion risk.</li><li> Systematic collection of supply chain data as well as monitoring of supplier performance.</li><li>Public reporting of progress</li></ul>",
             plan: "<p>In the future, the partnership between EDEKA and WWF will focus even more on achieving the greatest possible impact within the company, along supply chains and in procurement processes. In doing so, EDEKA will concentrate on systematically recording and analyzing risks in the private label assortment and developing tailor-made measures with scaling potential to reduce risks. Especially for palm oil EDEKA will focus on creating transparency and achieve a high level of traceability. Beyond EDEKA’s own supply chain, we promote transformation of the entire value chain by supporting especially low performing suppliers with the implementation of ethical and environmental supply chains.</p>"
-        },
+        }, */
         {
             id: 284,
             company: 'godrej',

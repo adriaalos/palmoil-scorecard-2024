@@ -79,7 +79,8 @@
                 <div class="absolute left-[35%] bottom-12 u-gradient u-gradient--green-greensoft p-6 rounded-[12px] font-wwf text-white uppercase <md:relative <md:left-0 <md:w-1/2 <md:bottom-0 <sm:w-full">
                     <span class="block u-fs38">77.6 million MT</span>
                     <span class="block text-sm">total volume of palm oil produced globally</span>
-                    <span class="block u-fs24 leading-[24px]">the equivalent of 20,000<br> olympic swimming pools</span>
+                    <!-- <span class="block u-fs24 leading-[24px]">the equivalent of 20,000<br> olympic swimming pools</span> -->
+                    <span class="block u-fs24 leading-[24px]">this number will grow to <br>264-447 million my by 2050</span>
                 </div>
                 <div class="max-w-[35%] absolute left-[60%] -bottom-6 text-[10px] text-[#7b7b7b] <md:relative <md:left-0 <md:bottom-0 <md:max-w-none <md:w-1/2 <md:bottom-0 <md:pl-6 <sm:w-full <sm:pl-0 <sm:mt-6">
                     <span class="block u-fs24 font-wwf text-green">GLOBAL PALM OIL PRODUCTION & TRADE</span>

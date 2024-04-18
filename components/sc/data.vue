@@ -446,7 +446,7 @@
                                         <template #popper="{ hide }">
                                             <div @click="hide()">
                                                 <core-tooltip 
-                                                    :category="'traceability'" 
+                                                    :category="'traceability'"
                                                     :company="company" 
                                                 />
                                             </div>

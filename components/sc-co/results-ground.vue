@@ -58,7 +58,7 @@
                                 v-for="badge in ONTHEGROUND_BADGES"
                                 :class="[
                                     'u-otg-badge <md:w-1/2 <md:p-3 <md:flex-initial',
-                                    /* { 'u-otg-badge--disabled': !badge.value } */
+                                    { 'u-otg-badge--disabled': !sc.company?.onTheGround.haveOnTheGrnd }
                                 ]"
                             >
                                 <div>

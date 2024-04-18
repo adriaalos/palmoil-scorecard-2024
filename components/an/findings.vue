@@ -113,7 +113,7 @@
                                 <h3>SOURCING 100% RSPO-CERTIFIED PALM OIL IS STILL NOT THE NORM.</h3>
                             </header>
                             <p>
-                                Of the 10.3 million MT of palm oil derived ingredients reported by respondents in this year’s scorecard, only 59% is certified. Palm oil buyers must swiftly boost their sourcing of certified sustainable palm oil in all markets and bridge the certification gap. They should also take proactive steps and be transparent about barriers to wider adoption of certified supply.
+                                Of the 10.1 million MT of palm oil derived ingredients reported by respondents in this year’s scorecard, only 59% is certified. Palm oil buyers must swiftly boost their sourcing of certified sustainable palm oil in all markets and bridge the certification gap. They should also take proactive steps and be transparent about barriers to wider adoption of certified supply.
                             </p>
                             <p>
                                 North America, Europe and UK-based respondents have the highest uptake of RSPO CSPO. Conversely, respondents from Asia and Africa lag behind, indicating the need for significant progress in narrowing the certification gap in these regions.
@@ -532,7 +532,7 @@
                         <div class="flex-1 px-20 <sm:px-0">
                             <div class="p-12 bg-green rounded-[12px] text-white font-wwf uppercase">
                                 <div class="u-fs78">
-                                    39% of<br> respondents 
+                                    45% of<br> respondents 
                                 </div>
                                 <div class="mt-8 u-fs44noleaded">
                                     are driving positive change in palm oil producing landscapes 

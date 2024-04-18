@@ -12,6 +12,7 @@
         <ab-care />
         <ab-production />
         <ab-closing />
+        <ho-chocolate />
     </div>
 </template>
 

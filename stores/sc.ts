@@ -179,14 +179,13 @@ export const useScStore = defineStore('scStore', () => {
             sections: [
                 {
                     description:
-                        'Does the company expect suppliers to have a commitment to sourcing deforestation- and conversion-free palm oil?',
+                        'DOES THE COMPANY EXPECT SUPPLIERS TO HAVE A COMMITMENT TO SOURCING DEFORESTATION- AND CONVERSION-FREE PALM OIL?',
                     categories: [
                         {
                             yes: 'Company requires suppliers to have a deforestation- and conversion-free commitment ',
                             no: 'Company does not require suppliers to have have a deforestation- or conversion- free commitment',
-                            partially:
-                                'Company only requires suppliers to have a deforestation-free commitment',
-                            property: 'supFree',
+                            partially: 'Company only requires suppliers to have a deforestation-free commitment',
+                            property: 'supFree'
                         },
                     ],
                 },
@@ -197,9 +196,8 @@ export const useScStore = defineStore('scStore', () => {
                         {
                             yes: 'Company requires suppliers to have a commitment to respect the human rights of all relevant stakeholder groups',
                             no: 'Company does not require suppliers to have a human rights commitment',
-                            partially:
-                                'Company requires suppliers to have a commitment to respect human rights, but it does not cover the rights of all relevant stakeholder groups',
-                            property: 'supHr',
+                            partially: 'Company requires suppliers to have a commitment to respect human rights, but it does not cover the rights of all relevant stakeholder groups',
+                            property: 'supHr'
                         },
                     ],
                 }
@@ -212,18 +210,25 @@ export const useScStore = defineStore('scStore', () => {
             sections: [
                 {
                     description:
-                        'Does the company expect suppliers to source palm oil that is traceable to the mill/plantation?',
+                        'Does the company measure traceability of palm oil purchased?', 
                     categories: [
                         {
-                            yes_mill:
-                                'Company requires suppliers to only purchase palm oil that is traceable to the mill.',
-                            yes_plant:
-                                'Company requires suppliers to only purchase palm oil that is traceable to the plantation.',
-                            no: 'Company does not require suppliers to purchase traceable palm oil.',
+                            yes: 'Yes, traceable to the mill.',
+                            no: 'No, not traceable to the mill',
                             property: 'supMill',
                         },
                     ],
                 },
+                {
+                    description: '', 
+                    categories: [
+                        {
+                            yes: 'Yes, traceable to plantations.',
+                            no: 'No, not traceable to plantations',
+                            property: 'supPlant',
+                        },
+                    ],
+                }
             ],
         },
         {
@@ -232,25 +237,28 @@ export const useScStore = defineStore('scStore', () => {
             out_of: 2,
             sections: [
                 {
-                    description: 'Is the company a member of the RSPO?',
+                    description: 'IS THE COMPANY A MEMBER OF THE RSPO?',
                     categories: [
                         {
                             yes: 'Company is a member of the RSPO',
                             no: 'Company is not a member of the RSPO',
                             property: 'rspoMember',
                         },
-                    ],
-                },
-                {
-                    description: 'Is the company a member of POIG?',
-                    categories: [
                         {
-                            yes: 'Company is a member of POIG',
-                            no: 'Company is not a member of POIG',
-                            property: 'poigMemeber',
+                            yes: 'Based on the Company score on the SR scorecard Requirement set by RSPO',
+                            property: 'pobrSrScore',
                         },
                     ],
                 },
+                /* {
+                    description: 'What was your RSPO SR score?',
+                    categories: [
+                        {
+                            yes: 'Based on the Company score on the SR scorecard Requirement set by RSPO',
+                            property: 'pobrSrScore',
+                        },
+                    ],
+                }, */
                 {
                     description:
                         'Does the company take part in other action-oriented sustainability platforms?',

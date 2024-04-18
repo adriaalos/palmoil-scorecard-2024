@@ -4,19 +4,38 @@
         <div>
             <div class="mb-6 last:mb-0" v-for="section in cat.sections ">
                 <h6 class="mb-3 text-xs font-bold uppercase text-[#7b7b7b]">{{ section.description }}</h6>
-                <div 
-                    v-for="c in section.categories"
-                    :class="[`u-legend u-legend--${getScore(c)}`]"
-                >
-                    <div class="u-legend__score">
-                        <span>{{ getScore(c) }}</span>
-                    </div>
-                    <div
-                        class="u-legend__description"
+                <template v-for="c in section.categories">
+                    <div 
+                        v-if="c.property != 'pobrSrScore'"
+                        :class="[`u-legend u-legend--${getScore(c)}`]"
                     >
-                        <p>{{ getDescription(c) }}</p>
+                        <div class="u-legend__score">
+                            <span>{{ getScore(c) }}</span>
+                        </div>
+                        <div
+                            class="u-legend__description"
+                        >
+                            <p>{{ getDescription(c) }}</p>
+                        </div>
                     </div>
-                </div>
+                    <div v-if="c.property == 'pobrSrScore' && company.platforms.rspoMember">
+                        <h5 class="mt-6 mb-4 text-xs font-bold uppercase text-[#7b7b7b] [&>br]:hidden" v-html="'What was your RSPO SR score?'" />
+                        <div 
+                        
+                        :class="[`u-legend u-legend--yes`]"
+                    >
+                        <div class="u-legend__score">
+                            <span>{{ company.platforms.pobrSrScore }}</span>
+                        </div>
+                        <div
+                            class="u-legend__description"
+                        >
+                            <p>Based on the Company score on the SR scorecard Requirement set by RSPO</p>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </template>
             </div>
         </div>
     </div>
@@ -44,7 +63,12 @@ const getScore = (c: any) => {
 
     switch (c.property) {
         case 'supMill':
-            if (!props.company[props.category].supMill && !props.company[props.category].supPlant) {
+            if (!props.company[props.category].supMill) {
+                respond = 'no'
+            }
+            break
+        case 'supPlant':
+            if (!props.company[props.category].supPlant) {
                 respond = 'no'
             }
             break

@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         '**/*._*'
     ],
     devtools: { enabled: true },
-    ssr: false,
+    ssr: true,
     modules: [
         '@unocss/nuxt',
         '@pinia/nuxt',
