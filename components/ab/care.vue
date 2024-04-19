@@ -8,12 +8,13 @@
         <div class="mb-20">
             <Swiper
                 :slidesPerView="1.5"
-                :modules="[SwiperPagination]"
+                :modules="[SwiperPagination, SwiperNavigation]"
                 :spaceBetween="distance"
                 :centeredSlides="true"
                 :pagination="{
                     clickable: true,
                 }"
+                :navigation="true"
                 :loop="false"
             >
                 <SwiperSlide class="">
@@ -102,5 +103,11 @@ if (width.value <= 640) distance.value = 50
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
     @apply bg-green;
+}
+.swiper-button-prev, .swiper-button-next {
+    @apply bg-green w-[54px] h-[54px] rounded-full shadow-md;
+    &:after {
+        @apply text-white text-sm;
+    }
 }
 </style>

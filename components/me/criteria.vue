@@ -441,7 +441,7 @@
                                     <ul>
                                         <li><strong>0.5 point</strong> if the company has a monitoring system for Traceability to Plantation (TTP) and achieves more than 50 % TTP.</li>
                                         <li><strong>0 points</strong> if % TTP is 0 % </li>
-                                        <li><strong>0.5 points</strong> if % TTP is less than 50 %</li>
+                                        <li><strong>0.25 points</strong> if % TTP is less than 50 %</li>
                                     </ul>
                                 </div>
                             </div>
@@ -639,7 +639,13 @@
                                             Nature of on-the-ground projects demonstrate engagement and an impact on local communities, Indigenous people, or women. Including but not limited to intentional sourcing commitments toward these groups, gender-sensitive grievance mechanisms, and alignment with UN Women’s Empowerment Principle 5 and 6 (1.5 points), or
                                         </li>
                                         <li>
-                                            Nature of biodiversity conservation projects involving restoration adheres to the parameters for effective environmental restoration and conservation per AFI Operational Guidance on Environmental Restoration
+                                            Nature of biodiversity conservation projects involving restoration adheres to the parameters for effective environmental restoration and conservation per AFI Operational Guidance on Environmental Restoration Compensation (1.5 points), or
+                                        </li>
+                                        <li>
+                                            Nature of supporting landscapes and jurisdictional approaches incorporate actions specified in the AFI Operations Guidance on Achieving Commitments Through Collaboration (1.5 points), and
+                                        </li>
+                                        <li>
+                                            Any of the aforementioned on-the-ground projects has been implemented for a continuous timeframe, is long-term, (i.e. not a one-off investment), or project has achieved objectives and delivered its intended impacts since 2021 (0.5 points).
                                         </li>
                                     </ul>
                                 </div>
@@ -660,7 +666,28 @@
                                         </p>
                                         <p>
                                             <strong>Biodiversity conservation and restoration</strong><br>
-                                            One of the key principles of sustainable palm oil production is restoration. In particular, landscapes and degraded ecosystems – including forests,
+                                            One of the key principles of sustainable palm oil production is restoration. In particular, landscapes and degraded ecosystems – including forests, peatlands, and existing plantations – are restored, and fragmented habitats and populations are reconnected by wildlife corridors, helping to enhance biodiversity conservation.<br>
+                                            WWF defines forest restoration as the process of improving the health, productivity, and array of life of a forest. Much of the work of restoration focuses on bringing back natural processes that contribute to the forest’s productivity, like how water interacts with soil, streams, and plants. This requires starting with a diagnostic exercise to figure out what has gone awry, as the appropriate approach to forest restoration depends on what is causing a particular forest to falter. The damage is not always immediately apparent—a forest may look very healthy and green but be suffering ecologically.<br>
+                                            The problem may be invasive species, infrastructure development, agriculture, mining, fire, or some other stressor.<br>
+                                            Core elements of forest restoration include:<br>
+                                        </p>
+                                        <ul>
+                                            <li>Planting trees</li>
+                                            <li>Improving soils</li>
+                                            <li>Protecting wildlife corridors</li>
+                                            <li>Managing land sustainably</li>
+                                        </ul>
+                                        <p>
+                                            <strong>Landscape and Jurisdictional Approaches</strong><br>
+                                            Landscape and jurisdictional approaches are providing greater scope than ever before for companies to remove barriers to sustainable production, support better environmental and social outcomes in landscapes producing palm oil, and to scale up compliance with the RSPO standard. A landscape/jurisdictional approach targets an ecological area (such as river catchments or ecoregion priority areas), culture (such as indigenous territories or cultural terroirs) and/or administrative units or jurisdictions (such as provinces, districts or states).
+                                        </p>
+                                        <p>
+                                            Jurisdictional approaches seek to align interests and coordinate actions among many different stakeholders, including governments, businesses, local communities, and NGOs in order to identify and work toward shared conservation, supply chain sustainability and green development goals. Similarly, landscape approaches utilise long-term collaboration among multiple stakeholders to combine conservation, development and human-well being goals and achieve sustainability at the landscape level.
+                                        </p>
+                                        <p>
+                                            <strong>Protection of rare threatened and endangered (RTE) wildlife species</strong><br>
+                                            The protection of rare, threatened, and endangered (RTE) wildlife species entails a range of conservation efforts aimed at safeguarding animal species that are at risk of extinction. These efforts are essential to maintain biodiversity and the health of ecosystems.<br>
+                                            Examples of projects include discrete efforts supporting anti-poaching patrols, in situ wildlife conservation, community engagement to resolve human-wildlife conflict, setting up a wildlife corridor, training workers on ecological best management practices (BMPs), or support for no-use of hazardous pesticides.
                                         </p>
                                     </div>
                                 </div>

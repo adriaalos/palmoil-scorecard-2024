@@ -8,13 +8,14 @@
         <div class="-mt-16">
             <Swiper
                 :slidesPerView="slidesPerV"
-                :modules="[SwiperPagination]"
+                :modules="[SwiperPagination, SwiperNavigation]"
                 :spaceBetween="40"
                 :centeredSlides="false"
                 :slidesOffsetBefore="40"
                 :pagination="{
                     clickable: true,
-                }"
+                }",
+                :navigation="true"
                 :loop="false"
             >
                 <SwiperSlide
@@ -85,5 +86,11 @@ const getData = (item: any) => {
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
     @apply bg-green;
+}
+.swiper-button-prev, .swiper-button-next {
+    @apply bg-green w-[54px] h-[54px] rounded-full shadow-md;
+    &:after {
+        @apply text-white text-sm;
+    }
 }
 </style>

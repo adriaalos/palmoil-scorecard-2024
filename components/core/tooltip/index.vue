@@ -110,9 +110,9 @@ const getDescription = (c: any) => {
         description = getCommitRspoCpoDescription(c)
     }
 
-    if (c.property === 'supMill') {
+    /* if (c.property === 'supMill') {
         description = getSupplierMillPlantDescription(c)
-    }
+    } */
 
     if (c.property === 'memberPlatforms') {
         description = getPlatformMemberOfDescription(c)

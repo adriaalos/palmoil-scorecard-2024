@@ -7,7 +7,7 @@
             </div>
             <div class="u-page-header__cta">
                 <a 
-                    :href="$t('ho_report_url')"
+                    href="/WWF_POBS_2024_full_results.xlsx"
                     target="_blank"
                     class="u-button u-button--greendark"
                 >
