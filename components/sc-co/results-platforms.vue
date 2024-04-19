@@ -86,12 +86,12 @@
                                 <header>
                                     <h3 class="u-result-block__header noline"><span>DOES THE COMPANY TAKE PART IN OTHER ACTION-ORIENTED SUSTAINABILITY PLATFORMS?</span></h3>
                                 </header>
-                                <div :class="[`u-result-card u-result-card--${transformBooleanYesNo(sc.company.platforms.poigMemeber)}`]">
+                                <div :class="[`u-result-card u-result-card--${transformBooleanYesNo(sc.company.platforms.memberPlatforms)}`]">
                                     <div class="u-result-card__ans">
-                                        <span>{{ getPlatformsDescription('poigMemeber').ans }}</span>
+                                        <span>{{ getPlatformsDescription('memberPlatforms').ans }}</span>
                                     </div>
                                     <div class="u-result-card__des">
-                                        {{ getPlatformsDescription('poigMemeber').text }}
+                                        {{ getPlatformsDescription('memberPlatforms').text }}
                                     </div>
                                     <VDropdown :triggers="['hover']" class="u-result-card__tooltip">
                                         <a><img src="@/assets/img/tooltip.svg"></a>
@@ -135,8 +135,14 @@ const PLATFORMS_CARDS = ref<any>({
     },
     memberPlatforms: {
         options: {
-            yes: 'Company is a member of',
-            no: 'Company is not a member of any other platforms',
+            yes: {
+                ans: 'YES',
+                text: `Company is a member of ${sc.company.platforms.platformNames}`,
+            },
+            no: {
+                ans: 'NO',
+                text: 'Company is not a member of any other platforms'
+            },
         },
     },
     poigMemeber: {
@@ -160,26 +166,22 @@ const PLATFORMS_TOOLTIPS = [
 ]
 
 const getPlatformsDescription = (field: string) => {
+    let description;
      if (sc.company) {
-        let description;
+        
         if (field == 'rspoMember' || field == 'poigMemeber') {
             sc.company.platforms[field] == true ? description = PLATFORMS_CARDS.value[field].options.yes : description = PLATFORMS_CARDS.value[field].options.no
         } else {
-            description = 'Lol'
+            description = ''
         }
-        return description;
         
-        /* if (
-        field === 'memberPlatforms' &&
-        value === 'yes' &&
-        sc.company.platforms.platformNames !== ''
-        ) {
-        description +=
-            ' ' +
-            formatString(sc.company.platforms.platformNames, ';');
+        
+        if (field === 'memberPlatforms') {
+            sc.company.platforms[field] == true ? description = PLATFORMS_CARDS.value[field].options.yes : description = PLATFORMS_CARDS.value[field].options.no
         }
-        return description; */
     }
+    console.log(description)
+    return description;
    
 }
 
