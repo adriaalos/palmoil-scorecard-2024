@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useScStore = defineStore('scStore', () => {
     const csStore = useCsStore()
     const { $i18n } = useNuxtApp()
-    const companies = ref<Company[]>([])
+    const companies = ref<Company[]>(useGetCompanies())
     const company = ref<Company|null>(null)
     const average = ref<number>(0)
     const ranges = ref<any>([
@@ -295,14 +295,14 @@ export const useScStore = defineStore('scStore', () => {
     const supply_chain_beyond = ref<number>(6)
 
     const fetchScores = async () => {
-        const { data, error } = await useFetch('https://palmoiladm.panda.org/scores?year=2024')
+       /*  const { data, error } = await useFetch('https://palmoiladm.panda.org/scores?year=2024')
 
         if (error.value) {
             console.error('Error fetching scores', error.value)
             return
         }
 
-        companies.value = data.value as Company[]
+        companies.value = data.value as Company[] */
         companies.value.map((c: Company) => { c.historical = false })
         await getAverage()
     }

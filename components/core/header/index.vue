@@ -29,7 +29,7 @@
                 '<lg:pointer-events-none <lg:opacity-0': !collapsed,
                 '<lg:pointer-events-auto <lg:opacity-100': collapsed,
             }]">
-                <ul class="flex items-center gap-x-8 text-xl <lg:flex-col <lg:gap-x-0 <lg:gap-y-2">
+                <ul class="top-1 flex items-center gap-x-6 text-lg <lg:flex-col <lg:gap-x-0 <lg:gap-y-2">
                     <li
                         v-for="item in nav"
                         :key="item.id"
@@ -85,6 +85,11 @@ const nav = ref([
         id: 'methodology',
         title: $i18n.t('me_name'),
         url: `/${$i18n.t('me_url')}`
+    },
+    {
+        id: 'case-studies',
+        title: $i18n.t('cs_name'),
+        url: `/${$i18n.t('cs_url')}`
     }
 ])
 const collapsed = ref(false)

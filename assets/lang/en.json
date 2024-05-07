@@ -132,5 +132,7 @@
     "re_name": "Recommendations",
     "re_url": "recommendations",
     "me_name": "Methodology",
-    "me_url": "methodology"
+    "me_url": "methodology",
+    "cs_name": "Case Studies",
+    "cs_url": "case-studies"
 }

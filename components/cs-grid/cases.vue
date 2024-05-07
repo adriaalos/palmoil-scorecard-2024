@@ -1,26 +1,8 @@
 <template>
-    <section class="u-section" v-if="sc.companies && cs.casestudies">
-        <div class="u-container u-container--lg">
-            <header class="u-header u-header--left">
-                <h2>CASE STUDIES</h2>
-            </header>
-        </div>
-        <div class="-mt-16">
-            <Swiper
-                :slidesPerView="slidesPerV"
-                :modules="[SwiperPagination, SwiperNavigation]"
-                :spaceBetween="40"
-                :centeredSlides="false"
-                :slidesOffsetBefore="40"
-                :pagination="{
-                    clickable: true,
-                }"
-                :navigation="true"
-                :loop="false"
-            >
-                <SwiperSlide
-                    v-for="casestudy in cs.casestudies"
-                >
+    <section class="u-section">
+        <div class="u-container">
+            <div class="flex flex-wrap -m-6">
+                <div v-for="casestudy in cs.casestudies" class="w-1/3 p-6 <md:w-1/2 <sm:w-full">
                     <div class="flex flex-col bg-green rounded-[60px] overflow-hidden h-[500px] <sm:h-[400px]">
                         <nuxt-link
                             :to="`/case-studies/${casestudy.id}`"
@@ -45,8 +27,8 @@
                             </nuxt-link>
                         </div>
                     </div>
-                </SwiperSlide>
-            </Swiper>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -54,15 +36,6 @@
 <script setup lang="ts">
 const cs = useCsStore()
 const sc = useScStore()
-const cases = ref(cs.casestudies || [])
-
-import { useWindowSize } from '@vueuse/core'
-const { width, height } = useWindowSize()
-
-const slidesPerV = ref(3.5)
-if (width.value <= 1024) slidesPerV.value = 2.75
-if (width.value <= 768) slidesPerV.value = 2.25
-if (width.value <= 640) slidesPerV.value = 1.5
 
 const getData = (item: any) => {
     const comp = sc.companies.find((company: any) => company.id === item.id)
@@ -71,26 +44,4 @@ const getData = (item: any) => {
         hq: comp?.hq,
     }
 }
-
 </script>
-
-<style lang="scss">
-.swiper {
-    @apply overflow-y-visible;
-}
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-    @apply top-[100%] mt-6;
-}
-.swiper-pagination-bullet {
-    @apply w-[12px] h-[12px] rounded-full <md:w-[8px] <md:h-[8px];
-}
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-    @apply bg-green;
-}
-.swiper-button-prev, .swiper-button-next {
-    @apply bg-green w-[54px] h-[54px] rounded-full shadow-md;
-    &:after {
-        @apply text-white text-sm;
-    }
-}
-</style>
